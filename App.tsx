@@ -1,0 +1,205 @@
+
+import React, { useState } from 'react';
+import Navbar from './components/Navbar';
+import SearchBar from './components/SearchBar';
+import EntityCard from './components/EntityCard';
+import MiniCard from './components/MiniCard';
+import LandingPage from './components/LandingPage';
+import AboutPage from './components/AboutPage';
+import MapPage from './components/MapPage';
+import LineageTree from './components/LineageTree';
+import { MythologicalEntity } from './types';
+import { searchEntities, getRandomEntity, MYTHOLOGICAL_DB } from './services/mockData';
+import { Dices, Sparkles, ArrowLeft } from 'lucide-react';
+
+type ViewState = 'landing' | 'archive' | 'about' | 'map' | 'lineage';
+
+const App: React.FC = () => {
+  const [view, setView] = useState<ViewState>('landing');
+  const [results, setResults] = useState<MythologicalEntity[]>([]);
+  const [selectedEntity, setSelectedEntity] = useState<MythologicalEntity | null>(null);
+  const [lineageFocusEntity, setLineageFocusEntity] = useState<MythologicalEntity | null>(null);
+  
+  const [loading, setLoading] = useState(false);
+  const [hasSearched, setHasSearched] = useState(false);
+
+  // --- Actions ---
+
+  const handleSearch = (query: string) => {
+    setView('archive');
+    setLoading(true);
+    setHasSearched(true);
+    setSelectedEntity(null);
+    setResults([]);
+
+    setTimeout(() => {
+      const found = searchEntities(query);
+      if (found.length === 1) {
+        setSelectedEntity(found[0]);
+      } else {
+        setResults(found);
+      }
+      setLoading(false);
+    }, 800);
+  };
+
+  const handleRandomDiscovery = () => {
+    setView('archive');
+    setLoading(true);
+    setHasSearched(true);
+    setSelectedEntity(null);
+    setResults([]);
+
+    setTimeout(() => {
+      const result = getRandomEntity();
+      setSelectedEntity(result);
+      setLoading(false);
+    }, 600);
+  };
+
+  const resetToHome = () => {
+    setView('landing');
+  };
+
+  const handleSelectEntity = (entity: MythologicalEntity) => {
+    setSelectedEntity(entity);
+    if (view === 'map' || view === 'lineage') {
+        setView('archive');
+    }
+  };
+
+  const handleOpenLineage = (entity: MythologicalEntity) => {
+    setLineageFocusEntity(entity);
+    setView('lineage');
+  };
+
+  // --- Render Helpers ---
+
+  const renderArchive = () => (
+    <div className="container mx-auto px-4 pt-24 pb-12 flex flex-col min-h-screen">
+      {/* Search Header */}
+      <div className={`transition-all duration-700 ease-in-out flex flex-col items-center ${hasSearched ? 'mt-4 mb-8' : 'mt-[10vh] mb-12'}`}>
+        <h1 className={`font-serif text-center font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-amber-100 via-stone-300 to-stone-600 drop-shadow-lg transition-all duration-700 ${hasSearched ? 'text-3xl mb-4' : 'text-5xl md:text-7xl mb-6'}`}>
+          Search The <span className="text-amber-600">Archive</span>
+        </h1>
+        <p className={`text-stone-400 text-center max-w-lg mx-auto mb-8 font-light text-lg transition-opacity duration-500 ${hasSearched ? 'opacity-0 h-0 overflow-hidden m-0' : 'opacity-100'}`}>
+          Discover lost and found myths from Sub-Saharan Africa. 
+          Experience Divinities, Heroes, and Creatures reimagined by AI.
+        </p>
+      </div>
+
+      {/* Search Section */}
+      <div className="flex flex-col items-center w-full max-w-2xl mx-auto mb-12 relative z-10">
+        <SearchBar onSearch={handleSearch} isLoading={loading} />
+        
+        <button 
+          onClick={handleRandomDiscovery}
+          disabled={loading}
+          className="mt-4 flex items-center gap-2 px-6 py-2 rounded-full border border-stone-800 bg-stone-900/50 text-stone-400 text-sm hover:text-amber-400 hover:border-amber-500/50 hover:bg-stone-800 transition-all duration-300 group"
+        >
+          <Dices size={16} className="group-hover:rotate-180 transition-transform duration-500" />
+          <span className="font-mono tracking-wide">Random Discovery</span>
+          <Sparkles size={14} className="opacity-0 group-hover:opacity-100 text-amber-500 transition-opacity" />
+        </button>
+      </div>
+
+      {/* Results Section */}
+      <div className="flex-grow w-full relative min-h-[400px]">
+        {loading && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-amber-500/50 pt-12 animate-pulse z-20">
+            <div className="w-16 h-16 border-4 border-amber-500/20 border-t-amber-500 rounded-full animate-spin mb-4"></div>
+            <p className="font-mono text-sm tracking-widest uppercase">Querying Ancestral Nexus...</p>
+          </div>
+        )}
+
+        {!loading && results.length > 0 && !selectedEntity && (
+          <div className="animate-fadeIn">
+            <div className="flex justify-between items-center mb-6 pb-2 border-b border-stone-800">
+              <h2 className="font-serif text-xl text-stone-400 uppercase tracking-widest">
+                Found {results.length} Chronicles
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {results.map((entity) => (
+                <MiniCard key={entity.name} entity={entity} onClick={() => handleSelectEntity(entity)} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {!loading && selectedEntity && (
+          <div className="animate-fadeIn">
+            {results.length > 1 && (
+              <button 
+                onClick={() => setSelectedEntity(null)}
+                className="mb-6 flex items-center gap-2 text-xs font-mono uppercase text-stone-500 hover:text-amber-500 transition-colors"
+              >
+                <ArrowLeft size={14} /> Back to selection
+              </button>
+            )}
+            <EntityCard 
+              key={selectedEntity.name} 
+              data={selectedEntity} 
+              onSelectEntity={handleSelectEntity} 
+              onOpenLineage={() => handleOpenLineage(selectedEntity)}
+            />
+          </div>
+        )}
+
+        {!loading && hasSearched && !selectedEntity && results.length === 0 && (
+          <div className="text-center mt-12 animate-fadeIn">
+            <div className="inline-block p-6 rounded-lg bg-stone-900/50 border border-stone-800">
+              <p className="text-stone-400 font-serif text-lg">No myths found in the archive matching this query.</p>
+              <p className="text-stone-600 text-sm mt-2 italic">Try search terms like "Nile", "Spider", "Thunder", or "Water"...</p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <footer className="mt-20 border-t border-stone-900 pt-8 text-center">
+        <p className="text-stone-600 text-sm font-mono">
+          &copy; {new Date().getFullYear()} Living Archive • Afro-Futurism Methodology
+        </p>
+      </footer>
+    </div>
+  );
+
+  return (
+    <div className="min-h-screen bg-stone-950 text-stone-200 selection:bg-amber-500/30 selection:text-amber-200 font-sans overflow-x-hidden">
+      
+      {/* Persistent Navbar */}
+      <Navbar 
+        currentView={view === 'lineage' ? 'archive' : view} // Highlight archive when in lineage
+        onHomeClick={resetToHome} 
+        onSearchClick={() => setView('archive')} 
+        onMapClick={() => setView('map')} 
+        onAboutClick={() => setView('about')} 
+      />
+
+      {/* Ambient Background Effects (Global) */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-amber-900/5 blur-[120px] rounded-full mix-blend-screen"></div>
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-red-900/5 blur-[100px] rounded-full"></div>
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
+      </div>
+
+      {/* Main View Router */}
+      <main className="relative z-10">
+        {view === 'landing' && <LandingPage onEnter={() => setView('archive')} />}
+        {view === 'archive' && renderArchive()}
+        {view === 'map' && <MapPage onSelectEntity={handleSelectEntity} />}
+        {view === 'lineage' && lineageFocusEntity && (
+          <LineageTree 
+            focusEntity={lineageFocusEntity} 
+            onClose={() => setView('archive')}
+            onNodeClick={handleOpenLineage}
+          />
+        )}
+        {view === 'about' && <AboutPage onBack={() => setView('archive')} />}
+      </main>
+
+    </div>
+  );
+};
+
+export default App;
