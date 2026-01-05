@@ -505,6 +505,61 @@ export const MYTHOLOGICAL_DB: MythologicalEntity[] = [
     "appearance": { "physical_signs": ["Skin with granite texture", "Warrior's build", "Powerful gaze"], "manifestations": "A warrior standing unmoved by a barrage of spears.", "image_generation_prompt": "The Luo hero Luanda Magere, the stone warrior. A powerful dark-skinned man with skin texture like cracked granite, brandishing a traditional Luo hide shield and iron spear. Invincible posture, dramatic sunset lighting across the Kenyan savannah, historical epic cinematic style, 8k resolution.", "imageUrl": "" },
     "story": { "description": "A legendary warrior whose flesh was made of stone. He was invincible in battle, as spears and arrows would simply bounce off his skin. His only vulnerability was his shadow, a secret that eventually led to his tragic fall after a betrayal.", "characteristics": ["Invincible", "Warrior", "Tragic"] },
     "relations": { "parents": [], "conjoint": [], "descendants": [] }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Abada",
+    "category": "Mythical Ungulate",
+    "origin": { "country": "DRC / Congo", "ethnicity": "Mongo", "pantheon": "Central African Legends" },
+    "identity": { "gender": "Neutral", "cultural_role": "Guardian of Antidotes", "alignment": "Lawful Neutral" },
+    "attributes": { "domains": ["Protection", "Healing"], "symbols": ["Dual Horns"], "power_objects": ["Sacred Horn"], "symbolic_animals": ["Donkey", "Stag"] },
+    "appearance": { "physical_signs": ["Donkey-sized", "Two crooked horns (forehead and nape)", "Stag feet", "Ox tail"], "manifestations": "Appears in the deep jungle to those seeking cures.", "image_generation_prompt": "The mystical Abada creature, size of a donkey with two crooked golden horns (one on forehead, one on neck), stag feet, ox tail, lush Congo jungle background, bioluminescent accents, photorealistic.", "imageUrl": "" },
+    "story": { "description": "A rare creature whose horns are sought as powerful antidotes against all poisons and diseases.", "characteristics": ["Elusive", "Healing", "Sacred"] },
+    "relations": { "parents": [], "conjoint": [], "descendants": [] }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Bida",
+    "category": "Sacred Serpent",
+    "origin": { "country": "Mali", "ethnicity": "Soninke", "pantheon": "Wagadu Legends" },
+    "identity": { "gender": "Male", "cultural_role": "Giver of Prosperity", "alignment": "Neutral" },
+    "attributes": { "domains": ["Wealth", "Rain", "Sacrifice"], "symbols": ["Seven Heads", "Gold Dust"], "power_objects": ["Seventh Head Crown"], "symbolic_animals": ["Black Snake"] },
+    "appearance": { "physical_signs": ["Massive black serpent", "Seven distinct heads", "Shimmering obsidian scales"], "manifestations": "Coils around the city to bring golden rain.", "image_generation_prompt": "Giant seven-headed black serpent Bida, scales shining like obsidian, raining gold dust over an ancient Sahel city, majestic and terrifying, sunset lighting, cinematic scale.", "imageUrl": "" },
+    "story": { "description": "The guardian serpent of the Kingdom of Wagadu. It granted prosperity and gold in exchange for an annual sacrifice.", "characteristics": ["Powerful", "Demanding", "Ancient"] },
+    "relations": { "parents": [], "conjoint": [], "descendants": [] }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Biloko",
+    "category": "Forest Spirit",
+    "origin": { "country": "DRC", "ethnicity": "Mongo", "pantheon": "Central African Folklore" },
+    "identity": { "gender": "Neutral", "cultural_role": "Jungle Guardians", "alignment": "Territorial" },
+    "attributes": { "domains": ["Nature", "Forest", "Hidden Treasures"], "symbols": ["Bells", "Leaves"], "power_objects": ["Enchanted Bells"], "symbolic_animals": ["None"] },
+    "appearance": { "physical_signs": ["Small hairless humanoid", "Covered in moss and leaves", "Large snouts", "Sharp claws"], "manifestations": "Hiding in hollow trees, making bells ring to charm travelers.", "image_generation_prompt": "Small hairless forest dwarves Biloko, covered in moss and leaves, large snouts, holding ancient bells, peeking from a hollow giant baobab tree, mystical green atmosphere, sharp detail.", "imageUrl": "" },
+    "story": { "description": "Restless spirits of ancestors who live in the forest. They are dangerous to hunters and guard the secrets of the deep woods.", "characteristics": ["Stealthy", "Hostile", "Enchanting"] },
+    "relations": { "parents": [], "conjoint": [], "descendants": [] }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Dingonek",
+    "category": "River Monster",
+    "origin": { "country": "Kenya", "ethnicity": "Wandorobo", "pantheon": "East African Cryptids" },
+    "identity": { "gender": "Neutral", "cultural_role": "Apex Aquatic Predator", "alignment": "True Neutral" },
+    "attributes": { "domains": ["Water", "Predation", "Strength"], "symbols": ["Tusks", "Scales"], "power_objects": ["Ancient Scales"], "symbolic_animals": ["Leopard", "Walrus", "Hippopotamus"] },
+    "appearance": { "physical_signs": ["Scale-covered body", "Walrus-like tusks", "Leopard head", "Stinger tail"], "manifestations": "Emerging from the murky waters of Lake Victoria.", "image_generation_prompt": "The river monster Dingonek, leopard head, giant walrus tusks, armored scales like an armadillo, broad tail with stinger, emerging from dark river waters, hyper-realistic, intimidating.", "imageUrl": "" },
+    "story": { "description": "A terrifying aquatic beast that attacks even hippos. It is said that where lightning strikes, the Impundulu has laid an egg. It is a creature of pure chaotic energy and fear.", "characteristics": ["Fierce", "Armored", "Amphibious"] },
+    "relations": { "parents": [], "conjoint": [], "descendants": [] }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Inkanyamba",
+    "category": "Storm Entity",
+    "origin": { "country": "South Africa", "ethnicity": "Zulu", "pantheon": "Water Spirits" },
+    "identity": { "gender": "Neutral", "cultural_role": "Storm Bringer", "alignment": "Unpredictable" },
+    "attributes": { "domains": ["Weather", "Storms", "Lakes"], "symbols": ["Tornadoes", "Waterfalls"], "power_objects": ["Storm Feather"], "symbolic_animals": ["Eel", "Horse"] },
+    "appearance": { "physical_signs": ["Giant eel-like body", "Large wings", "Horse-like head"], "manifestations": "Taking flight during the summer months, causing massive storms.", "image_generation_prompt": "Colossal winged eel Inkanyamba emerging from a massive waterfall, horse-like head, dark storm clouds and lightning, feathers made of wind, powerful and divine, cinematic lighting.", "imageUrl": "" },
+    "story": { "description": "A migratory spirit that moves between waterfalls. Its flight creates the summer tornadoes of the South.", "characteristics": ["Colossal", "Volatile", "Majestic"] },
+    "relations": { "parents": [], "conjoint": [], "descendants": [] }
   }
 ];
 
