@@ -21,13 +21,13 @@ const FilteredList: React.FC<FilteredListProps> = ({ category, onBack, onSelectE
   }, [category]);
 
   return (
-    <div className="min-h-screen pt-24 pb-12 px-4 container mx-auto">
+    <div className="min-h-screen pt-24 pb-12 px-4 container mx-auto animate-fadeIn">
       
       {/* Header Bar */}
-      <div className="flex flex-col md:flex-row items-center justify-between mb-12 border-b border-stone-800 pb-6 animate-fadeIn">
+      <div className="flex flex-col md:flex-row items-center justify-between mb-12 border-b border-stone-800 pb-6">
         <button 
           onClick={onBack}
-          className="flex items-center gap-2 px-4 py-2 rounded-full border border-stone-800 text-stone-400 hover:text-amber-500 hover:border-amber-500/50 hover:bg-stone-900 transition-all group mb-4 md:mb-0"
+          className="flex items-center gap-2 px-4 py-2 rounded-full border border-stone-800 text-stone-400 hover:text-gold hover:border-gold hover:bg-stone-900 transition-all group mb-4 md:mb-0"
         >
           <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
           <span className="font-mono text-xs uppercase tracking-widest">Back to Categories</span>
@@ -49,7 +49,7 @@ const FilteredList: React.FC<FilteredListProps> = ({ category, onBack, onSelectE
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-fadeIn" style={{ animationDelay: '0.1s' }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {sortedEntities.map((entity) => (
           <MiniCard 
             key={entity.name} 
