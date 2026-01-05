@@ -2,7 +2,8 @@
 import React, { useMemo } from 'react';
 import { MythologicalEntity } from '../types';
 import { MYTHOLOGICAL_DB } from '../services/mockData';
-import { ArrowLeft } from 'lucide-react';
+// ArrowLeft imported but we will use text arrow for strict adherence to prompt if needed, 
+// though SVG icon is cleaner. I will use the text arrow as requested in the specific text instruction.
 
 interface LineageTreeProps {
   focusEntity: MythologicalEntity;
@@ -105,16 +106,32 @@ const LineageTree: React.FC<LineageTreeProps> = ({ focusEntity, onClose }) => {
   return (
     <div className="fixed inset-0 bg-black z-[100] overflow-auto text-white font-mono selection:bg-white selection:text-black">
       
-      {/* 1. FIXED NAVIGATION BUTTON (Top Left) */}
-      <div className="fixed top-8 left-8 z-50">
-        <button 
-          onClick={onClose} 
-          className="flex items-center gap-3 px-5 py-2 border border-amber-600/50 bg-black/80 backdrop-blur-sm text-amber-500 hover:text-amber-300 hover:border-amber-400 hover:bg-amber-900/20 transition-all duration-300 uppercase font-serif text-xs font-bold tracking-widest group"
-        >
-          <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
-          Back to Profile
-        </button>
-      </div>
+      {/* 1. AGGRESSIVE NAVIGATION BUTTON (Forced Layout) */}
+      <button 
+        onClick={onClose} 
+        style={{
+          position: 'fixed',
+          top: '100px',
+          left: '50px',
+          zIndex: 9999,
+          backgroundColor: '#1a1a1a',
+          border: '2px solid #D4AF37',
+          color: '#FFBF00',
+          fontSize: '1.2rem',
+          fontWeight: 'bold',
+          padding: '15px 30px',
+          textTransform: 'uppercase',
+          cursor: 'pointer',
+          fontFamily: 'serif',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px',
+          boxShadow: '0 0 15px rgba(0,0,0,0.8)'
+        }}
+        className="hover:bg-[#FFBF00] hover:text-black transition-colors duration-300"
+      >
+        <span>←</span> BACK TO PROFILE
+      </button>
 
       {/* 2. CENTERED CONTAINER (Flexbox Wrapper) */}
       <div className="min-h-screen flex flex-col items-center justify-center p-12 pt-24">
