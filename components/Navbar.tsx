@@ -1,16 +1,17 @@
 
 import React from 'react';
-import { Compass, Map as MapIcon, Search, BookOpen, Home } from 'lucide-react';
+import { Compass, Map as MapIcon, Search, BookOpen, Home, Layers } from 'lucide-react';
 
 interface NavbarProps {
-  currentView: 'landing' | 'archive' | 'about' | 'map';
+  currentView: 'landing' | 'archive' | 'about' | 'map' | 'types';
   onHomeClick: () => void;
   onSearchClick: () => void;
   onMapClick: () => void;
   onAboutClick: () => void;
+  onTypesClick: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ currentView, onHomeClick, onSearchClick, onMapClick, onAboutClick }) => {
+const Navbar: React.FC<NavbarProps> = ({ currentView, onHomeClick, onSearchClick, onMapClick, onAboutClick, onTypesClick }) => {
   
   const getButtonClass = (view: string) => {
     const isActive = currentView === view;
@@ -60,6 +61,14 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onHomeClick, onSearchClick
           >
             <Search size={14} />
             <span className="hidden md:inline">Search</span>
+          </button>
+
+          <button 
+            onClick={onTypesClick}
+            className={getButtonClass('types')}
+          >
+            <Layers size={14} />
+            <span className="hidden md:inline">Beings</span>
           </button>
 
           <button 

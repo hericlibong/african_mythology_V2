@@ -8,17 +8,22 @@ import LandingPage from './components/LandingPage';
 import AboutPage from './components/AboutPage';
 import MapPage from './components/MapPage';
 import LineageTree from './components/LineageTree';
-import { MythologicalEntity } from './types';
+import TypesLobby from './components/TypesLobby';
+import FilteredList from './components/FilteredList';
+import { MythologicalEntity, EntityType } from './types';
 import { searchEntities, getRandomEntity, MYTHOLOGICAL_DB } from './services/mockData';
 import { Dices, Sparkles, ArrowLeft } from 'lucide-react';
 
-type ViewState = 'landing' | 'archive' | 'about' | 'map' | 'lineage';
+type ViewState = 'landing' | 'archive' | 'about' | 'map' | 'lineage' | 'types';
 
 const App: React.FC = () => {
   const [view, setView] = useState<ViewState>('landing');
   const [results, setResults] = useState<MythologicalEntity[]>([]);
   const [selectedEntity, setSelectedEntity] = useState<MythologicalEntity | null>(null);
   const [lineageFocusEntity, setLineageFocusEntity] = useState<MythologicalEntity | null>(null);
+  
+  // New State for Type Filtering
+  const [selectedTypeFilter, setSelectedTypeFilter] = useState<EntityType | null>(null);
   
   const [loading, setLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
@@ -63,7 +68,12 @@ const App: React.FC = () => {
 
   const handleSelectEntity = (entity: MythologicalEntity) => {
     setSelectedEntity(entity);
-    if (view === 'map' || view === 'lineage') {
+    // If coming from types, we can either stay in 'types' view showing the card, 
+    // or switch to 'archive'. For consistency with search, let's use 'archive' view logic 
+    // but we need to ensure the card is shown.
+    // However, to keep the context "Back to categories", let's handle it within 'types' view?
+    // Simplified approach: View card in 'archive' mode effectively.
+    if (view === 'map' || view === 'lineage' || view === 'types') {
         setView('archive');
     }
   };
@@ -169,11 +179,15 @@ const App: React.FC = () => {
       
       {/* Persistent Navbar */}
       <Navbar 
-        currentView={view === 'lineage' ? 'archive' : view} // Highlight archive when in lineage
+        currentView={view === 'lineage' ? 'archive' : view} 
         onHomeClick={resetToHome} 
         onSearchClick={() => setView('archive')} 
         onMapClick={() => setView('map')} 
         onAboutClick={() => setView('about')} 
+        onTypesClick={() => {
+            setView('types');
+            setSelectedTypeFilter(null); // Reset filter when clicking main nav
+        }}
       />
 
       {/* Ambient Background Effects (Global) */}
@@ -188,6 +202,18 @@ const App: React.FC = () => {
         {view === 'landing' && <LandingPage onEnter={() => setView('archive')} />}
         {view === 'archive' && renderArchive()}
         {view === 'map' && <MapPage onSelectEntity={handleSelectEntity} />}
+        
+        {view === 'types' && !selectedTypeFilter && (
+            <TypesLobby onSelectType={(type) => setSelectedTypeFilter(type)} />
+        )}
+        {view === 'types' && selectedTypeFilter && (
+            <FilteredList 
+                category={selectedTypeFilter} 
+                onBack={() => setSelectedTypeFilter(null)}
+                onSelectEntity={handleSelectEntity}
+            />
+        )}
+
         {view === 'lineage' && lineageFocusEntity && (
           <LineageTree 
             focusEntity={lineageFocusEntity} 
