@@ -56,10 +56,28 @@ const styles = {
     margin: '0 auto',
     display: 'block'
   },
+  shortVertLine: {
+    width: '0px',
+    height: '10px',
+    borderLeft: '2px solid white',
+    margin: '0 auto',
+    display: 'block'
+  },
   horzBar: {
     height: '10px',
     borderTop: '2px solid white',
     width: '100%'
+  },
+  // New Label Style
+  label: {
+    fontFamily: 'monospace',
+    fontSize: '10px',
+    color: '#D4AF37', // Gold/Amber
+    fontWeight: 'bold' as const,
+    letterSpacing: '0.1em',
+    textTransform: 'uppercase' as const,
+    display: 'block',
+    padding: '2px 0'
   }
 };
 
@@ -106,7 +124,7 @@ const LineageTree: React.FC<LineageTreeProps> = ({ focusEntity, onClose }) => {
   return (
     <div className="fixed inset-0 bg-black z-[100] overflow-auto text-white font-mono selection:bg-white selection:text-black">
       
-      {/* 1. AGGRESSIVE NAVIGATION BUTTON (Forced Layout) */}
+      {/* 1. AGGRESSIVE NAVIGATION BUTTON (Forced Layout) - MONOSPACE UPDATE */}
       <button 
         onClick={onClose} 
         style={{
@@ -122,7 +140,7 @@ const LineageTree: React.FC<LineageTreeProps> = ({ focusEntity, onClose }) => {
           padding: '15px 30px',
           textTransform: 'uppercase',
           cursor: 'pointer',
-          fontFamily: 'serif',
+          fontFamily: 'monospace', // Changed to monospace
           display: 'flex',
           alignItems: 'center',
           gap: '10px',
@@ -154,6 +172,7 @@ const LineageTree: React.FC<LineageTreeProps> = ({ focusEntity, onClose }) => {
               {/* --- LEVEL 1: PARENTS --- */}
               {parents.length > 0 && (
                 <>
+                  {/* Parent Names */}
                   <tr>
                     <td colSpan={colCount} style={styles.cell}>
                       {parents.map((p, i) => (
@@ -163,10 +182,13 @@ const LineageTree: React.FC<LineageTreeProps> = ({ focusEntity, onClose }) => {
                       ))}
                     </td>
                   </tr>
-                  {/* Connector from Parent Down */}
+                  
+                  {/* Label: PARENTS */}
                   <tr>
                     <td colSpan={colCount} style={styles.cell}>
-                      <div style={styles.vertLine}></div>
+                        <div style={styles.shortVertLine}></div>
+                        <span style={styles.label}>PARENTS</span>
+                        <div style={styles.shortVertLine}></div>
                     </td>
                   </tr>
                 </>
@@ -214,14 +236,52 @@ const LineageTree: React.FC<LineageTreeProps> = ({ focusEntity, onClose }) => {
                     </tr>
                   )}
 
-                  {/* Single Spouse Connector */}
+                  {/* Single Spouse Connector (Line before label) */}
                   {spouses.length === 1 && (
                     <tr>
                         <td colSpan={colCount} style={styles.cell}>
-                          <div style={styles.vertLine}></div>
+                          <div style={styles.shortVertLine}></div>
                         </td>
                     </tr>
                   )}
+
+                  {/* Multiple Spouses Connectors (before label) */}
+                  {spouses.length > 1 && (
+                     <tr>
+                        {spouses.map((_, i) => {
+                             const spanPerSpouse = colCount / spouses.length;
+                             return (
+                                 <td key={i} colSpan={spanPerSpouse} style={styles.cell}>
+                                     <div style={styles.shortVertLine}></div>
+                                 </td>
+                             );
+                        })}
+                     </tr>
+                  )}
+
+                  {/* LABEL ROW: PARTNER */}
+                  <tr>
+                    {spouses.map((spouse, i) => {
+                      const spanPerSpouse = colCount / spouses.length;
+                      return (
+                        <td key={`label-${i}`} colSpan={spanPerSpouse} style={styles.cell}>
+                           <span style={styles.label}>PARTNER</span>
+                        </td>
+                      );
+                    })}
+                  </tr>
+
+                  {/* Connector after label */}
+                   <tr>
+                    {spouses.map((_, i) => {
+                      const spanPerSpouse = colCount / spouses.length;
+                      return (
+                        <td key={`conn-${i}`} colSpan={spanPerSpouse} style={styles.cell}>
+                          <div style={styles.shortVertLine}></div>
+                        </td>
+                      );
+                    })}
+                  </tr>
 
                   {/* The Spouse Names */}
                   <tr>
@@ -240,10 +300,12 @@ const LineageTree: React.FC<LineageTreeProps> = ({ focusEntity, onClose }) => {
               {/* --- LEVEL 4: CHILDREN --- */}
               {children.length > 0 && (
                 <>
-                  {/* Gap / Vertical Line Sequence */}
+                  {/* Label Sequence: Line -> Label -> Line -> Bus */}
                   <tr>
                     <td colSpan={colCount} style={styles.cell}>
-                        <div style={{ ...styles.vertLine, height: '40px' }}></div> 
+                        <div style={{ ...styles.vertLine, height: '15px' }}></div>
+                        <span style={styles.label}>DESCENDANTS</span> 
+                        <div style={{ ...styles.vertLine, height: '15px' }}></div> 
                     </td>
                   </tr>
 
