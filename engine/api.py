@@ -75,7 +75,7 @@ def generate_image(request: GenerateRequest):
         # 2. Call Vertex AI (Imagen)
         model = ImageGenerationModel.from_pretrained("imagegeneration@006")
         
-        images = model.generate_images(
+        response = model.generate_images(
             prompt=prompt,
             number_of_images=1,
             language="en",
@@ -84,21 +84,34 @@ def generate_image(request: GenerateRequest):
             person_generation="allow_adult"
         )
         
-        if not images:
-             raise HTTPException(status_code=500, detail="No image generated")
+        # --- DEBUG / INSPECTION ---
+        print(f"DEBUG: Response type: {type(response)}")
+        print(f"DEBUG: Response content: {response}")
+        # --------------------------
+
+        images = response
+        
+        # Robust check: Ensure images is a list-like object and has at least one element
+        if not images or len(images) == 0:
+             print("Error: No images returned from Vertex AI.")
+             # Return a clean 502 error instead of crashing
+             return JSONResponse(
+                 status_code=502,
+                 content={
+                     "status": "error", 
+                     "message": "No image returned from generation service",
+                     "details": str(response)
+                 }
+             )
 
         # 3. Save Image
         # Define path: public/generated_images/
         # api.py is in engine/, so public is at ../public
-        public_dir = Path(__file__).parent.parent / "src" / "public" 
-        # Wait, usually public is in root for Vite. Let's start with 'public' in root.
-        # Check if 'public' exists in root, otherwise src/public? 
-        # Standard Vite: /public in root.
-        root_public_dir = Path(__file__).parent.parent / "public"
         
-        # If root public doesn't exist, try src/public (older structure?)
-        # But wait, we restructured to src/. Usually public stays in root.
-        # Let's assume root public for now, check later.
+        # Using correct resolution for public directory relative to engine/api.py
+        # Current file: /home/hericdev/AfricanPantheon/african_mythology_V2/engine/api.py
+        # Public dir: /home/hericdev/AfricanPantheon/african_mythology_V2/public
+        root_public_dir = Path(__file__).parent.parent / "public"
         
         output_dir = root_public_dir / "generated_images"
         output_dir.mkdir(parents=True, exist_ok=True)
@@ -107,7 +120,9 @@ def generate_image(request: GenerateRequest):
         filename = f"{safe_name}.png"
         file_path = output_dir / filename
         
-        images[0].save(location=str(file_path), include_generation_parameters=False)
+        # Safely access the first image
+        generated_image = images[0]
+        generated_image.save(location=str(file_path), include_generation_parameters=False)
         print(f"Image saved to {file_path}")
 
         # 4. Update Database (JSON)
@@ -134,7 +149,8 @@ def generate_image(request: GenerateRequest):
 
     except Exception as e:
         print(f"Generation Error: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        # If it's a known API error, we might want to pass it through, otherwise 500
+        raise HTTPException(status_code=500, detail=f"Internal Server Error: {str(e)}")
 
 if __name__ == "__main__":
     import uvicorn
