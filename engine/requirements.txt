@@ -2,3 +2,4 @@ pydantic
 rich
 fastapi
 uvicorn
+google-cloud-aiplatform
