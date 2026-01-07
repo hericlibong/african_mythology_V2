@@ -14,19 +14,42 @@ interface EntityCardProps {
 
 const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLineage }) => {
   const [showPrompt, setShowPrompt] = useState(false);
-  const [generationState, setGenerationState] = useState<'idle' | 'generating' | 'completed'>('idle');
+  const [generationState, setGenerationState] = useState<'idle' | 'generating' | 'completed' | 'error'>('idle');
+  const [imageUrl, setImageUrl] = useState(data.appearance.imageUrl);
 
   // Reset generation state when navigating to a new entity
   useEffect(() => {
     setGenerationState('idle');
+    setImageUrl(data.appearance.imageUrl);
   }, [data]);
 
-  const handleGenerate = () => {
+  const handleGenerate = async () => {
     setGenerationState('generating');
-    // Simulate Neural Rendering delay
-    setTimeout(() => {
-      setGenerationState('completed');
-    }, 3000);
+
+    try {
+      const response = await fetch('http://localhost:8000/generate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ entity_name: data.name }),
+      });
+
+      if (!response.ok) throw new Error('Generation failed');
+
+      const result = await response.json();
+
+      if (result.status === 'success') {
+        setImageUrl(result.image_url);
+        setGenerationState('completed');
+      } else {
+        console.error("API returned error:", result);
+        setGenerationState('error');
+      }
+    } catch (e) {
+      console.error("Generation error:", e);
+      setGenerationState('error');
+    }
   };
 
   const getEntityByName = (name: string) => {
@@ -47,7 +70,7 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
     const target = getEntityByName(name);
     if (target && onSelectEntity) {
       return (
-        <button 
+        <button
           key={name}
           onClick={() => onSelectEntity(target)}
           className="text-amber-400 hover:text-amber-200 underline decoration-amber-500/30 underline-offset-4 transition-colors"
@@ -62,7 +85,7 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
   return (
     <div className="w-full max-w-5xl mx-auto animate-fadeIn pb-12">
       <div className="bg-stone-900/80 backdrop-blur-xl border border-amber-500/20 rounded-2xl overflow-hidden shadow-2xl shadow-black">
-        
+
         {/* Header Section */}
         <div className="relative p-6 md:p-8 pb-4 border-b border-stone-800">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-stone-900 via-amber-600 to-stone-900"></div>
@@ -78,7 +101,7 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
                 {data.identity.cultural_role}
               </h2>
             </div>
-            
+
             <div className="text-right flex flex-col items-end">
               <div className="flex items-center gap-2 text-stone-300">
                 <MapPin size={16} className="text-amber-500" />
@@ -93,36 +116,36 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-0">
-          
+
           {/* Left Column: Visuals */}
           <div className="md:col-span-5 bg-stone-950/50 p-6 border-b md:border-b-0 md:border-r border-stone-800 flex flex-col">
-            
+
             {/* Visual Generator Area */}
             <div className="aspect-[3/4] w-full rounded-lg overflow-hidden border border-stone-800 relative group bg-black shadow-lg">
-              
+
               {/* IDLE & GENERATING OVERLAYS (The "Screen") */}
-              {generationState !== 'completed' && (
+              {generationState !== 'completed' && !imageUrl && (
                 <div className="absolute inset-0 z-20 bg-stone-950 flex flex-col items-center justify-center p-6 text-center">
                   {/* Grid Texture Background */}
                   <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-                  
-                  {generationState === 'idle' ? (
+
+                  {generationState === 'idle' || generationState === 'error' ? (
                     <div className="relative z-10 flex flex-col items-center animate-fadeIn">
                       <div className="mb-6 p-4 rounded-full bg-stone-900 border border-stone-800 shadow-inner">
-                        <Cpu size={32} className="text-stone-600" strokeWidth={1} />
+                        <Cpu size={32} className={`text-stone-600 ${generationState === 'error' ? 'text-red-500' : ''}`} strokeWidth={1} />
                       </div>
-                      <button 
+                      <button
                         onClick={handleGenerate}
                         className="group relative px-6 py-3 bg-amber-900/10 border border-amber-800/50 hover:bg-amber-900/30 hover:border-amber-500/80 transition-all duration-500"
                       >
                         <div className="absolute inset-0 w-1 bg-amber-500/50 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out opacity-20"></div>
                         <span className="flex items-center gap-3 text-amber-500 font-mono text-xs font-bold tracking-widest uppercase">
                           <Sparkles size={14} className="group-hover:animate-pulse" />
-                          Initialize Neural Render
+                          {generationState === 'error' ? 'Retry Neural Render' : 'Initialize Neural Render'}
                         </span>
                       </button>
                       <p className="mt-4 text-[9px] text-stone-600 font-mono uppercase tracking-[0.2em]">
-                        Awaiting User Authorization
+                        {generationState === 'error' ? 'Construct Failed. Retry?' : 'Awaiting User Authorization'}
                       </p>
                     </div>
                   ) : (
@@ -140,48 +163,48 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
               )}
 
               {/* COMPLETED STATE: Reveal Image or Fallback */}
-              <div className={`w-full h-full transition-opacity duration-1000 ease-in-out ${generationState === 'completed' ? 'opacity-100' : 'opacity-0'}`}>
-                {data.appearance.imageUrl ? (
-                  <img 
-                    src={data.appearance.imageUrl}
-                    alt={data.name} 
+              <div className={`w-full h-full transition-opacity duration-1000 ease-in-out ${generationState === 'completed' || imageUrl ? 'opacity-100' : 'opacity-0'}`}>
+                {imageUrl ? (
+                  <img
+                    src={imageUrl}
+                    alt={data.name}
                     className="w-full h-full object-cover"
                   />
                 ) : (
                   <VisualManifestation entity={data} />
                 )}
               </div>
-              
+
               {/* Tech Label Overlay (Visible only after generation) */}
-              <div className={`absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent transition-opacity duration-1000 ${generationState === 'completed' ? 'opacity-100' : 'opacity-0'}`}>
+              <div className={`absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent transition-opacity duration-1000 ${generationState === 'completed' || imageUrl ? 'opacity-100' : 'opacity-0'}`}>
                 <div className="flex items-center gap-2 text-white/60 text-xs font-mono">
                   <ImageIcon size={12} />
-                  <span>{data.appearance.imageUrl ? 'Generative Render Output' : 'Abstract Reconstruction'}</span>
+                  <span>{imageUrl ? 'Generative Render Output' : 'Abstract Reconstruction'}</span>
                 </div>
               </div>
             </div>
 
             {/* Prompt Toggle */}
             <div className="mt-4">
-               <button 
+              <button
                 onClick={() => setShowPrompt(!showPrompt)}
                 className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-stone-500 hover:text-amber-500 transition-colors"
-               >
-                 {showPrompt ? <EyeOff size={14} /> : <Eye size={14} />}
-                 {showPrompt ? 'Hide GenAI Prompt' : 'View GenAI Prompt'}
-               </button>
-               
-               {showPrompt && (
-                 <div className="animate-fadeIn mt-2">
-                   <PromptBox prompt={data.appearance.image_generation_prompt} />
-                 </div>
-               )}
+              >
+                {showPrompt ? <EyeOff size={14} /> : <Eye size={14} />}
+                {showPrompt ? 'Hide GenAI Prompt' : 'View GenAI Prompt'}
+              </button>
+
+              {showPrompt && (
+                <div className="animate-fadeIn mt-2">
+                  <PromptBox prompt={data.appearance.image_generation_prompt} />
+                </div>
+              )}
             </div>
           </div>
 
           {/* Right Column: Data */}
           <div className="md:col-span-7 p-6 md:p-8 space-y-8">
-            
+
             {/* Story */}
             <section>
               <div className="flex items-center gap-2 mb-3 text-amber-500">
@@ -235,60 +258,60 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
 
             {/* Relations */}
             <section className="bg-stone-950/30 p-4 rounded-lg border border-stone-800 hover:border-stone-700 transition-colors">
-               <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2 text-amber-500">
-                    <Heart size={18} />
-                    <h3 className="font-serif font-bold uppercase tracking-wide text-sm">Lineage</h3>
-                  </div>
-               </div>
-               
-                <div className="text-sm text-stone-400 space-y-2 mb-6">
-                  {data.relations.parents.length > 0 && (
-                    <p>
-                      <strong className="text-stone-500">Parents:</strong>{' '}
-                      {data.relations.parents.map((name, i) => (
-                        <React.Fragment key={name}>
-                          {renderRelationLink(name)}
-                          {i < data.relations.parents.length - 1 ? ', ' : ''}
-                        </React.Fragment>
-                      ))}
-                    </p>
-                  )}
-                  {data.relations.conjoint.length > 0 && (
-                     <p>
-                       <strong className="text-stone-500">Partners:</strong>{' '}
-                       {data.relations.conjoint.map((name, i) => (
-                        <React.Fragment key={name}>
-                          {renderRelationLink(name)}
-                          {i < data.relations.conjoint.length - 1 ? ', ' : ''}
-                        </React.Fragment>
-                      ))}
-                     </p>
-                  )}
-                   {data.relations.descendants.length > 0 && (
-                     <p>
-                       <strong className="text-stone-500">Descendants:</strong>{' '}
-                       {data.relations.descendants.map((name, i) => (
-                        <React.Fragment key={name}>
-                          {renderRelationLink(name)}
-                          {i < data.relations.descendants.length - 1 ? ', ' : ''}
-                        </React.Fragment>
-                      ))}
-                     </p>
-                  )}
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-2 text-amber-500">
+                  <Heart size={18} />
+                  <h3 className="font-serif font-bold uppercase tracking-wide text-sm">Lineage</h3>
                 </div>
+              </div>
 
-                {hasValidConnections && onOpenLineage && (
-                  <button 
-                    onClick={onOpenLineage}
-                    className="w-full py-3 bg-stone-900 border border-stone-700 hover:border-amber-500 text-stone-400 hover:text-amber-400 transition-all group rounded flex items-center justify-center gap-3"
-                  >
-                    <GitFork size={16} className="group-hover:rotate-180 transition-transform duration-500" />
-                    <span className="font-mono text-xs uppercase tracking-[0.2em] font-bold">
-                      View Lineage Tree
-                    </span>
-                  </button>
+              <div className="text-sm text-stone-400 space-y-2 mb-6">
+                {data.relations.parents.length > 0 && (
+                  <p>
+                    <strong className="text-stone-500">Parents:</strong>{' '}
+                    {data.relations.parents.map((name, i) => (
+                      <React.Fragment key={name}>
+                        {renderRelationLink(name)}
+                        {i < data.relations.parents.length - 1 ? ', ' : ''}
+                      </React.Fragment>
+                    ))}
+                  </p>
                 )}
+                {data.relations.conjoint.length > 0 && (
+                  <p>
+                    <strong className="text-stone-500">Partners:</strong>{' '}
+                    {data.relations.conjoint.map((name, i) => (
+                      <React.Fragment key={name}>
+                        {renderRelationLink(name)}
+                        {i < data.relations.conjoint.length - 1 ? ', ' : ''}
+                      </React.Fragment>
+                    ))}
+                  </p>
+                )}
+                {data.relations.descendants.length > 0 && (
+                  <p>
+                    <strong className="text-stone-500">Descendants:</strong>{' '}
+                    {data.relations.descendants.map((name, i) => (
+                      <React.Fragment key={name}>
+                        {renderRelationLink(name)}
+                        {i < data.relations.descendants.length - 1 ? ', ' : ''}
+                      </React.Fragment>
+                    ))}
+                  </p>
+                )}
+              </div>
+
+              {hasValidConnections && onOpenLineage && (
+                <button
+                  onClick={onOpenLineage}
+                  className="w-full py-3 bg-stone-900 border border-stone-700 hover:border-amber-500 text-stone-400 hover:text-amber-400 transition-all group rounded flex items-center justify-center gap-3"
+                >
+                  <GitFork size={16} className="group-hover:rotate-180 transition-transform duration-500" />
+                  <span className="font-mono text-xs uppercase tracking-[0.2em] font-bold">
+                    View Lineage Tree
+                  </span>
+                </button>
+              )}
             </section>
 
           </div>
