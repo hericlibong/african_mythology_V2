@@ -703,7 +703,7 @@
       ],
       "manifestations": "A devoted wife at a hearth or a swirling river current.",
       "image_generation_prompt": "Oba, the orisha of the hearth, in a peaceful ancient domestic setting. She wears indigo and red robes, one side of her face veiled. She stands by a warm cooking fire. Soft domestic glow, photorealistic portrait style, warm lighting.",
-      "imageUrl": ""
+      "imageUrl": "/generated_images/oba.png"
     },
     "story": {
       "description": "The first wife of Shango who represents absolute devotion and the sacrifice required for a home. After a tragic jealousy-fueled mistake, she transformed into a river spirit. She protects the domestic unity of every household.",
@@ -820,7 +820,7 @@
       ],
       "manifestations": "A flash of lightning turning into a massive predatory bird.",
       "image_generation_prompt": "The mythic Impundulu bird of Zulu legend. A man-sized bird with iridescent shimmering feathers that crackle with violet lightning. Dark stormy background, realistic and terrifying bird anatomy, cinematic dark fantasy.",
-      "imageUrl": ""
+      "imageUrl": "/generated_images/impundulu.png"
     },
     "story": {
       "description": "The terrifying 'lightning bird' that serves powerful witches or summons storms at will. It is said that where lightning strikes, the Impundulu has laid an egg. It is a creature of pure chaotic energy and fear.",
@@ -987,7 +987,7 @@
       ],
       "manifestations": "A beautiful woman bridge walking between earth and sky in a rainbow.",
       "image_generation_prompt": "Zulu rainbow goddess Mbaba Mwana Waresa. A joyful goddess standing on a translucent rainbow bridge, holding a golden beer calabash. Radiant skin, iridescent traditional clothing, cinematic nature background.",
-      "imageUrl": ""
+      "imageUrl": "/generated_images/mbaba_mwana_waresa.png"
     },
     "story": {
       "description": "The beloved goddess who taught humanity the secret of brewing beer. She lives in the clouds and builds the rainbow bridges that allow communication between gods and men. She is the harbinger of the rain that brings life back to the soil.",
@@ -1158,7 +1158,7 @@
       ],
       "manifestations": "Leading a massive cavalry through the savannah heat.",
       "image_generation_prompt": "Queen Amina of Zazzau atop a powerful white warhorse. She wears traditional iron chainmail and Hausa royal fabrics, brandishing a curved sword. Dry desert heat background, dust clouds, historical epic cinematic style.",
-      "imageUrl": ""
+      "imageUrl": "/generated_images/queen_amina.png"
     },
     "story": {
       "description": "The 16th-century Hausa warrior who founded the trade walls of the savannah. She never married, devoting her life to conquest and the prosperity of the Zazzau Kingdom. She remains a symbol of absolute feminine military might.",
@@ -1884,7 +1884,7 @@
       ],
       "manifestations": "The absolute silence of the void before the first word.",
       "image_generation_prompt": "Ancient primordial mother Nana Buluku. An elderly goddess with skin like cracked ancestral earth, wearing star-print robes. She sits in the celestial void before time. Ancient features, ethereal scale, photorealistic fantasy art style.",
-      "imageUrl": ""
+      "imageUrl": "/generated_images/nana_buluku.png"
     },
     "story": {
       "description": "The great cosmic grandmother who gave birth to the sun and the moon. She existed before the creation of the current universe and wove the first tapestry of destiny out of chaos. She is the source to which all souls eventually return.",
@@ -2282,7 +2282,7 @@
       ],
       "manifestations": "Appears in the deep jungle to those seeking cures.",
       "image_generation_prompt": "The mystical Abada creature, size of a donkey with two crooked golden horns (one on forehead, one on neck), stag feet, ox tail, lush Congo jungle background, bioluminescent accents, photorealistic.",
-      "imageUrl": ""
+      "imageUrl": "/generated_images/abada.png"
     },
     "story": {
       "description": "A rare creature whose horns are sought as powerful antidotes against all poisons and diseases.",

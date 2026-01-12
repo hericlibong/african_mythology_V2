@@ -89,17 +89,18 @@ def generate_image(request: GenerateRequest):
         print(f"DEBUG: Response content: {response}")
         # --------------------------
 
-        images = response
+        # FIX: Access the 'images' attribute of the response object
+        images = response.images if hasattr(response, 'images') else []
         
         # Robust check: Ensure images is a list-like object and has at least one element
         if not images or len(images) == 0:
-             print("Error: No images returned from Vertex AI.")
+             print("Error: No images returned from Vertex AI. This usually means the prompt triggered a Safety Filter.")
              # Return a clean 502 error instead of crashing
              return JSONResponse(
                  status_code=502,
                  content={
                      "status": "error", 
-                     "message": "No image returned from generation service",
+                     "message": "No image returned from generation service. The prompt may have triggered a safety filter.",
                      "details": str(response)
                  }
              )
