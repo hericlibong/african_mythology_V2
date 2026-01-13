@@ -49,13 +49,13 @@ graph TD
     end
 
     subgraph "L'Esprit (Backend)"
-        API[FastAPI (engine/api.py)] --> Orchestrator
+        API["FastAPI (engine/api.py)"] --> Orchestrator
         Orchestrator -->|Reads| DB[(JSON Data)]
-        Orchestrator -->|Prompts| Vertex[Vertex AI (Cloud)]
+        Orchestrator -->|Prompts| Vertex["Vertex AI (Cloud)"]
     end
 
     Vertex -->|Image Blob| API
-    API -->|Saves to| LocalStorage[public/generated_images]
+    API -->|Saves to| LocalStorage["public/generated_images"]
     LocalStorage -->|Serves| UI
 ```
 
