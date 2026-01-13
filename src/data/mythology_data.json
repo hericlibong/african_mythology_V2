@@ -1441,7 +1441,7 @@
       ],
       "manifestations": "A calm dark rain cloud or a fierce red streak across the horizon.",
       "image_generation_prompt": "Masai god Enkai manifested in the vast open sky of the Rift Valley. One half deep indigo thunderheads with gentle rain, other half fierce red lightning and heat haze. Epic scale nature fantasy, ultra-detailed landscape art.",
-      "imageUrl": ""
+      "imageUrl": "/generated_images/enkai.png"
     },
     "story": {
       "description": "The supreme lord of the Masai who lives between the black clouds of the rain (Narok) and the red heat of the sun (Nanyokie). Enkai gave all the world's cattle to the Masai to protect. He is the ultimate arbitrator of life and death.",
@@ -1496,7 +1496,7 @@
       ],
       "manifestations": "The horizon where sky meets ocean or a threshold guardian.",
       "image_generation_prompt": "The Kongo god Kalunga at the threshold of the underworld. An elder god with dark skin dusted in white chalk, standing on the ocean horizon where water merges with sky. Moody indigo lighting, serene but imposing presence.",
-      "imageUrl": ""
+      "imageUrl": "/generated_images/kalunga.png"
     },
     "story": {
       "description": "The supreme being who serves as both creator and king of the land of the dead. He is the horizon itself, the thin line that separates our world from the spirit realm. He represents the cyclical nature of life, death, and reincarnation.",
@@ -2393,7 +2393,7 @@
       ],
       "manifestations": "Hiding in hollow trees, making bells ring to charm travelers.",
       "image_generation_prompt": "Small hairless forest dwarves Biloko, covered in moss and leaves, large snouts, holding ancient bells, peeking from a hollow giant baobab tree, mystical green atmosphere, sharp detail.",
-      "imageUrl": ""
+      "imageUrl": "/generated_images/biloko.png"
     },
     "story": {
       "description": "Restless spirits of ancestors who live in the forest. They are dangerous to hunters and guard the secrets of the deep woods.",
