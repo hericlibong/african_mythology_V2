@@ -2,7 +2,8 @@
 
 > **"Restoring the visual memory of forgotten pantheons through the lens of AI."**
 
-![Project Banner](docs/screenshots/banner.png)
+
+![Living Archive Banner](docs/screenshots/banner.png)
 *(Note for portfolio: Place a hero screenshot here named banner.png)*
 
 ## 🌍 The Vision
@@ -41,7 +42,7 @@ The project follows a **Hexagonal Architecture** splitting the "Body" (Frontend)
 
 ```mermaid
 graph TD
-    User([User]) -->|Interacts| UI[React Frontend (src/)]
+    User([User]) -->|Interacts| UI["React Frontend (src/)"]
     
     subgraph "Le Corps (Frontend)"
         UI -->|POST /generate| API
