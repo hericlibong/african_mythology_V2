@@ -1,0 +1,2526 @@
+[
+  {
+    "entity_type": "Divinity",
+    "name": "Shango",
+    "category": "Orisha of Lightning",
+    "origin": {
+      "country": "Nigeria",
+      "ethnicity": "Yoruba",
+      "pantheon": "Orisha"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "God of Thunder and Royal Justice",
+      "alignment": "Chaotic Good"
+    },
+    "attributes": {
+      "domains": [
+        "Thunder",
+        "Lightning",
+        "Justice",
+        "Dance"
+      ],
+      "symbols": [
+        "Double-headed axe",
+        "Red and White Beads"
+      ],
+      "power_objects": [
+        "Oshe Shango"
+      ],
+      "symbolic_animals": [
+        "Ram"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Braided hair like a woman",
+        "Regal red robes",
+        "Eyes glowing like embers"
+      ],
+      "manifestations": "A powerful warrior king who breathes fire and controls the sky.",
+      "image_generation_prompt": "An epic Afro-futurist oil painting of Shango, the Yoruba god of thunder. He wields a wooden double-headed axe, wearing vibrant red and white robes with gold trim. Thunderous storm clouds and jagged lightning fill the background. Dramatic low-angle lighting, photorealistic facial details, 8k cinematic art.",
+      "imageUrl": "/generated_images/shango.png"
+    },
+    "story": {
+      "description": "The historical fourth king of Oyo who ascended to godhood after a tragic misuse of power. He now represents the absolute and often volatile justice of the storm. He is the spirit of virility and the sound of the drum that echoes across the universe.",
+      "characteristics": [
+        "Powerful",
+        "Just",
+        "Volatile"
+      ]
+    },
+    "relations": {
+      "parents": [
+        "Oranmiyan"
+      ],
+      "conjoint": [
+        "Oya",
+        "Oshun",
+        "Oba"
+      ],
+      "descendants": [
+        "Ibeji"
+      ]
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Mami Wata",
+    "category": "Water Goddess",
+    "origin": {
+      "country": "Pan-African",
+      "ethnicity": "Multi-ethnic",
+      "pantheon": "Vodun / Diaspora"
+    },
+    "identity": {
+      "gender": "Female",
+      "cultural_role": "Sovereign Spirit of the Oceans",
+      "alignment": "Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Water",
+        "Wealth",
+        "Beauty",
+        "Seduction"
+      ],
+      "symbols": [
+        "Snake",
+        "Mirror",
+        "Golden Comb"
+      ],
+      "power_objects": [
+        "Enchanted Mirror"
+      ],
+      "symbolic_animals": [
+        "Python",
+        "Mermaid"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Mermaid tail in deep water",
+        "Human woman on shore",
+        "Pythons wrapped around her"
+      ],
+      "manifestations": "A breathtaking woman emerging from the surf draped in serpents.",
+      "image_generation_prompt": "A hyper-realistic cinematic shot of Mami Wata, the primordial water spirit. She emerges from turquoise waves with a massive python wrapped around her neck. She holds a golden mirror, bioluminescent jewelry glowing under the moonlight. Realistic skin textures, shimmering scales, ethereal underwater lighting.",
+      "imageUrl": "https://i.postimg.cc/jdfVspJX/mami-wata.png"
+    },
+    "story": {
+      "description": "The 'Mother of Waters' who controls the wealth of the seas. She can bring immense fortune to those she favors but demands absolute loyalty and spiritual commitment. Her beauty is a mirror to the soul, reflecting either one's truth or one's greed.",
+      "characteristics": [
+        "Mysterious",
+        "Wealthy",
+        "Seductive"
+      ]
+    },
+    "relations": {
+      "parents": [
+        "Olokun"
+      ],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Hero",
+    "name": "Anansi",
+    "category": "Trickster Spirit",
+    "origin": {
+      "country": "Ghana",
+      "ethnicity": "Akan",
+      "pantheon": "Akan"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "Master Weaver of Stories",
+      "alignment": "Chaotic Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Stories",
+        "Wisdom",
+        "Cunning",
+        "Wit"
+      ],
+      "symbols": [
+        "Spider Web",
+        "Small Calabash"
+      ],
+      "power_objects": [
+        "Pot of Wisdom"
+      ],
+      "symbolic_animals": [
+        "Spider"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Mischievous grin",
+        "Extra fingers like spider legs",
+        "Agile frame"
+      ],
+      "manifestations": "A small spider weaving complex webs or a clever man in traditional kente cloth.",
+      "image_generation_prompt": "A character concept of Anansi the Spider, an Akan hero. Humanoid trickster with eight nimble fingers, wearing vibrant golden Kente cloth. He sits in a lush tropical jungle weaving a web made of stories. Intricate web patterns, glowing wisdom pot nearby, soft forest lighting, fantasy art style.",
+      "imageUrl": "https://i.postimg.cc/gj672hrZ/ananzi.png"
+    },
+    "story": {
+      "description": "The clever son of the sky god Nyame who captured all the world's stories for humanity. He is a 'trickster' not through malice, but to highlight the power of intelligence over brute force. His myths serve as the foundation of oral tradition across the continent.",
+      "characteristics": [
+        "Witty",
+        "Resourceful",
+        "Cunning"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Oya",
+    "category": "Orisha of Wind",
+    "origin": {
+      "country": "Nigeria",
+      "ethnicity": "Yoruba",
+      "pantheon": "Orisha"
+    },
+    "identity": {
+      "gender": "Female",
+      "cultural_role": "Goddess of Change and the Wind",
+      "alignment": "Lawful Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Wind",
+        "Storms",
+        "Cemeteries",
+        "Transformation"
+      ],
+      "symbols": [
+        "Copper Sword",
+        "Horsetail Whip",
+        "Tornado"
+      ],
+      "power_objects": [
+        "Copper Blade"
+      ],
+      "symbolic_animals": [
+        "Buffalo"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Surrounded by purple smoke",
+        "Warrior's gaze",
+        "Flowing dark garments"
+      ],
+      "manifestations": "A sudden whirlwind or a fierce warrior standing guard at the gates of death.",
+      "image_generation_prompt": "Oya, the Yoruba goddess of storms, standing in the heart of a tornado. She wears deep purple robes and brandishes a sharp copper sword. Her eyes glow with the power of the wind. Dark atmospheric fantasy art, dramatic lightning, hyper-realistic warrior aesthetic.",
+      "imageUrl": "/generated_images/oya.png"
+    },
+    "story": {
+      "description": "The fierce queen who rules the winds of transition and the marketplace of ancestors. She is the companion of Shango who rides beside him in every lightning bolt. Oya represents the sudden, necessary destruction that allows for rebirth and progress.",
+      "characteristics": [
+        "Fierce",
+        "Protective",
+        "Transformative"
+      ]
+    },
+    "relations": {
+      "parents": [
+        "Yemaya"
+      ],
+      "conjoint": [
+        "Shango",
+        "Ogun"
+      ],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Ogun",
+    "category": "Orisha of Iron",
+    "origin": {
+      "country": "Nigeria",
+      "ethnicity": "Yoruba",
+      "pantheon": "Orisha"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "Lord of War and Blacksmithing",
+      "alignment": "Lawful Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Iron",
+        "War",
+        "Technology",
+        "Strength"
+      ],
+      "symbols": [
+        "Iron Machete",
+        "Palm Leaves"
+      ],
+      "power_objects": [
+        "The First Blade"
+      ],
+      "symbolic_animals": [
+        "Dog"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Muscular build",
+        "Sweat and ash on skin",
+        "Warrior's tattoos"
+      ],
+      "manifestations": "A blacksmith at a glowing forge or a warrior in heavy iron armor.",
+      "image_generation_prompt": "Ogun, the god of iron, forged in fire. Muscular dark-skinned man in a tribal blacksmith's forge, glowing embers and sparks everywhere. He holds a heavy iron machete. Industrial tribal aesthetic, cinematic lighting, ultra-detailed metallic textures.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The master of steel who cleared the path from heaven to earth. He is the guardian of every tool and every machine, representing the creative power of civilization and the destructive power of the battlefield. He is a solitary figure who finds peace in the heat of the forge.",
+      "characteristics": [
+        "Hardworking",
+        "Brutal",
+        "Loyal"
+      ]
+    },
+    "relations": {
+      "parents": [
+        "Oduduwa"
+      ],
+      "conjoint": [
+        "Oya"
+      ],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Eshu",
+    "category": "Spirit of Roads",
+    "origin": {
+      "country": "Nigeria",
+      "ethnicity": "Yoruba",
+      "pantheon": "Orisha"
+    },
+    "identity": {
+      "gender": "Fluid",
+      "cultural_role": "The Divine Messenger",
+      "alignment": "True Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Crossroads",
+        "Choices",
+        "Communication"
+      ],
+      "symbols": [
+        "Hooked Staff",
+        "Split Cap",
+        "Laterite"
+      ],
+      "power_objects": [
+        "Ogo Eshu"
+      ],
+      "symbolic_animals": [
+        "Black Rooster"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Cap of two colors",
+        "Smoking a pipe",
+        "Duality in features"
+      ],
+      "manifestations": "An old man at a crossroad or a young child playing tricks.",
+      "image_generation_prompt": "Eshu at a lonely desert crossroads under a twilight sky. He wears a traditional cap split between red and black, holding a hooked wooden staff and smoking a pipe. Mysterious atmosphere, moody cinematic lighting, detailed facial expressions.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The lord of the crossroads who holds the keys to the future. He is the one who translates human desires to the gods and ensures that every choice has a consequence. He is neither good nor evil, but the essential friction that makes growth possible.",
+      "characteristics": [
+        "Clever",
+        "Essential",
+        "Unpredictable"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Oshun",
+    "category": "River Spirit",
+    "origin": {
+      "country": "Nigeria",
+      "ethnicity": "Yoruba",
+      "pantheon": "Orisha"
+    },
+    "identity": {
+      "gender": "Female",
+      "cultural_role": "Goddess of Love and Prosperity",
+      "alignment": "Neutral Good"
+    },
+    "attributes": {
+      "domains": [
+        "Love",
+        "Rivers",
+        "Gold",
+        "Healing"
+      ],
+      "symbols": [
+        "Brass",
+        "Honey",
+        "Hand Mirror"
+      ],
+      "power_objects": [
+        "Golden Fan"
+      ],
+      "symbolic_animals": [
+        "Peacock"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Radiant golden skin",
+        "Yellow silk flowing robes",
+        "Adorned in brass jewelry"
+      ],
+      "manifestations": "A beautiful woman at a waterfall holding a golden fan.",
+      "image_generation_prompt": "A breathtaking portrait of Oshun, goddess of love. She stands near a golden waterfall in a lush jungle, wearing shimmering yellow silks and heavy brass jewelry. She holds a copper mirror, reflecting light. Hyper-realistic skin, vibrant warm colors, master painting style.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The goddess who brought sweetness and love to the universe. She is the mother of fresh waters who preserves life and provides wealth to those who serve her with an open heart. She represents the diplomatic and soft power that can overcome even the hardest of obstacles.",
+      "characteristics": [
+        "Graceful",
+        "Prosperous",
+        "Kind"
+      ]
+    },
+    "relations": {
+      "parents": [
+        "Olokun"
+      ],
+      "conjoint": [
+        "Shango",
+        "Ogun"
+      ],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Oduduwa",
+    "category": "Founder Spirit",
+    "origin": {
+      "country": "Nigeria",
+      "ethnicity": "Yoruba",
+      "pantheon": "Orisha"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "Progenitor of Humanity",
+      "alignment": "Lawful Good"
+    },
+    "attributes": {
+      "domains": [
+        "Creation",
+        "Kingship",
+        "Foundations"
+      ],
+      "symbols": [
+        "Beaded Crown",
+        "Sacred Chain"
+      ],
+      "power_objects": [
+        "Bag of Primordial Earth"
+      ],
+      "symbolic_animals": [
+        "Cockerel"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Royal beaded veil",
+        "Regal bearing",
+        "Ancestral crown"
+      ],
+      "manifestations": "Descending from the heavens on a golden chain to create the land.",
+      "image_generation_prompt": "Oduduwa descending from a golden light on a sacred chain to the watery abyss. He holds a bag of cosmic earth and a five-toed cockerel. His face is masked by a royal beaded veil. Epic scale fantasy art, majestic and biblical lighting.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The first king of Ife who was sent by the supreme being to create solid land upon the primordial waters. He is the ancestor of all Yoruba people and the foundation of royal authority. His deeds defined the very landscape of human existence.",
+      "characteristics": [
+        "Regal",
+        "Determined",
+        "Wise"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [
+        "Olokun"
+      ],
+      "descendants": [
+        "Oranmiyan",
+        "Ogun"
+      ]
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Obatala",
+    "category": "Sky Orisha",
+    "origin": {
+      "country": "Nigeria",
+      "ethnicity": "Yoruba",
+      "pantheon": "Orisha"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "Sculptor of Human Form",
+      "alignment": "Lawful Good"
+    },
+    "attributes": {
+      "domains": [
+        "Creation",
+        "Purity",
+        "Ethics",
+        "Justice"
+      ],
+      "symbols": [
+        "White Cloth",
+        "Snail Shell"
+      ],
+      "power_objects": [
+        "White Staff"
+      ],
+      "symbolic_animals": [
+        "Elephant"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Always dressed in pure white",
+        "Calm and peaceful aura",
+        "Elder features"
+      ],
+      "manifestations": "A wise elder sculpting figures from clay under a cosmic light.",
+      "image_generation_prompt": "Obatala, the elder god of creation, dressed in immaculate white robes. He sits in a celestial workshop sculpting human figures out of white light and clay. Peaceful and holy atmosphere, soft glowing white lighting, photorealistic facial details.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The father of the Orishas who sculpted humanity from the clay of the earth. He is the protector of the disabled and the champion of ethical behavior and moral purity. He sits in quiet judgment of the soul's intentions.",
+      "characteristics": [
+        "Pure",
+        "Patient",
+        "Ethical"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [
+        "Oduduwa"
+      ],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Yemaya",
+    "category": "Ocean Mother",
+    "origin": {
+      "country": "Nigeria / Diaspora",
+      "ethnicity": "Yoruba",
+      "pantheon": "Orisha"
+    },
+    "identity": {
+      "gender": "Female",
+      "cultural_role": "Mother of All Living Things",
+      "alignment": "Neutral Good"
+    },
+    "attributes": {
+      "domains": [
+        "Ocean",
+        "Maternity",
+        "Protection",
+        "Family"
+      ],
+      "symbols": [
+        "Silver Moon",
+        "Seashells",
+        "Cowrie Shells"
+      ],
+      "power_objects": [
+        "Crystal Beads"
+      ],
+      "symbolic_animals": [
+        "Fish"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Vast ocean-blue robes",
+        "Radiant motherly presence",
+        "Silver jewelry"
+      ],
+      "manifestations": "A beautiful woman walking on waves or a tidal force of nature.",
+      "image_generation_prompt": "Yemaya, the mother of the ocean. A stunning goddess with deep blue flowing robes that merge with the waves. She wears silver necklaces and holds seashells. Hyper-realistic ocean background, regal and serene facial details, cinematic lighting.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The sovereign spirit of the ocean whose womb gave birth to the other Orishas. She is the nurturing protectress of women and children, but her grief can manifest as the crushing force of the deep sea. She is the mother who never forgets a child.",
+      "characteristics": [
+        "Nurturing",
+        "Powerful",
+        "Deep"
+      ]
+    },
+    "relations": {
+      "parents": [
+        "Olokun"
+      ],
+      "conjoint": [
+        "Oranmiyan"
+      ],
+      "descendants": [
+        "Oya",
+        "Shango"
+      ]
+    }
+  },
+  {
+    "entity_type": "Hero",
+    "name": "Oranmiyan",
+    "category": "Warrior King",
+    "origin": {
+      "country": "Nigeria",
+      "ethnicity": "Yoruba",
+      "pantheon": "Legendary"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "Conqueror and Founder of Empires",
+      "alignment": "Lawful Good"
+    },
+    "attributes": {
+      "domains": [
+        "War",
+        "Conquest",
+        "Leadership",
+        "Lineage"
+      ],
+      "symbols": [
+        "Granite Pillar",
+        "Shield"
+      ],
+      "power_objects": [
+        "Opa Oranmiyan"
+      ],
+      "symbolic_animals": [
+        "Ram"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Massive warrior's frame",
+        "Towering stone-like strength",
+        "Ancient armor"
+      ],
+      "manifestations": "A titan leading a conquest across the savannah or a monolithic stone pillar.",
+      "image_generation_prompt": "Legendary warrior Oranmiyan standing beside his monolithic stone pillar (Opa Oranmiyan) on a vast savannah. Clad in ancient iron warrior armor, dust clouds in the wind. Epic historical cinematic shot, dramatic golden hour lighting.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The son of Oduduwa who founded the empires of Oyo and Benin. He is the ultimate figure of military expansion and royal bloodline. He eventually returned to Ife and transformed into a tall stone pillar, forever guarding his people.",
+      "characteristics": [
+        "Indomitable",
+        "Strategic",
+        "Foundation"
+      ]
+    },
+    "relations": {
+      "parents": [
+        "Oduduwa"
+      ],
+      "conjoint": [
+        "Yemaya"
+      ],
+      "descendants": [
+        "Shango"
+      ]
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Oba",
+    "category": "River Orisha",
+    "origin": {
+      "country": "Nigeria",
+      "ethnicity": "Yoruba",
+      "pantheon": "Orisha"
+    },
+    "identity": {
+      "gender": "Female",
+      "cultural_role": "Goddess of the Hearth and Domesticity",
+      "alignment": "Lawful Good"
+    },
+    "attributes": {
+      "domains": [
+        "Marriage",
+        "Home",
+        "Cooking",
+        "Rivers"
+      ],
+      "symbols": [
+        "Veil covering ear",
+        "Knife"
+      ],
+      "power_objects": [
+        "Copper Vessel"
+      ],
+      "symbolic_animals": [
+        "None"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Head covering masking one side",
+        "Dignified traditional robes",
+        "Humble aura"
+      ],
+      "manifestations": "A devoted wife at a hearth or a swirling river current.",
+      "image_generation_prompt": "Oba, the orisha of the hearth, in a peaceful ancient domestic setting. She wears indigo and red robes, one side of her face veiled. She stands by a warm cooking fire. Soft domestic glow, photorealistic portrait style, warm lighting.",
+      "imageUrl": "/generated_images/oba.png"
+    },
+    "story": {
+      "description": "The first wife of Shango who represents absolute devotion and the sacrifice required for a home. After a tragic jealousy-fueled mistake, she transformed into a river spirit. She protects the domestic unity of every household.",
+      "characteristics": [
+        "Devoted",
+        "Tragic",
+        "Stable"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [
+        "Shango"
+      ],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Ibeji",
+    "category": "Sacred Twins",
+    "origin": {
+      "country": "Nigeria",
+      "ethnicity": "Yoruba",
+      "pantheon": "Orisha"
+    },
+    "identity": {
+      "gender": "Neutral",
+      "cultural_role": "Spirits of Balance and Duality",
+      "alignment": "Neutral Good"
+    },
+    "attributes": {
+      "domains": [
+        "Twins",
+        "Joy",
+        "Double Fortune",
+        "Mischief"
+      ],
+      "symbols": [
+        "Two Statuettes",
+        "Red and White Cloth"
+      ],
+      "power_objects": [
+        "Wooden Ere Ibeji"
+      ],
+      "symbolic_animals": [
+        "Colobus Monkey"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Two identical children",
+        "Mirrored movements",
+        "Playful energy"
+      ],
+      "manifestations": "Twin children laughing in the marketplace or two small wooden statues glowing with light.",
+      "image_generation_prompt": "Sacred Yoruba Ibeji twins, two identical dark-skinned children wearing ceremonial red and white beads. They hold each other's hands, surrounded by floating golden light and fruit offerings. Playful and magical atmosphere, hyper-detailed fantasy portrait.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The divine twins who were born to Shango and represent the blessing of double joy. In Yoruba culture, twins are seen as sharing one soul split in two bodies, requiring special rituals to keep them balanced. They are the bringers of luck and play.",
+      "characteristics": [
+        "Joyful",
+        "Dual",
+        "Sacred"
+      ]
+    },
+    "relations": {
+      "parents": [
+        "Shango",
+        "Oshun"
+      ],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Impundulu",
+    "category": "Lightning Bird",
+    "origin": {
+      "country": "South Africa",
+      "ethnicity": "Zulu",
+      "pantheon": "Southern"
+    },
+    "identity": {
+      "gender": "Neutral",
+      "cultural_role": "Avenger of Storms",
+      "alignment": "Chaotic Evil"
+    },
+    "attributes": {
+      "domains": [
+        "Storms",
+        "Lightning",
+        "Terror",
+        "Illness"
+      ],
+      "symbols": [
+        "Iridescent Feathers",
+        "Spark"
+      ],
+      "power_objects": [
+        "Electric Talons"
+      ],
+      "symbolic_animals": [
+        "Vampiric Bird"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Man-sized bird",
+        "Shimmering iridescent wings",
+        "Glowing beak"
+      ],
+      "manifestations": "A flash of lightning turning into a massive predatory bird.",
+      "image_generation_prompt": "The mythic Impundulu bird of Zulu legend. A man-sized bird with iridescent shimmering feathers that crackle with violet lightning. Dark stormy background, realistic and terrifying bird anatomy, cinematic dark fantasy.",
+      "imageUrl": "/generated_images/impundulu.png"
+    },
+    "story": {
+      "description": "The terrifying 'lightning bird' that serves powerful witches or summons storms at will. It is said that where lightning strikes, the Impundulu has laid an egg. It is a creature of pure chaotic energy and fear.",
+      "characteristics": [
+        "Electric",
+        "Predatory",
+        "Swift"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Tokoloshe",
+    "category": "Poltergeist Spirit",
+    "origin": {
+      "country": "South Africa",
+      "ethnicity": "Southern Nations",
+      "pantheon": "Southern"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "Agent of Mischief and Terror",
+      "alignment": "Chaotic Evil"
+    },
+    "attributes": {
+      "domains": [
+        "Mischief",
+        "Nightmares",
+        "Sneaking"
+      ],
+      "symbols": [
+        "Hairy Skin",
+        "One Eye"
+      ],
+      "power_objects": [
+        "Invisibility Stone"
+      ],
+      "symbolic_animals": [
+        "Dwarf Spirit"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Small, hairy dwarf-like frame",
+        "Glowing red eyes",
+        "One eye closed"
+      ],
+      "manifestations": "A tiny humanoid shape darting through the shadows under a bed.",
+      "image_generation_prompt": "A creepy Tokoloshe dwarf hiding in a dark dusty corner. Small, hairy humanoid with glowing red eyes. Cinematic lighting, horror atmosphere, hyper-realistic textures, suspenseful composition.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "A malicious dwarf spirit created by sorcerers to harass households. Tradition dictates that putting one's bed on bricks prevents the Tokoloshe from reaching you while you sleep. It is a spirit of the repressed and the hidden fear.",
+      "characteristics": [
+        "Sneaky",
+        "Malicious",
+        "Tiny"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Unkulunkulu",
+    "category": "Sky Lord",
+    "origin": {
+      "country": "South Africa",
+      "ethnicity": "Zulu",
+      "pantheon": "Southern"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "Supreme Creator of Mankind",
+      "alignment": "Lawful Good"
+    },
+    "attributes": {
+      "domains": [
+        "Creation",
+        "Ancestry",
+        "Cosmos",
+        "Life"
+      ],
+      "symbols": [
+        "Primordial Reed",
+        "Sky"
+      ],
+      "power_objects": [
+        "The First Reed"
+      ],
+      "symbolic_animals": [
+        "Chameleon"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Immense spectral form",
+        "Glowing ancestral features",
+        "Ancient gaze"
+      ],
+      "manifestations": "Emerging from a vast field of glowing reeds under a star-filled sky.",
+      "image_generation_prompt": "Unkulunkulu, the Zulu creator god, emerging from a primordial glowing reed bed under a massive cosmic galaxy sky. Vast wise facial features, ethereal celestial light, ultra-detailed fantasy art.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The first ancestor who crawled out of the cosmic reed bed and brought humanity into existence. He taught the world the laws of survival and ancestry. He sits high above the sky, a distant but absolute architect of life.",
+      "characteristics": [
+        "Ancient",
+        "Wise",
+        "Vast"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Mbaba Mwana Waresa",
+    "category": "Rainbow Goddess",
+    "origin": {
+      "country": "South Africa",
+      "ethnicity": "Zulu",
+      "pantheon": "Southern"
+    },
+    "identity": {
+      "gender": "Female",
+      "cultural_role": "Goddess of Rainbows and Beer",
+      "alignment": "Neutral Good"
+    },
+    "attributes": {
+      "domains": [
+        "Rainbows",
+        "Rain",
+        "Agriculture",
+        "Brewing"
+      ],
+      "symbols": [
+        "Rainbow Arc",
+        "Calabash"
+      ],
+      "power_objects": [
+        "Copper Gourd"
+      ],
+      "symbolic_animals": [
+        "None"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Surrounded by rainbow mist",
+        "Joyful warrior clothing",
+        "Glowing skin"
+      ],
+      "manifestations": "A beautiful woman bridge walking between earth and sky in a rainbow.",
+      "image_generation_prompt": "Zulu rainbow goddess Mbaba Mwana Waresa. A joyful goddess standing on a translucent rainbow bridge, holding a golden beer calabash. Radiant skin, iridescent traditional clothing, cinematic nature background.",
+      "imageUrl": "/generated_images/mbaba_mwana_waresa.png"
+    },
+    "story": {
+      "description": "The beloved goddess who taught humanity the secret of brewing beer. She lives in the clouds and builds the rainbow bridges that allow communication between gods and men. She is the harbinger of the rain that brings life back to the soil.",
+      "characteristics": [
+        "Joyful",
+        "Hospitable",
+        "Radiant"
+      ]
+    },
+    "relations": {
+      "parents": [
+        "Unkulunkulu"
+      ],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Hero",
+    "name": "Yasuke",
+    "category": "Samurai Warrior",
+    "origin": {
+      "country": "Mozambique / Japan",
+      "ethnicity": "Makua",
+      "pantheon": "Historical"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "Black Retainer of the Oda",
+      "alignment": "Lawful Good"
+    },
+    "attributes": {
+      "domains": [
+        "War",
+        "Loyalty",
+        "Honor"
+      ],
+      "symbols": [
+        "Katana",
+        "Lacquer Armor"
+      ],
+      "power_objects": [
+        "The Black Sword"
+      ],
+      "symbolic_animals": [
+        "Lion"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Towering black warrior",
+        "Japanese samurai armor",
+        "Makua scars"
+      ],
+      "manifestations": "A massive figure in obsidian-black armor standing guard at a temple.",
+      "image_generation_prompt": "Yasuke, the legendary black samurai. Standing in a winter temple courtyard in Japan, wearing ornate black lacquered armor over Makua tribal textures. He holds a katana, glowing moonlight atmosphere. Cinematic masterpiece portrait.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The historical African man who traveled from Mozambique to Kyoto and became a high-ranking samurai under Nobunaga. His presence challenged the perception of identity and loyalty, forever sealing his place as a hero across two continents.",
+      "characteristics": [
+        "Loyal",
+        "Formidable",
+        "Unbreakable"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Hero",
+    "name": "Queen Nzinga",
+    "category": "Conqueror Queen",
+    "origin": {
+      "country": "Angola",
+      "ethnicity": "Mbundu / Ndongo",
+      "pantheon": "Historical"
+    },
+    "identity": {
+      "gender": "Female",
+      "cultural_role": "Resistant Sovereign of Ndongo",
+      "alignment": "Lawful Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Diplomacy",
+        "War",
+        "Leadership",
+        "Independence"
+      ],
+      "symbols": [
+        "Leopard skin",
+        "Bow",
+        "Throne"
+      ],
+      "power_objects": [
+        "Command Staff"
+      ],
+      "symbolic_animals": [
+        "Lioness"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Regal leopard skin cloak",
+        "Warrior stance",
+        "Intense gaze"
+      ],
+      "manifestations": "Sitting on a human-chair or leading a charge across the plains.",
+      "image_generation_prompt": "A majestic cinematic shot of Queen Nzinga Mbande on her Ndongo throne. She wears royal leopard skin and traditional heavy gold jewelry, brandishing a war bow. Arid savannah landscape behind her, cinematic high-fidelity detail.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The warrior-queen of Ndongo who fought the Portuguese for decades. She was a master of diplomacy and military strategy, famously demanding a human seat when refused a chair by the invaders to show her absolute equality and power.",
+      "characteristics": [
+        "Cunning",
+        "Fearless",
+        "Diplomatic"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Hero",
+    "name": "Queen Amina",
+    "category": "Warrior Legend",
+    "origin": {
+      "country": "Nigeria",
+      "ethnicity": "Hausa",
+      "pantheon": "Historical"
+    },
+    "identity": {
+      "gender": "Female",
+      "cultural_role": "The Lioness Queen of Zazzau",
+      "alignment": "Lawful Good"
+    },
+    "attributes": {
+      "domains": [
+        "Conquest",
+        "Trade",
+        "Architecture",
+        "Expansion"
+      ],
+      "symbols": [
+        "Stone Walls",
+        "Chainmail",
+        "White Stallion"
+      ],
+      "power_objects": [
+        "Hausa Sword"
+      ],
+      "symbolic_animals": [
+        "Stallion"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Heavy chainmail armor",
+        "Riding a white horse",
+        "Sword in hand"
+      ],
+      "manifestations": "Leading a massive cavalry through the savannah heat.",
+      "image_generation_prompt": "Queen Amina of Zazzau atop a powerful white warhorse. She wears traditional iron chainmail and Hausa royal fabrics, brandishing a curved sword. Dry desert heat background, dust clouds, historical epic cinematic style.",
+      "imageUrl": "/generated_images/queen_amina.png"
+    },
+    "story": {
+      "description": "The 16th-century Hausa warrior who founded the trade walls of the savannah. She never married, devoting her life to conquest and the prosperity of the Zazzau Kingdom. She remains a symbol of absolute feminine military might.",
+      "characteristics": [
+        "Fierce",
+        "Strategic",
+        "Builder"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Hero",
+    "name": "Sundiata Keita",
+    "category": "Empire Founder",
+    "origin": {
+      "country": "Mali",
+      "ethnicity": "Mandinka",
+      "pantheon": "Empire"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "The Lion Prince of Mali",
+      "alignment": "Lawful Good"
+    },
+    "attributes": {
+      "domains": [
+        "Empire",
+        "Kingship",
+        "Magic",
+        "Destiny"
+      ],
+      "symbols": [
+        "Iron Cane",
+        "Lion Mask"
+      ],
+      "power_objects": [
+        "Bow of Destiny"
+      ],
+      "symbolic_animals": [
+        "Lion"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Muscular and regal",
+        "Rich blue and gold silk",
+        "Glowing magical aura"
+      ],
+      "manifestations": "Rising from a chair with an iron cane or leading an imperial army.",
+      "image_generation_prompt": "Emperor Sundiata Keita, the Lion Prince, sitting in a desert palace of Timbuktu style. Rich indigo robes with gold patterns, holding a golden scepter. A lion's phantom spirit walks behind him. Epic scale, cinematic historical art.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The crippled prince who rose through grit and sorcery to build one of history's wealthiest empires. His epic is the blueprint for Mandinka culture, describing the triumph of fate over tragedy and the union of fragmented tribes into a nation.",
+      "characteristics": [
+        "Resilient",
+        "Strategic",
+        "Vast"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Mawu-Lisa",
+    "category": "Dual Creator",
+    "origin": {
+      "country": "Benin / Togo",
+      "ethnicity": "Fon / Ewe",
+      "pantheon": "Vodun"
+    },
+    "identity": {
+      "gender": "Androgynous",
+      "cultural_role": "Dual Spirits of Creation and Balance",
+      "alignment": "True Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Cosmos",
+        "Sun",
+        "Moon",
+        "Time",
+        "Creation"
+      ],
+      "symbols": [
+        "Solar Disk",
+        "Crescent Moon"
+      ],
+      "power_objects": [
+        "Cosmic Loom"
+      ],
+      "symbolic_animals": [
+        "Chameleon"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "One side glowing gold",
+        "One side glowing silver",
+        "Stars on skin"
+      ],
+      "manifestations": "The merging of the sun and moon during an eclipse.",
+      "image_generation_prompt": "A majestic androgynous divinity merging the sun and moon. Mawu-Lisa with skin reflecting the solar flares of gold and the cool lunar silver. Cosmic background, weaving galaxies on a loom. Epic ethereal scale, photorealistic fantasy art.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The great dual creator deities of Fon Vodun. Mawu (moon/night/cool) and Lisa (sun/day/heat) merge to form the absolute balance of existence. They are the ones who wove the tapestry of time and instructed humanity in its laws.",
+      "characteristics": [
+        "Balanced",
+        "Creative",
+        "Cosmic"
+      ]
+    },
+    "relations": {
+      "parents": [
+        "Nana Buluku"
+      ],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Damballa",
+    "category": "Sky Serpent",
+    "origin": {
+      "country": "Benin / Haiti",
+      "ethnicity": "Fon / Diaspora",
+      "pantheon": "Vodun"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "Grand Ancestor and Creator of Springs",
+      "alignment": "Neutral Good"
+    },
+    "attributes": {
+      "domains": [
+        "Wisdom",
+        "Water",
+        "Creation",
+        "Purity"
+      ],
+      "symbols": [
+        "White Serpent",
+        "Egg"
+      ],
+      "power_objects": [
+        "Silver Staff"
+      ],
+      "symbolic_animals": [
+        "Python"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Vast white serpent scales",
+        "Aged and wise face",
+        "Surrounded by silver light"
+      ],
+      "manifestations": "A giant white python stretching from sky to ocean floor.",
+      "image_generation_prompt": "Primordial god Damballa manifested as a massive shimmering white python coiling around the cosmic world egg. Silver sparkles in the scales, ethereal rainforest setting with pure springs. Majestic and peaceful dark fantasy art.",
+      "imageUrl": "/generated_images/damballa.png"
+    },
+    "story": {
+      "description": "The white sky serpent who wove the cosmos into being. He is the grandfather of the Vodun pantheon, communicating through hiss-like wisdom. He created the freshwater springs that sustain all life and represents ancient, silent wisdom.",
+      "characteristics": [
+        "Ancient",
+        "Silent",
+        "Wise"
+      ]
+    },
+    "relations": {
+      "parents": [
+        "Mawu-Lisa"
+      ],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Nommo",
+    "category": "Stellar Spirit",
+    "origin": {
+      "country": "Mali",
+      "ethnicity": "Dogon",
+      "pantheon": "Dogon"
+    },
+    "identity": {
+      "gender": "Fluid",
+      "cultural_role": "Divine Instructors from Sirius",
+      "alignment": "Lawful Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Stars",
+        "Water",
+        "Instructions",
+        "Civilization"
+      ],
+      "symbols": [
+        "Sirius Star",
+        "Fish Tail"
+      ],
+      "power_objects": [
+        "Ark of Nommo"
+      ],
+      "symbolic_animals": [
+        "Amphibian"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Amphibious features",
+        "Bioluminescent skin",
+        "Large obsidian eyes"
+      ],
+      "manifestations": "Instructors descending from the sky in a cosmic craft.",
+      "image_generation_prompt": "The Nommo spirits of Dogon mythology. Ethereal amphibious beings with bioluminescent blue skin and large dark eyes, emerging from a craft near the star Sirius. Hyper-detailed futuristic tribal aesthetic, deep space lighting.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The divine teachers who descended from the star Sirius to instruct the Dogon people in the secret laws of the universe. They are the masters of water and the word, representing the deep ancient link between the continent and the cosmos.",
+      "characteristics": [
+        "Stellar",
+        "Instructor",
+        "Ancient"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Enkai",
+    "category": "Sky God",
+    "origin": {
+      "country": "Kenya / Tanzania",
+      "ethnicity": "Masai",
+      "pantheon": "East"
+    },
+    "identity": {
+      "gender": "Fluid",
+      "cultural_role": "Dual Spirit of Benevolence and Vengeance",
+      "alignment": "True Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Rain",
+        "Cattle",
+        "Sky",
+        "Grass"
+      ],
+      "symbols": [
+        "Black Cloud",
+        "Red Lightning"
+      ],
+      "power_objects": [
+        "Staff of Rain"
+      ],
+      "symbolic_animals": [
+        "Cow"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Shifting from black cloud to red flame"
+      ],
+      "manifestations": "A calm dark rain cloud or a fierce red streak across the horizon.",
+      "image_generation_prompt": "Masai god Enkai manifested in the vast open sky of the Rift Valley. One half deep indigo thunderheads with gentle rain, other half fierce red lightning and heat haze. Epic scale nature fantasy, ultra-detailed landscape art.",
+      "imageUrl": "/generated_images/enkai.png"
+    },
+    "story": {
+      "description": "The supreme lord of the Masai who lives between the black clouds of the rain (Narok) and the red heat of the sun (Nanyokie). Enkai gave all the world's cattle to the Masai to protect. He is the ultimate arbitrator of life and death.",
+      "characteristics": [
+        "Dual",
+        "Remote",
+        "Providing"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Kalunga",
+    "category": "Ancestor Sovereign",
+    "origin": {
+      "country": "DRC / Angola",
+      "ethnicity": "Kongo",
+      "pantheon": "Kongo"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "Lord of the Underworld and Crossroads",
+      "alignment": "Lawful Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Death",
+        "Creation",
+        "Oceans",
+        "Wisdom"
+      ],
+      "symbols": [
+        "White Chalk",
+        "Horizontal Line"
+      ],
+      "power_objects": [
+        "Staff of Thresholds"
+      ],
+      "symbolic_animals": [
+        "None"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Skin covered in white chalk",
+        "Vast presence like the sea"
+      ],
+      "manifestations": "The horizon where sky meets ocean or a threshold guardian.",
+      "image_generation_prompt": "The Kongo god Kalunga at the threshold of the underworld. An elder god with dark skin dusted in white chalk, standing on the ocean horizon where water merges with sky. Moody indigo lighting, serene but imposing presence.",
+      "imageUrl": "/generated_images/kalunga.png"
+    },
+    "story": {
+      "description": "The supreme being who serves as both creator and king of the land of the dead. He is the horizon itself, the thin line that separates our world from the spirit realm. He represents the cyclical nature of life, death, and reincarnation.",
+      "characteristics": [
+        "Threshold",
+        "Elder",
+        "Absolute"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Grootslang",
+    "category": "The Ancient Serpent",
+    "origin": {
+      "country": "South Africa",
+      "ethnicity": "Khoisan Variation",
+      "pantheon": "Southern"
+    },
+    "identity": {
+      "gender": "Neutral",
+      "cultural_role": "Guardian of the Diamond Vaults",
+      "alignment": "Chaotic Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Caves",
+        "Wealth",
+        "Raw Power"
+      ],
+      "symbols": [
+        "Elephant Tusk",
+        "Snake Coil"
+      ],
+      "power_objects": [
+        "Diamond Eye"
+      ],
+      "symbolic_animals": [
+        "Elephant-Snake Hybrid"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Colossal emerald scales",
+        "Massive tusks",
+        "Eyes like diamonds"
+      ],
+      "manifestations": "A cave wall transforming into a massive hybrid beast.",
+      "image_generation_prompt": "The mythic Grootslang in a dark cavern filled with diamonds. A colossal emerald-skinned serpent with the massive head and tusks of an elephant. Primal power, shimmering scales, cinematic lighting, ultra-detailed fantasy art.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "A primordial error made during creation, possessing the strength of an elephant and the cunning of a snake. It hid in the deep, diamond-filled caves of the south, guarding immense treasures from those who dare enter.",
+      "characteristics": [
+        "Greedy",
+        "Ancient",
+        "Massive"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Aigamuxa",
+    "category": "Folklore Creature",
+    "origin": {
+      "country": "South Africa / Namibia",
+      "ethnicity": "Khoikhoi",
+      "pantheon": "Folklore"
+    },
+    "identity": {
+      "gender": "Neutral",
+      "cultural_role": "The Upside-down Hunter",
+      "alignment": "Chaotic Evil"
+    },
+    "attributes": {
+      "domains": [
+        "Arid Lands",
+        "Predation",
+        "Stealth"
+      ],
+      "symbols": [
+        "Eyes on feet"
+      ],
+      "power_objects": [
+        "Sharp Claws"
+      ],
+      "symbolic_animals": [
+        "None"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Humanoid frame",
+        "Eyes located on soles of feet",
+        "Long sharp claws"
+      ],
+      "manifestations": "Running upside down or on all fours to see the world.",
+      "image_generation_prompt": "The mythic Aigamuxa humanoid predator. A dark-skinned creature with wild features, lifting one foot to reveal a glowing yellow eye on the sole. Arid rocky desert landscape, suspenseful horror lighting, photorealistic anatomy.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "Human-eating creatures that roam the dunes of the south. Because their eyes are on their feet, they must stop and look up with one leg raised to find their prey. They represent the strange and dangerous turns of the landscape.",
+      "characteristics": [
+        "Stealthy",
+        "Strange",
+        "Vicious"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Abiku",
+    "category": "Spirit Child",
+    "origin": {
+      "country": "Nigeria / Benin",
+      "ethnicity": "Yoruba",
+      "pantheon": "Orisha"
+    },
+    "identity": {
+      "gender": "Neutral",
+      "cultural_role": "Cycle of Life and Ghostly Mischief",
+      "alignment": "Chaotic Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Death",
+        "Rebirth",
+        "Trickery"
+      ],
+      "symbols": [
+        "Iron Bangles",
+        "Bells"
+      ],
+      "power_objects": [
+        "Copper Anklets"
+      ],
+      "symbolic_animals": [
+        "None"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Marked face",
+        "Bangles on ankles",
+        "Child-like features"
+      ],
+      "manifestations": "A ghostly child appearing at the forest edge holding bells.",
+      "image_generation_prompt": "A mythic Abiku child figure in an old dark forest. Ghostly glowing child wearing iron bells and copper bangles. Ethereal atmospheric lighting, cinematic horror fantasy, hyper-realistic textures.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "Spirits that repeatedly enter human wombs only to die and return to the bush. To stop this cycle, mothers mark their faces or put bells on their ankles to scare away the spirit world and force the Abiku to stay in the world of the living.",
+      "characteristics": [
+        "Cyclical",
+        "Haunting",
+        "Tricky"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Neith",
+    "category": "Creation Goddess",
+    "origin": {
+      "country": "Egypt",
+      "ethnicity": "Ancient Egyptian",
+      "pantheon": "Egyptian"
+    },
+    "identity": {
+      "gender": "Female",
+      "cultural_role": "The Mother of Ra and Nehebkau",
+      "alignment": "Lawful Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "War",
+        "Creation",
+        "Fate",
+        "Weaving"
+      ],
+      "symbols": [
+        "Arrows",
+        "Shield",
+        "Loom"
+      ],
+      "power_objects": [
+        "Primordial Bow"
+      ],
+      "symbolic_animals": [
+        "Bee"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Red Crown",
+        "Crossed arrows",
+        "Golden skin"
+      ],
+      "manifestations": "A warrior woman with a shield or a loom of light.",
+      "image_generation_prompt": "The ancient Egyptian goddess Neith at her celestial loom. She weaves the stars of the milky way, wearing the Red Crown of Lower Egypt. She holds crossed arrows. Masterpiece Egyptian art style, hyper-realistic cosmic lighting.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The 'Ancient Weaver' of the universe who wove the cosmos into existence with seven primordial sounds. She is the mother who wove the first sun, Ra, and remains the sovereign spirit of both battle and destiny.",
+      "characteristics": [
+        "Ancient",
+        "Warrior",
+        "Mother"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Kianda",
+    "category": "Water Spirit",
+    "origin": {
+      "country": "Angola",
+      "ethnicity": "Mbundu",
+      "pantheon": "Southern"
+    },
+    "identity": {
+      "gender": "Female",
+      "cultural_role": "Queen of the Coastal Waters",
+      "alignment": "Neutral Good"
+    },
+    "attributes": {
+      "domains": [
+        "Sea",
+        "Abundance",
+        "Protection",
+        "Offerings"
+      ],
+      "symbols": [
+        "Seashell",
+        "Offerings into waves"
+      ],
+      "power_objects": [
+        "Shell Crown"
+      ],
+      "symbolic_animals": [
+        "Sea Snail"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Long flowing water-hair",
+        "Mermaid lower half",
+        "Golden jewelry"
+      ],
+      "manifestations": "Emerging from the surf with a net full of luck for fishermen.",
+      "image_generation_prompt": "Kianda, the water spirit of Angola. A beautiful mermaid goddess emerging from the turquoise Atlantic surf, long flowing dark hair with seashell beads. Soft sunlight, cinematic oceanic lighting, realistic skin and scale textures.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The sovereign spirit of the Angolan coast who protects the fish and the souls who venture into the deep. Every year, people offer baskets of food and flowers to the sea to ensure Kianda provides a bountiful harvest and keeps the waves calm.",
+      "characteristics": [
+        "Kind",
+        "Generous",
+        "Serene"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Hero",
+    "name": "Kibuuka",
+    "category": "Warrior Spirit",
+    "origin": {
+      "country": "Uganda",
+      "ethnicity": "Buganda",
+      "pantheon": "Legendary"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "The Cloud Warrior",
+      "alignment": "Lawful Good"
+    },
+    "attributes": {
+      "domains": [
+        "War",
+        "Storms",
+        "Protection"
+      ],
+      "symbols": [
+        "Shield",
+        "Arrows from above"
+      ],
+      "power_objects": [
+        "Sky Bow"
+      ],
+      "symbolic_animals": [
+        "Leopard"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Floating among clouds",
+        "Massive warrior frame",
+        "Glow of thunder"
+      ],
+      "manifestations": "Shooting arrows from high above in a cloud formation.",
+      "image_generation_prompt": "Buganda hero Kibuuka manifested in a stormy cloud. A colossal warrior shooting glowing arrows from a bank of thunderheads. Epic scale historical fantasy, atmospheric thunder and lighting art.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The warrior spirit who lived in the clouds to defend the Buganda empire. He would hover above the enemy, rain arrows upon them, and shield his soldiers. He eventually descended to the earth after a betrayal, becoming a guardian spirit of the land.",
+      "characteristics": [
+        "Protective",
+        "Fierce",
+        "Aerial"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Nana Buluku",
+    "category": "Primordial Spirit",
+    "origin": {
+      "country": "Benin / Nigeria",
+      "ethnicity": "Fon / Yoruba",
+      "pantheon": "Vodun / Orisha"
+    },
+    "identity": {
+      "gender": "Female",
+      "cultural_role": "Great Grandmother of Creation",
+      "alignment": "True Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Creation",
+        "Ancestry",
+        "Cosmos",
+        "Void"
+      ],
+      "symbols": [
+        "Egg",
+        "Serpent coiling Earth"
+      ],
+      "power_objects": [
+        "Primordial Clay"
+      ],
+      "symbolic_animals": [
+        "Ancient Python"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Older than time",
+        "Ancient skin like cracked earth",
+        "Stars in robes"
+      ],
+      "manifestations": "The absolute silence of the void before the first word.",
+      "image_generation_prompt": "Ancient primordial mother Nana Buluku. An elderly goddess with skin like cracked ancestral earth, wearing star-print robes. She sits in the celestial void before time. Ancient features, ethereal scale, photorealistic fantasy art style.",
+      "imageUrl": "/generated_images/nana_buluku.png"
+    },
+    "story": {
+      "description": "The great cosmic grandmother who gave birth to the sun and the moon. She existed before the creation of the current universe and wove the first tapestry of destiny out of chaos. She is the source to which all souls eventually return.",
+      "characteristics": [
+        "Primordial",
+        "Silent",
+        "Infinite"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": [
+        "Mawu-Lisa"
+      ]
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Nyami Nyami",
+    "category": "The River God",
+    "origin": {
+      "country": "Zimbabwe/Zambia",
+      "ethnicity": "Tonga",
+      "pantheon": "Tonga"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "Guardian of the Zambezi",
+      "alignment": "Neutral Good"
+    },
+    "attributes": {
+      "domains": [
+        "Rivers",
+        "Protection",
+        "Whirlpools",
+        "Storms"
+      ],
+      "symbols": [
+        "Coiled Serpent",
+        "Ancient Ripples"
+      ],
+      "power_objects": [
+        "Zambezi Currents"
+      ],
+      "symbolic_animals": [
+        "Fish-Serpent Hybrid"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Serpent-like body",
+        "Fish head with glowing gills",
+        "Emerald and clay scales"
+      ],
+      "manifestations": "A sudden whirlpool in the river or a massive coiling shadow beneath the water.",
+      "image_generation_prompt": "The Tonga river god Nyami Nyami, a massive serpent with the head of a fish, coiling through the emerald and turquoise whirlpools of the Zambezi river. Clay-colored highlights on scales, ancient water ripples, hyper-realistic water effects, dramatic sun rays through water.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The mighty spirit of the Zambezi who protects the Tonga people. He is said to have been separated from his wife by the construction of the Kariba Dam, and his movements cause the river to swell and rage in his grief.",
+      "characteristics": [
+        "Protective",
+        "Ancient",
+        "Mighty"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Modjadji",
+    "category": "The Rain Queen",
+    "origin": {
+      "country": "South Africa",
+      "ethnicity": "Lobedu",
+      "pantheon": "Lobedu"
+    },
+    "identity": {
+      "gender": "Female",
+      "cultural_role": "Mystical Ruler of the Weather",
+      "alignment": "Lawful Good"
+    },
+    "attributes": {
+      "domains": [
+        "Rain",
+        "Agriculture",
+        "Fertility",
+        "Clouds"
+      ],
+      "symbols": [
+        "Silver Mist",
+        "Rain Curtains"
+      ],
+      "power_objects": [
+        "Translucent Blue Beads"
+      ],
+      "symbolic_animals": [
+        "None"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Radiant skin through silver mist",
+        "Traditional Lobedu royal beads",
+        "Translucent blue garments"
+      ],
+      "manifestations": "Emerging from a wall of heavy rain or standing atop a cloud-shrouded mountain.",
+      "image_generation_prompt": "The Rain Queen Modjadji of the Lobedu people. A mystical regal ruler surrounded by silver mist and heavy rain curtains. She wears traditional Lobedu royal beads and translucent blue flowing garments. Ethereal atmospheric lighting, silver and deep blue palette, cinematic photography style.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The hereditary ruler of the Lobedu people, believed to have the power to control the rain. Her ability to bring fertility to the land or drought to enemies makes her one of the most respected figures in Southern African mythology.",
+      "characteristics": [
+        "Mystical",
+        "Sovereign",
+        "Powerful"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Mokele-mbembe",
+    "category": "The Hidden Giant",
+    "origin": {
+      "country": "Congo Basin",
+      "ethnicity": "Bakwele",
+      "pantheon": "Congolese Folklore"
+    },
+    "identity": {
+      "gender": "Neutral",
+      "cultural_role": "River Threshold Guardian",
+      "alignment": "True Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Caves",
+        "Water",
+        "Swamps",
+        "Mystery"
+      ],
+      "symbols": [
+        "Moss-covered scales",
+        "Immense footprints"
+      ],
+      "power_objects": [
+        "None"
+      ],
+      "symbolic_animals": [
+        "Sauropod"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Prehistoric sauropod-like body",
+        "Long neck reaching above canopy",
+        "Mud-brown and moss-green skin"
+      ],
+      "manifestations": "A huge disturbance in the murky swamp waters of the Congo Basin.",
+      "image_generation_prompt": "The hidden cryptid Mokele-mbembe in the dense Congo Basin rainforest. A prehistoric sauropod-like giant wading through murky swamp waters. Moss-covered scales, immense scale, dramatic jungle light filtering through canopy, photorealistic textures, National Geographic style.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "A legendary water-dwelling creature of the Congo River basin. Described as a living dinosaur, it is said to block the passage of boats and dwell in the most remote caves and swamps of the rainforest.",
+      "characteristics": [
+        "Reclusive",
+        "Gigantic",
+        "Primordial"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Divinity",
+    "name": "Papa Legba",
+    "category": "Guardian of the Crossroads",
+    "origin": {
+      "country": "Benin",
+      "ethnicity": "Fon",
+      "pantheon": "Vodun"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "Divine Mediator and Opener of Ways",
+      "alignment": "True Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Crossroads",
+        "Mediation",
+        "Communication",
+        "Keys"
+      ],
+      "symbols": [
+        "Straw Hat",
+        "Wooden Cane",
+        "Pipe Smoke"
+      ],
+      "power_objects": [
+        "Ring of Keys",
+        "Poto Mitan"
+      ],
+      "symbolic_animals": [
+        "Dog"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Wise elderly man",
+        "Limping gait with a cane",
+        "Smoking a pipe"
+      ],
+      "manifestations": "Standing at a crossroads at dusk, jingling a set of old keys.",
+      "image_generation_prompt": "Papa Legba, the Vodun guardian of the crossroads. A wise elderly man wearing a straw hat and holding a carved wooden cane (poto mitan). He carries a ring of rusted keys. Vibrant red and yellow cloth accents, pipe smoke swirling in the air, sunset lighting at a mystical desert road junction, hyper-detailed portrait.",
+      "imageUrl": "/generated_images/papa_legba.png"
+    },
+    "story": {
+      "description": "The great mediator who must be invoked before any other spirit can be contacted. He stands between the world of humans and the world of the divine, holding the keys that unlock the path to the ancestors.",
+      "characteristics": [
+        "Wise",
+        "Essential",
+        "Mediator"
+      ]
+    },
+    "relations": {
+      "parents": [
+        "Mawu-Lisa"
+      ],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Popobawa",
+    "category": "The Shadow Shifter",
+    "origin": {
+      "country": "Tanzania",
+      "ethnicity": "Swahili",
+      "pantheon": "Zanzibar Folklore"
+    },
+    "identity": {
+      "gender": "Neutral",
+      "cultural_role": "Agent of Night Terror",
+      "alignment": "Chaotic Evil"
+    },
+    "attributes": {
+      "domains": [
+        "Shadows",
+        "Dreams",
+        "Nightmares",
+        "Terror"
+      ],
+      "symbols": [
+        "One Glowing Eye",
+        "Bat-like Wings"
+      ],
+      "power_objects": [
+        "Shadow Cloak"
+      ],
+      "symbolic_animals": [
+        "Bat"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "One-eyed shape-shifter",
+        "Large leathery wings",
+        "Silhouetted frame"
+      ],
+      "manifestations": "A shadow perched on a rooftop or a sulfurous smell in the night air.",
+      "image_generation_prompt": "The shadow-shifter Popobawa from Zanzibar folklore. A terrifying one-eyed creature with massive leathery bat-like wings perched on a traditional carved Swahili roof at night. Single glowing yellow eye, silhouette aesthetics, dark urban fantasy setting, moonlight and deep shadows.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "A shapeshifting spirit that first appeared on the island of Pemba. It is feared for its nighttime attacks and its ability to change form from a human into a winged beast. It represents the collective fears and shadows of the community.",
+      "characteristics": [
+        "Terrifying",
+        "Shapeshifter",
+        "Swift"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Hero",
+    "name": "Luanda Magere",
+    "category": "The Stone Warrior",
+    "origin": {
+      "country": "Kenya",
+      "ethnicity": "Luo",
+      "pantheon": "Luo Folklore"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "Invincible Defender of the People",
+      "alignment": "Lawful Good"
+    },
+    "attributes": {
+      "domains": [
+        "War",
+        "Stone",
+        "Strength",
+        "Invincibility"
+      ],
+      "symbols": [
+        "Granite Skin",
+        "Luo Shield",
+        "Spear"
+      ],
+      "power_objects": [
+        "Shadow of the Rock"
+      ],
+      "symbolic_animals": [
+        "Leopard"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Skin with granite texture",
+        "Warrior's build",
+        "Powerful gaze"
+      ],
+      "manifestations": "A warrior standing unmoved by a barrage of spears.",
+      "image_generation_prompt": "The Luo hero Luanda Magere, the stone warrior. A powerful dark-skinned man with skin texture like cracked granite, brandishing a traditional Luo hide shield and iron spear. Invincible posture, dramatic sunset lighting across the Kenyan savannah, historical epic cinematic style, 8k resolution.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "A legendary warrior whose flesh was made of stone. He was invincible in battle, as spears and arrows would simply bounce off his skin. His only vulnerability was his shadow, a secret that eventually led to his tragic fall after a betrayal.",
+      "characteristics": [
+        "Invincible",
+        "Warrior",
+        "Tragic"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Abada",
+    "category": "Mythical Ungulate",
+    "origin": {
+      "country": "DRC / Congo",
+      "ethnicity": "Mongo",
+      "pantheon": "Central African Legends"
+    },
+    "identity": {
+      "gender": "Neutral",
+      "cultural_role": "Guardian of Antidotes",
+      "alignment": "Lawful Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Protection",
+        "Healing"
+      ],
+      "symbols": [
+        "Dual Horns"
+      ],
+      "power_objects": [
+        "Sacred Horn"
+      ],
+      "symbolic_animals": [
+        "Donkey",
+        "Stag"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Donkey-sized",
+        "Two crooked horns (forehead and nape)",
+        "Stag feet",
+        "Ox tail"
+      ],
+      "manifestations": "Appears in the deep jungle to those seeking cures.",
+      "image_generation_prompt": "The mystical Abada creature, size of a donkey with two crooked golden horns (one on forehead, one on neck), stag feet, ox tail, lush Congo jungle background, bioluminescent accents, photorealistic.",
+      "imageUrl": "/generated_images/abada.png"
+    },
+    "story": {
+      "description": "A rare creature whose horns are sought as powerful antidotes against all poisons and diseases.",
+      "characteristics": [
+        "Elusive",
+        "Healing",
+        "Sacred"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Bida",
+    "category": "Sacred Serpent",
+    "origin": {
+      "country": "Mali",
+      "ethnicity": "Soninke",
+      "pantheon": "Wagadu Legends"
+    },
+    "identity": {
+      "gender": "Male",
+      "cultural_role": "Giver of Prosperity",
+      "alignment": "Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Wealth",
+        "Rain",
+        "Sacrifice"
+      ],
+      "symbols": [
+        "Seven Heads",
+        "Gold Dust"
+      ],
+      "power_objects": [
+        "Seventh Head Crown"
+      ],
+      "symbolic_animals": [
+        "Black Snake"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Massive black serpent",
+        "Seven distinct heads",
+        "Shimmering obsidian scales"
+      ],
+      "manifestations": "Coils around the city to bring golden rain.",
+      "image_generation_prompt": "Giant seven-headed black serpent Bida, scales shining like obsidian, raining gold dust over an ancient Sahel city, majestic and terrifying, sunset lighting, cinematic scale.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "The guardian serpent of the Kingdom of Wagadu. It granted prosperity and gold in exchange for an annual sacrifice.",
+      "characteristics": [
+        "Powerful",
+        "Demanding",
+        "Ancient"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Biloko",
+    "category": "Forest Spirit",
+    "origin": {
+      "country": "DRC",
+      "ethnicity": "Mongo",
+      "pantheon": "Central African Folklore"
+    },
+    "identity": {
+      "gender": "Neutral",
+      "cultural_role": "Jungle Guardians",
+      "alignment": "Territorial"
+    },
+    "attributes": {
+      "domains": [
+        "Nature",
+        "Forest",
+        "Hidden Treasures"
+      ],
+      "symbols": [
+        "Bells",
+        "Leaves"
+      ],
+      "power_objects": [
+        "Enchanted Bells"
+      ],
+      "symbolic_animals": [
+        "None"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Small hairless humanoid",
+        "Covered in moss and leaves",
+        "Large snouts",
+        "Sharp claws"
+      ],
+      "manifestations": "Hiding in hollow trees, making bells ring to charm travelers.",
+      "image_generation_prompt": "Small hairless forest dwarves Biloko, covered in moss and leaves, large snouts, holding ancient bells, peeking from a hollow giant baobab tree, mystical green atmosphere, sharp detail.",
+      "imageUrl": "/generated_images/biloko.png"
+    },
+    "story": {
+      "description": "Restless spirits of ancestors who live in the forest. They are dangerous to hunters and guard the secrets of the deep woods.",
+      "characteristics": [
+        "Stealthy",
+        "Hostile",
+        "Enchanting"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Dingonek",
+    "category": "River Monster",
+    "origin": {
+      "country": "Kenya",
+      "ethnicity": "Wandorobo",
+      "pantheon": "East African Cryptids"
+    },
+    "identity": {
+      "gender": "Neutral",
+      "cultural_role": "Apex Aquatic Predator",
+      "alignment": "True Neutral"
+    },
+    "attributes": {
+      "domains": [
+        "Water",
+        "Predation",
+        "Strength"
+      ],
+      "symbols": [
+        "Tusks",
+        "Scales"
+      ],
+      "power_objects": [
+        "Ancient Scales"
+      ],
+      "symbolic_animals": [
+        "Leopard",
+        "Walrus",
+        "Hippopotamus"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Scale-covered body",
+        "Walrus-like tusks",
+        "Leopard head",
+        "Stinger tail"
+      ],
+      "manifestations": "Emerging from the murky waters of Lake Victoria.",
+      "image_generation_prompt": "The river monster Dingonek, leopard head, giant walrus tusks, armored scales like an armadillo, broad tail with stinger, emerging from dark river waters, hyper-realistic, intimidating.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "A terrifying aquatic beast that attacks even hippos. It is said that where lightning strikes, the Impundulu has laid an egg. It is a creature of pure chaotic energy and fear.",
+      "characteristics": [
+        "Fierce",
+        "Armored",
+        "Amphibious"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  },
+  {
+    "entity_type": "Creature",
+    "name": "Inkanyamba",
+    "category": "Storm Entity",
+    "origin": {
+      "country": "South Africa",
+      "ethnicity": "Zulu",
+      "pantheon": "Water Spirits"
+    },
+    "identity": {
+      "gender": "Neutral",
+      "cultural_role": "Storm Bringer",
+      "alignment": "Unpredictable"
+    },
+    "attributes": {
+      "domains": [
+        "Weather",
+        "Storms",
+        "Lakes"
+      ],
+      "symbols": [
+        "Tornadoes",
+        "Waterfalls"
+      ],
+      "power_objects": [
+        "Storm Feather"
+      ],
+      "symbolic_animals": [
+        "Eel",
+        "Horse"
+      ]
+    },
+    "appearance": {
+      "physical_signs": [
+        "Giant eel-like body",
+        "Large wings",
+        "Horse-like head"
+      ],
+      "manifestations": "Taking flight during the summer months, causing massive storms.",
+      "image_generation_prompt": "Colossal winged eel Inkanyamba emerging from a massive waterfall, horse-like head, dark storm clouds and lightning, feathers made of wind, powerful and divine, cinematic lighting.",
+      "imageUrl": ""
+    },
+    "story": {
+      "description": "A migratory spirit that moves between waterfalls. Its flight creates the summer tornadoes of the South.",
+      "characteristics": [
+        "Colossal",
+        "Volatile",
+        "Majestic"
+      ]
+    },
+    "relations": {
+      "parents": [],
+      "conjoint": [],
+      "descendants": []
+    }
+  }
+]
