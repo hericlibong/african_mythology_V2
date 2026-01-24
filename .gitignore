@@ -29,4 +29,9 @@ engine/venv/
 __pycache__/
 *.pyc
 engine/__pycache__/
-.pytest_cache/.env.hf
+.pytest_cache/
+.env.hf
+
+# Hugging Face Space: exclude binaries & local assets
+docs/
+public/generated_images/
