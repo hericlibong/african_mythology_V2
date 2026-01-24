@@ -111,7 +111,7 @@ def generate_image(request: GenerateRequest):
 
     try:
         # 2) Call Vertex AI (Imagen)
-        model = ImageGenerationModel.from_pretrained("imagegeneration@006")
+        model = ImageGenerationModel.from_pretrained("imagen-3.0-generate-002")
 
         response = model.generate_images(
             prompt=prompt,
