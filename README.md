@@ -1,3 +1,16 @@
+---
+title: African Mythology Living Archive
+emoji: 🪘
+colorFrom: indigo
+colorTo: purple
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
+
+
+
 # Living Archive: Encyclopédie Vivante des Mythologies Africaines (V2)
 
 > **"Restoring the visual memory of forgotten pantheons through the lens of AI."**
