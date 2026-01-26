@@ -82,6 +82,12 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
     return <span key={name} className="text-stone-400">{name}</span>;
   };
 
+  const handleImageError = () => {
+    console.warn(`Failed to load image for ${data.name}. Resetting state.`);
+    setImageUrl(undefined);
+    setGenerationState('error');
+  };
+
   return (
     <div className="w-full max-w-5xl mx-auto animate-fadeIn pb-12">
       <div className="bg-stone-900/80 backdrop-blur-xl border border-amber-500/20 rounded-2xl overflow-hidden shadow-2xl shadow-black">
@@ -169,6 +175,7 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
                     src={imageUrl}
                     alt={data.name}
                     className="w-full h-full object-cover"
+                    onError={handleImageError}
                   />
                 ) : (
                   <VisualManifestation entity={data} />
