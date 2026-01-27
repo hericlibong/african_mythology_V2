@@ -3,6 +3,7 @@ from fastapi.testclient import TestClient
 from unittest.mock import MagicMock, patch
 import sys
 import os
+from google.api_core.exceptions import ResourceExhausted
 
 # Add engine directory to sys.path so we can import api
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -91,4 +92,26 @@ def test_generate_image_safety_filter(mock_vertex, mock_loader):
     assert "safety filter" in data["message"]
     
     # Verify save wasn't called since no image
+    mock_loader.assert_not_called()
+
+def test_generate_image_quota_exceeded(mock_vertex, mock_loader):
+    """
+    Test 3: Backend Integration POST /generate (Quota Exceeded case)
+    Verifies that the API returns 429 when Vertex AI raises ResourceExhausted.
+    """
+    # Configure mock to raise ResourceExhausted
+    # We need to provide a message to the exception, usually it takes a message
+    mock_vertex.generate_images.side_effect = ResourceExhausted("Quota exceeded")
+
+    payload = {"entity_name": "Shango"}
+    response = client.post("/generate", json=payload)
+
+    # Assertions
+    assert response.status_code == 429
+    data = response.json()
+    assert data["status"] == "error"
+    assert data["error"] == "quota_exceeded"
+    assert "Quota reached" in data["message"]
+    
+    # Verify save wasn't called
     mock_loader.assert_not_called()

@@ -16,6 +16,7 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
   const [showPrompt, setShowPrompt] = useState(false);
   const [generationState, setGenerationState] = useState<'idle' | 'generating' | 'completed' | 'error'>('idle');
   const [imageUrl, setImageUrl] = useState(data.appearance.imageUrl);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   // Reset generation state when navigating to a new entity
   useEffect(() => {
@@ -35,6 +36,21 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
         body: JSON.stringify({ entity_name: data.name }),
       });
 
+      if (response.status === 429) {
+        let msg = "Quota reached. Try again later.";
+        try {
+          const errorData = await response.json();
+          if (errorData.message) {
+            msg = errorData.message;
+          }
+        } catch (jsonError) {
+          console.warn("Could not parse 429 JSON response", jsonError);
+        }
+        setErrorMessage(msg);
+        setGenerationState('error');
+        return;
+      }
+
       if (!response.ok) throw new Error('Generation failed');
 
       const result = await response.json();
@@ -42,13 +58,16 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
       if (result.status === 'success') {
         setImageUrl(result.image_url);
         setGenerationState('completed');
+        setErrorMessage(null);
       } else {
         console.error("API returned error:", result);
         setGenerationState('error');
+        setErrorMessage(result.message || null);
       }
     } catch (e) {
       console.error("Generation error:", e);
       setGenerationState('error');
+      setErrorMessage(null);
     }
   };
 
@@ -151,7 +170,7 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
                         </span>
                       </button>
                       <p className="mt-4 text-[9px] text-stone-600 font-mono uppercase tracking-[0.2em]">
-                        {generationState === 'error' ? 'Construct Failed. Retry?' : 'Awaiting User Authorization'}
+                        {generationState === 'error' ? (errorMessage || 'Construct Failed. Retry?') : 'Awaiting User Authorization'}
                       </p>
                     </div>
                   ) : (

@@ -169,6 +169,29 @@ def generate_image(request: GenerateRequest):
         }
 
     except Exception as e:
+        # Check for ResourceExhausted (429) from Google API
+        is_quota_error = False
+        error_str = str(e).lower()
+        
+        # 1. Check for specific ResourceExhausted exception class name in string or type
+        if "ResourceExhausted" in type(e).__name__ or "429" in error_str:
+            is_quota_error = True
+        
+        # 2. Check explicitly if it's the class (if we imported it)
+        # We can also check attributes if available, e.g. e.code == 429 if it's a GoogleAPICallError
+            
+        if is_quota_error or "quota" in error_str:
+            print(f"Quota Exceeded: {e}")
+            return JSONResponse(
+                status_code=429,
+                content={
+                    "status": "error",
+                    "error": "quota_exceeded",
+                    "message": "Quota reached. Try again later.",
+                    "details": str(e)
+                },
+            )
+
         print(f"Generation Error: {e}")
         raise HTTPException(status_code=500, detail=f"Internal Server Error: {str(e)}")
 
