@@ -49,6 +49,20 @@
         "Volatile"
       ]
     },
+    "type_specific": {
+      "divinity": {
+        "cult_offerings": [
+          "TBD"
+        ],
+        "cult_taboos": [
+          "TBD"
+        ],
+        "sacred_colors": [
+          "TBD"
+        ],
+        "sacred_attribute": "TBD"
+      }
+    },
     "relations": {
       "parents": [
         "Oranmiyan"
@@ -650,6 +664,22 @@
         "Strategic",
         "Foundation"
       ]
+    },
+    "type_specific": {
+      "hero": {
+        "titles": [
+          "TBD"
+        ],
+        "achievements": [
+          "TBD"
+        ],
+        "allies": [
+          "TBD"
+        ],
+        "enemies": [
+          "TBD"
+        ]
+      }
     },
     "relations": {
       "parents": [
@@ -2460,6 +2490,20 @@
         "Armored",
         "Amphibious"
       ]
+    },
+    "type_specific": {
+      "creature": {
+        "habitat": [
+          "TBD"
+        ],
+        "powers": [
+          "TBD"
+        ],
+        "weaknesses": [
+          "TBD"
+        ],
+        "threat_notes": "TBD"
+      }
     },
     "relations": {
       "parents": [],
