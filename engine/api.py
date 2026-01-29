@@ -7,13 +7,22 @@ from pathlib import Path
 import os
 import json
 
+import logging
 import vertexai
 from vertexai.preview.vision_models import ImageGenerationModel
 from google.oauth2 import service_account
+from google.api_core.exceptions import ResourceExhausted, TooManyRequests
 
 from orchestrator import ImageOrchestrator
 from loader import save_mythology_data  # Ensure loader exports this
 
+
+
+# -----------------------------
+# Logger
+# -----------------------------
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = FastAPI(title="L'Esprit - African Mythology Engine API")
 
@@ -107,7 +116,7 @@ def generate_image(request: GenerateRequest):
     if prompt == "Entity not found.":
         raise HTTPException(status_code=404, detail="Entity not found")
 
-    print(f"Generating image for {entity_name} with prompt: {prompt}")
+    logger.info(f"Generating image for {entity_name} with prompt: {prompt}")
 
     try:
         # 2) Call Vertex AI (Imagen)
@@ -125,7 +134,7 @@ def generate_image(request: GenerateRequest):
         images = response.images if hasattr(response, "images") else []
 
         if not images or len(images) == 0:
-            print("Error: No images returned from Vertex AI (possible safety filter).")
+            logger.warning("Error: No images returned from Vertex AI (possible safety filter).")
             return JSONResponse(
                 status_code=502,
                 content={
@@ -146,7 +155,7 @@ def generate_image(request: GenerateRequest):
 
         generated_image = images[0]
         generated_image.save(location=str(file_path), include_generation_parameters=False)
-        print(f"Image saved to {file_path}")
+        logger.info(f"Image saved to {file_path}")
 
         # 4) Update JSON DB (via orchestrator + loader)
         image_url = f"/generated_images/{filename}"
@@ -160,7 +169,7 @@ def generate_image(request: GenerateRequest):
 
         if updated:
             save_mythology_data(orchestrator.data)
-            print("Database updated.")
+            logger.info("Database updated.")
 
         return {
             "status": "success",
@@ -168,31 +177,19 @@ def generate_image(request: GenerateRequest):
             "prompt_used": prompt,
         }
 
-    except Exception as e:
-        # Check for ResourceExhausted (429) from Google API
-        is_quota_error = False
-        error_str = str(e).lower()
-        
-        # 1. Check for specific ResourceExhausted exception class name in string or type
-        if "ResourceExhausted" in type(e).__name__ or "429" in error_str:
-            is_quota_error = True
-        
-        # 2. Check explicitly if it's the class (if we imported it)
-        # We can also check attributes if available, e.g. e.code == 429 if it's a GoogleAPICallError
-            
-        if is_quota_error or "quota" in error_str:
-            print(f"Quota Exceeded: {e}")
-            return JSONResponse(
-                status_code=429,
-                content={
-                    "status": "error",
-                    "error": "quota_exceeded",
-                    "message": "Quota reached. Try again later.",
-                    "details": str(e)
-                },
-            )
+    except (ResourceExhausted, TooManyRequests) as e:
+        logger.error(f"Quota Exceeded: {e}")
+        return JSONResponse(
+            status_code=429,
+            content={
+                "status": "error",
+                "error": "quota_exceeded",
+                "message": "Quota reached. Try again later."
+            },
+        )
 
-        print(f"Generation Error: {e}")
+    except Exception as e:
+        logger.error(f"Generation Error: {e}")
         raise HTTPException(status_code=500, detail=f"Internal Server Error: {str(e)}")
 
 
