@@ -112,6 +112,27 @@ def test_generate_image_quota_exceeded(mock_vertex, mock_loader):
     assert data["status"] == "error"
     assert data["error"] == "quota_exceeded"
     assert "Quota reached" in data["message"]
+    assert "details" not in data  # Ensure technical details are not leaked
+    
+    # Verify save wasn't called
+    mock_loader.assert_not_called()
+
+def test_generate_image_false_positive_quota(mock_vertex, mock_loader):
+    """
+    Test 4: Backend Integration POST /generate (False Positive Quota case)
+    Verifies that a Generic exception containing the word 'quota' does NOT trigger a 429.
+    """
+    # Configure mock to raise a generic Exception containing "quota"
+    mock_vertex.generate_images.side_effect = Exception("Invalid quota parameter in configuration")
+
+    payload = {"entity_name": "Shango"}
+    response = client.post("/generate", json=payload)
+
+    # Assertions: Should be 500 (Internal Server Error), not 429
+    assert response.status_code == 500
+    data = response.json()
+    # Should confirm it's treated as a generic error
+    assert "Internal Server Error" in data["detail"]
     
     # Verify save wasn't called
     mock_loader.assert_not_called()
