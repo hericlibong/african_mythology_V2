@@ -35,3 +35,4 @@ engine/__pycache__/
 # Hugging Face Space: exclude binaries & local assets
 docs/
 public/generated_images/
+reproduce_issue.py
