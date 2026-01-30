@@ -1,5 +1,5 @@
 from typing import List, Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 class Origin(BaseModel):
     country: str
@@ -33,6 +33,7 @@ class Relations(BaseModel):
     descendants: List[str]
 
 class MythologicalEntity(BaseModel):
+    model_config = ConfigDict(extra='allow')
     entity_type: str
     name: str
     category: str
