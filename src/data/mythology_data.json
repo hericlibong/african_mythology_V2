@@ -49,20 +49,6 @@
         "Volatile"
       ]
     },
-    "type_specific": {
-      "divinity": {
-        "cult_offerings": [
-          "TBD"
-        ],
-        "cult_taboos": [
-          "TBD"
-        ],
-        "sacred_colors": [
-          "TBD"
-        ],
-        "sacred_attribute": "TBD"
-      }
-    },
     "relations": {
       "parents": [
         "Oranmiyan"
@@ -129,6 +115,51 @@
         "Seductive"
       ]
     },
+    "divinity": {
+      "cult": {
+        "offerings": [
+          "Perfume",
+          "White Kaolin",
+          "Powders",
+          "Sweet fruits"
+        ],
+        "taboos": [
+          "Fish (strict)",
+          "Disrespecting water"
+        ]
+      },
+      "domains": [
+        "Water",
+        "Wealth",
+        "Healing",
+        "Beauty"
+      ]
+    },
+    "rendering": {
+      "prompt_canon": "A hyper-realistic cinematic shot of Mami Wata, the primordial water spirit. She emerges from turquoise waves with a massive python wrapped around her neck. She holds a golden mirror, bioluminescent jewelry glowing under the moonlight. Realistic skin textures, shimmering scales, ethereal underwater lighting.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "West African Shrine Art",
+          "prompt": "Mami Wata depicted in the style of vivid West African shrine chromolithography. Saturated colors, iconic pose with snake and mirror, decorative geometric borders, spiritual aura."
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": "Mami Wata in high-quality anime style. Beautiful aquatic goddess, flowing hair turning into water, snake coiled around her shoulders, holding a mirror. Sparkling water effects, detailed eyes, serene expression."
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Western Comic",
+          "prompt": "Mami Wata as a powerful comic book superheroine. Dynamic floating pose, commanding the ocean waves. Green and gold scale armor, holding a magical mirror. Bold ink lines, dramatic coloring, Kirby dots energy effect."
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Contemporary African Art",
+          "prompt": "Abstract contemporary oil painting of Mami Wata. Deep blue and emerald textured brushstrokes, the python merging with the waves, gold leaf accents for the mirror. Modern gallery style."
+        }
+      ]
+    },
     "relations": {
       "parents": [
         "Olokun"
@@ -187,6 +218,46 @@
         "Cunning"
       ]
     },
+    "hero": {
+      "titles": [
+        "Master of Stories",
+        "Father of Spiders"
+      ],
+      "achievements": [
+        "Captured the World's Stories",
+        "Outwitted the Sky God"
+      ],
+      "weapons_or_artifacts": [
+        "Magical Web",
+        "Gourd of Wisdom"
+      ],
+      "legacy": "The archetype of storytelling and survival through wit."
+    },
+    "rendering": {
+      "prompt_canon": "A character concept of Anansi the Spider, an Akan hero. Humanoid trickster with eight nimble fingers, wearing vibrant golden Kente cloth. He sits in a lush tropical jungle weaving a web made of stories. Intricate web patterns, glowing wisdom pot nearby, soft forest lighting, fantasy art style.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Ashanti Goldweight",
+          "prompt": "Anansi depicted in the style of an Akan goldweight (abrammuo). Brass texture, geometric abstraction of the spider form, metallic sheen, neutral background."
+        },
+        {
+          "style_id": "manga",
+          "label": "Fantasy Adventure",
+          "prompt": "Anansi as a fantasy anime protagonist. A young man with spider-motif clothing and multiple spectral arms. Dynamic pose weaving magic threads. Bright, adventurous color palette."
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Web-Weaver Comic",
+          "prompt": "Anansi as a classic comic book hero. Acrobatic pose swinging through a jungle canopy. Wearing a modern superhero suit with Kente patterns. Bold colors, dramatic foreshortening."
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Storyteller Abstract",
+          "prompt": "Abstract portrait of Anansi. A silhouette made of woven words and threads. Warm earth tones mixed with bright gold. Symbolizing the oral tradition."
+        }
+      ]
+    },
     "relations": {
       "parents": [],
       "conjoint": [],
@@ -242,6 +313,50 @@
         "Fierce",
         "Protective",
         "Transformative"
+      ]
+    },
+    "divinity": {
+      "cult": {
+        "offerings": [
+          "Eggplant",
+          "Red wine",
+          "Dark chocolate"
+        ],
+        "taboos": [
+          "Ram meat",
+          "Smoke (in some traditions)"
+        ]
+      },
+      "domains": [
+        "Wind",
+        "Storms",
+        "Ceteris",
+        "Change"
+      ]
+    },
+    "rendering": {
+      "prompt_canon": "Oya, the Yoruba goddess of storms, standing in the heart of a tornado. She wears deep purple robes and brandishes a sharp copper sword. Her eyes glow with the power of the wind. Dark atmospheric fantasy art, dramatic lightning, hyper-realistic warrior aesthetic.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Yoruba Wood Carving",
+          "prompt": "Oya depicted as a traditional Yoruba wood carving. Intricate patterns carved into dark wood, holding a fly-whisk, stylized storm motifs. Natural wood texture, museum lighting."
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Action",
+          "prompt": "Oya using wind attacks in a shonen manga style. Dynamic speed lines, purple tornado effects, fierce expression, wielding a sword. High contrast black and white with spot color."
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Storm Goddess Comic",
+          "prompt": "Oya as a comic book level entity. Flying amidst a hurricane, purple cape billowing, eyes glowing white. Dynamic perspective, bold colors, dramatic shading."
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern Expressionism",
+          "prompt": "Expressionist painting of Oya. Swirling chaotic brushstrokes of purple, grey, and copper. Capturing the feeling of a storm rather than just the form. Emotive and powerful."
+        }
       ]
     },
     "relations": {
@@ -305,6 +420,50 @@
         "Loyal"
       ]
     },
+    "divinity": {
+      "cult": {
+        "offerings": [
+          "Palm wine",
+          "Roasted yam",
+          "Iron objects",
+          "Dog (symbolic)"
+        ],
+        "taboos": [
+          "Lying (breaking oaths taken on iron)"
+        ]
+      },
+      "domains": [
+        "Iron",
+        "War",
+        "Technology",
+        "Oaths"
+      ]
+    },
+    "rendering": {
+      "prompt_canon": "Ogun, the god of iron, forged in fire. Muscular dark-skinned man in a tribal blacksmith's forge, glowing embers and sparks everywhere. He holds a heavy iron machete. Industrial tribal aesthetic, cinematic lighting, ultra-detailed metallic textures.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Bronze Scuplture",
+          "prompt": "Ogun cast in the style of a Benin Bronze plaque. High relief, warrior attire, holding tools of the forge. Metallic bronze texture, oxidization details."
+        },
+        {
+          "style_id": "manga",
+          "label": "Seinen Manga",
+          "prompt": "Ogun as a grit-heavy seinen manga character. Heavily scarred, holding a massive rough iron sword, surrounded by steam and sparks. Detailed cross-hatching, intense atmosphere."
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Tech-Warrior Comic",
+          "prompt": "Ogun as a tech-enhanced warrior god. Iron armor that looks both ancient and futuristic. Wielding a glowing energy machete. Dynamic action pose breaking through a wall."
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Iron Abstract",
+          "prompt": "Abstract mixed media painting of Ogun. Using rust, metal shavings, and dark oils. The form of a blacksmith emerging from the chaotic textures of industry."
+        }
+      ]
+    },
     "relations": {
       "parents": [
         "Oduduwa"
@@ -363,6 +522,51 @@
         "Clever",
         "Essential",
         "Unpredictable"
+      ]
+    },
+    "divinity": {
+      "cult": {
+        "offerings": [
+          "Whistles",
+          "Candies",
+          "Tobacco",
+          "Toys"
+        ],
+        "taboos": [
+          "Palm kernel oil (adin)",
+          "Neglecting the messenger"
+        ]
+      },
+      "domains": [
+        "Crossroads",
+        "Communication",
+        "Chance",
+        "Trickery"
+      ]
+    },
+    "rendering": {
+      "prompt_canon": "Eshu at a lonely desert crossroads under a twilight sky. He wears a traditional cap split between red and black, holding a hooked wooden staff and smoking a pipe. Mysterious atmosphere, moody cinematic lighting, detailed facial expressions.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Laterite Mound Style",
+          "prompt": "Eshu represented as a sacred laterite mound with cowrie shell eyes. Simple, primal, earthy textures. Red clay dust, ritual offering context."
+        },
+        {
+          "style_id": "manga",
+          "label": "Trickster Anime",
+          "prompt": "Eshu as a playful anime trickster. Sitting on a floating staff, winking, dual-colored hair (red/black). Magical glyphs floating around. Bright, energetic cell shading."
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Anti-Hero Comic",
+          "prompt": "Eshu as a cosmic anti-hero. Wearing a modern suit split down the middle in color. Holding a reality-warping staff. Kirby-style cosmic background, bold colors."
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Surrealist Duality",
+          "prompt": "Surrealist painting of Eshu. A face that looks forward and backward, red and black melting into each other. Dreamlike crossroads landscape."
+        }
       ]
     },
     "relations": {
@@ -665,21 +869,46 @@
         "Foundation"
       ]
     },
-    "type_specific": {
-      "hero": {
-        "titles": [
-          "TBD"
-        ],
-        "achievements": [
-          "TBD"
-        ],
-        "allies": [
-          "TBD"
-        ],
-        "enemies": [
-          "TBD"
-        ]
-      }
+    "hero": {
+      "titles": [
+        "Alaafin of Oyo",
+        "Ooni of Ife",
+        "The Great One"
+      ],
+      "achievements": [
+        "Founded the Oyo Empire",
+        "Founded the Benin Dynasty"
+      ],
+      "weapons_or_artifacts": [
+        "Opa Oranmiyan (Staff)",
+        "Iron Sword"
+      ],
+      "legacy": "The physical ancestor of Yoruba kingship and legitimacy."
+    },
+    "rendering": {
+      "prompt_canon": "Legendary warrior Oranmiyan standing beside his monolithic stone pillar (Opa Oranmiyan) on a vast savannah. Clad in ancient iron warrior armor, dust clouds in the wind. Epic historical cinematic shot, dramatic golden hour lighting.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Ife Terracotta",
+          "prompt": "Oranmiyan visualized as a classic Ife terracotta head. Naturalistic proportions, serene expression, faint striations on the face. Clay texture, museum setting."
+        },
+        {
+          "style_id": "manga",
+          "label": "Historical Seinen",
+          "prompt": "Oranmiyan as a warlord in a historical manga. Heavily armored, standing atop a hill of swords. Gritty ink lines, screentones, serious expression."
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Conqueror Comic",
+          "prompt": "Oranmiyan as a cosmic conqueror. Wearing armor made of stars and iron. Holding a massive staff that cracks the ground. Kirby-style energy crackle."
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modernist Portrait",
+          "prompt": "A modernist interpretation of Oranmiyan. Strong geometric shapes defining his armor and the pillar. Bold primary colors, powerful and stoic."
+        }
+      ]
     },
     "relations": {
       "parents": [
@@ -1139,6 +1368,46 @@
         "Cunning",
         "Fearless",
         "Diplomatic"
+      ]
+    },
+    "hero": {
+      "titles": [
+        "Ngola",
+        "Queen of Ndongo and Matamba"
+      ],
+      "achievements": [
+        "Defied Portuguese colonization",
+        "United rival tribes"
+      ],
+      "weapons_or_artifacts": [
+        "Royal Battle Axe",
+        "Bow"
+      ],
+      "legacy": "A timeless symbol of African resistance and strategic brilliance."
+    },
+    "rendering": {
+      "prompt_canon": "A majestic cinematic shot of Queen Nzinga Mbande on her Ndongo throne. She wears royal leopard skin and traditional heavy gold jewelry, brandishing a war bow. Arid savannah landscape behind her, cinematic high-fidelity detail.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Royal Portrait",
+          "prompt": "Queen Nzinga in the style of 17th-century royal portraiture but with African aesthetics. Rich fabrics, dignified pose, holding a scroll of treaty. Oil on canvas texture."
+        },
+        {
+          "style_id": "manga",
+          "label": "Shojo/Josei",
+          "prompt": "Queen Nzinga as a brilliant strategist in a historical drama anime. Sharp eyes, flowing robes, commanding a war room. detailed background art, soft lighting."
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Warrior Queen Comic",
+          "prompt": "Nzinga leading a charge in a dynamic comic cover style. leaping into battle with a battle axe. Bold action lines, saturated colors, feeling of motion."
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Feminist Icon",
+          "prompt": "Contemporary mixed media portrait of Nzinga. Collage of maps, fabrics, and paint. Focusing on her gaze as a symbol of defiance and strength."
+        }
       ]
     },
     "relations": {
@@ -2094,6 +2363,51 @@
         "Primordial"
       ]
     },
+    "creature": {
+      "habitat": [
+        "Congo River Basin",
+        "Deep Swamps",
+        "Underground Caves"
+      ],
+      "powers": [
+        "Territorial Roar",
+        "Overturning Boats"
+      ],
+      "strengths": [
+        "Immense Size",
+        "Thick Hide"
+      ],
+      "weaknesses": [
+        "Loud Noises"
+      ],
+      "diet": "Herbivorous (Malombo vines)",
+      "size": "Gigantic (Sauropod-sized)"
+    },
+    "rendering": {
+      "prompt_canon": "The hidden cryptid Mokele-mbembe in the dense Congo Basin rainforest. A prehistoric sauropod-like giant wading through murky swamp waters. Moss-covered scales, immense scale, dramatic jungle light filtering through canopy, photorealistic textures, National Geographic style.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Field Sketch",
+          "prompt": "Mokele-mbembe as a 19th-century explorer's field sketch. Pencil and ink on aged paper. Detailed botanical surroundings, notes in margins. Sepia tone."
+        },
+        {
+          "style_id": "manga",
+          "label": "Kaiju Style",
+          "prompt": "Mokele-mbembe as a kaiju in a manga. Looming over trees, massive sense of scale, terrified birds flying away. Dynamic low angle, heavy inks, screentones."
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Savage Land Comic",
+          "prompt": "Mokele-mbembe in a pulp adventure comic. Vibrant green jungle, fighting off crocodiles. Action-packed scene, bold colors, classic comic book shading."
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Eco-Surrealism",
+          "prompt": "Surrealist painting of Mokele-mbembe. The creature is made of the forest itself—leaves, vines, and river water forming a dinosaur shape. Dreamlike and misty."
+        }
+      ]
+    },
     "relations": {
       "parents": [],
       "conjoint": [],
@@ -2208,6 +2522,53 @@
         "Terrifying",
         "Shapeshifter",
         "Swift"
+      ]
+    },
+    "creature": {
+      "habitat": [
+        "Zanzibar Archipelago",
+        "Roofs",
+        "Shadows"
+      ],
+      "powers": [
+        "Shapeshifting",
+        "Night Terror induction",
+        "Possession"
+      ],
+      "strengths": [
+        "Fear harvesting",
+        "Flight"
+      ],
+      "weaknesses": [
+        "Daylight",
+        "Communal solidarity"
+      ],
+      "diet": "Fear / Psychic energy",
+      "size": "Variable (Human to Large Bat)"
+    },
+    "rendering": {
+      "prompt_canon": "The shadow-shifter Popobawa from Zanzibar folklore. A terrifying one-eyed creature with massive leathery bat-like wings perched on a traditional carved Swahili roof at night. Single glowing yellow eye, silhouette aesthetics, dark urban fantasy setting, moonlight and deep shadows.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Swahili Art",
+          "prompt": "Popobawa depicted in a stylized Swahili art style. Using patterns found in henna and wood carving. Stark black and white contrast, frightening but ornamental."
+        },
+        {
+          "style_id": "manga",
+          "label": "Horror Manga",
+          "prompt": "Popobawa in the style of Junji Ito. Disturbing details, spiraling shadows, single realistic eye. High contrast, terrifying atmosphere."
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Villain Comic",
+          "prompt": "Popobawa as a Batman-esque villain. Looming over Stone Town. Dramatic cape/wing spread. Dark blues and blacks with yellow eye highlight."
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Nightmare Abstract",
+          "prompt": "Abstract painting of a nightmare. Dark palette with scratches of yellow and red. A vague winged shape dominating the composition. Evoking pure fear."
+        }
       ]
     },
     "relations": {
@@ -2484,26 +2845,56 @@
       "imageUrl": ""
     },
     "story": {
-      "description": "A terrifying aquatic beast that attacks even hippos. It is said that where lightning strikes, the Impundulu has laid an egg. It is a creature of pure chaotic energy and fear.",
+      "description": "A terrifying aquatic beast that attacks even hippos. It is described as a large, scaly monster with a walrus-like head and long tusks, lurking in the river depths to ambush prey.",
       "characteristics": [
         "Fierce",
         "Armored",
         "Amphibious"
       ]
     },
-    "type_specific": {
-      "creature": {
-        "habitat": [
-          "TBD"
-        ],
-        "powers": [
-          "TBD"
-        ],
-        "weaknesses": [
-          "TBD"
-        ],
-        "threat_notes": "TBD"
-      }
+    "creature": {
+      "habitat": [
+        "Lake Victoria",
+        "River Nyanza"
+      ],
+      "powers": [
+        "Ambush",
+        "Piercing Tusks"
+      ],
+      "strengths": [
+        "Scale Armor (Arrow-proof)",
+        "Swimming Speed"
+      ],
+      "weaknesses": [
+        "None recorded"
+      ],
+      "diet": "Carnivorous (Hippos, Crocodiles)",
+      "size": "Large (Hippo-sized)"
+    },
+    "rendering": {
+      "prompt_canon": "The river monster Dingonek, leopard head, giant walrus tusks, armored scales like an armadillo, broad tail with stinger, emerging from dark river waters, hyper-realistic, intimidating.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Rock Art Style",
+          "prompt": "Dingonek depicted in the style of East African rock art. Red ochre pigment on stone texture. Simple outline emphasizing tusks and scales."
+        },
+        {
+          "style_id": "manga",
+          "label": "Monster Hunter",
+          "prompt": "Dingonek as a monster hunter target. Splash page. Roaring with water splashing everywhere. Detailed scales and tusks. Action lines."
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Creature Feature",
+          "prompt": "Dingonek on a vintage horror comic cover. 'Terror of the Lake!' title style. Bright colors, exaggerated tusks, snapping a canoe in half."
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Water Abstract",
+          "prompt": "Abstract painting of a river attack. Turbid browns and greens. A flash of white teeth and scales. Chaotic water surface textures."
+        }
+      ]
     },
     "relations": {
       "parents": [],
