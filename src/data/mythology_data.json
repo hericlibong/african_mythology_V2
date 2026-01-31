@@ -61,6 +61,40 @@
       "descendants": [
         "Ibeji"
       ]
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "An epic Afro-futurist oil painting of Shango, the Yoruba god of thunder. He wields a wooden double-headed axe, wearing vibrant red and white robes with gold trim. Thunderous storm clouds and jagged lightning fill the background. Dramatic low-angle lighting, photorealistic facial details, 8k cinematic art.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -115,26 +149,6 @@
         "Seductive"
       ]
     },
-    "divinity": {
-      "cult": {
-        "offerings": [
-          "Perfume",
-          "White Kaolin",
-          "Powders",
-          "Sweet fruits"
-        ],
-        "taboos": [
-          "Fish (strict)",
-          "Disrespecting water"
-        ]
-      },
-      "domains": [
-        "Water",
-        "Wealth",
-        "Healing",
-        "Beauty"
-      ]
-    },
     "rendering": {
       "prompt_canon": "A hyper-realistic cinematic shot of Mami Wata, the primordial water spirit. She emerges from turquoise waves with a massive python wrapped around her neck. She holds a golden mirror, bioluminescent jewelry glowing under the moonlight. Realistic skin textures, shimmering scales, ethereal underwater lighting.",
       "prompt_variants": [
@@ -166,6 +180,28 @@
       ],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [
+            "Perfume",
+            "White Kaolin",
+            "Powders",
+            "Sweet fruits"
+          ],
+          "taboos": [
+            "Fish (strict)",
+            "Disrespecting water"
+          ]
+        },
+        "domains": [
+          "Water",
+          "Wealth",
+          "Healing",
+          "Beauty"
+        ]
+      }
     }
   },
   {
@@ -218,21 +254,6 @@
         "Cunning"
       ]
     },
-    "hero": {
-      "titles": [
-        "Master of Stories",
-        "Father of Spiders"
-      ],
-      "achievements": [
-        "Captured the World's Stories",
-        "Outwitted the Sky God"
-      ],
-      "weapons_or_artifacts": [
-        "Magical Web",
-        "Gourd of Wisdom"
-      ],
-      "legacy": "The archetype of storytelling and survival through wit."
-    },
     "rendering": {
       "prompt_canon": "A character concept of Anansi the Spider, an Akan hero. Humanoid trickster with eight nimble fingers, wearing vibrant golden Kente cloth. He sits in a lush tropical jungle weaving a web made of stories. Intricate web patterns, glowing wisdom pot nearby, soft forest lighting, fantasy art style.",
       "prompt_variants": [
@@ -262,6 +283,23 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "hero": {
+        "titles": [
+          "Master of Stories",
+          "Father of Spiders"
+        ],
+        "achievements": [
+          "Captured the World's Stories",
+          "Outwitted the Sky God"
+        ],
+        "weapons_or_artifacts": [
+          "Magical Web",
+          "Gourd of Wisdom"
+        ],
+        "legacy": "The archetype of storytelling and survival through wit."
+      }
     }
   },
   {
@@ -315,25 +353,6 @@
         "Transformative"
       ]
     },
-    "divinity": {
-      "cult": {
-        "offerings": [
-          "Eggplant",
-          "Red wine",
-          "Dark chocolate"
-        ],
-        "taboos": [
-          "Ram meat",
-          "Smoke (in some traditions)"
-        ]
-      },
-      "domains": [
-        "Wind",
-        "Storms",
-        "Ceteris",
-        "Change"
-      ]
-    },
     "rendering": {
       "prompt_canon": "Oya, the Yoruba goddess of storms, standing in the heart of a tornado. She wears deep purple robes and brandishes a sharp copper sword. Her eyes glow with the power of the wind. Dark atmospheric fantasy art, dramatic lightning, hyper-realistic warrior aesthetic.",
       "prompt_variants": [
@@ -368,6 +387,27 @@
         "Ogun"
       ],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [
+            "Eggplant",
+            "Red wine",
+            "Dark chocolate"
+          ],
+          "taboos": [
+            "Ram meat",
+            "Smoke (in some traditions)"
+          ]
+        },
+        "domains": [
+          "Wind",
+          "Storms",
+          "Ceteris",
+          "Change"
+        ]
+      }
     }
   },
   {
@@ -420,25 +460,6 @@
         "Loyal"
       ]
     },
-    "divinity": {
-      "cult": {
-        "offerings": [
-          "Palm wine",
-          "Roasted yam",
-          "Iron objects",
-          "Dog (symbolic)"
-        ],
-        "taboos": [
-          "Lying (breaking oaths taken on iron)"
-        ]
-      },
-      "domains": [
-        "Iron",
-        "War",
-        "Technology",
-        "Oaths"
-      ]
-    },
     "rendering": {
       "prompt_canon": "Ogun, the god of iron, forged in fire. Muscular dark-skinned man in a tribal blacksmith's forge, glowing embers and sparks everywhere. He holds a heavy iron machete. Industrial tribal aesthetic, cinematic lighting, ultra-detailed metallic textures.",
       "prompt_variants": [
@@ -472,6 +493,27 @@
         "Oya"
       ],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [
+            "Palm wine",
+            "Roasted yam",
+            "Iron objects",
+            "Dog (symbolic)"
+          ],
+          "taboos": [
+            "Lying (breaking oaths taken on iron)"
+          ]
+        },
+        "domains": [
+          "Iron",
+          "War",
+          "Technology",
+          "Oaths"
+        ]
+      }
     }
   },
   {
@@ -524,26 +566,6 @@
         "Unpredictable"
       ]
     },
-    "divinity": {
-      "cult": {
-        "offerings": [
-          "Whistles",
-          "Candies",
-          "Tobacco",
-          "Toys"
-        ],
-        "taboos": [
-          "Palm kernel oil (adin)",
-          "Neglecting the messenger"
-        ]
-      },
-      "domains": [
-        "Crossroads",
-        "Communication",
-        "Chance",
-        "Trickery"
-      ]
-    },
     "rendering": {
       "prompt_canon": "Eshu at a lonely desert crossroads under a twilight sky. He wears a traditional cap split between red and black, holding a hooked wooden staff and smoking a pipe. Mysterious atmosphere, moody cinematic lighting, detailed facial expressions.",
       "prompt_variants": [
@@ -573,6 +595,28 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [
+            "Whistles",
+            "Candies",
+            "Tobacco",
+            "Toys"
+          ],
+          "taboos": [
+            "Palm kernel oil (adin)",
+            "Neglecting the messenger"
+          ]
+        },
+        "domains": [
+          "Crossroads",
+          "Communication",
+          "Chance",
+          "Trickery"
+        ]
+      }
     }
   },
   {
@@ -635,6 +679,40 @@
         "Ogun"
       ],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "A breathtaking portrait of Oshun, goddess of love. She stands near a golden waterfall in a lush jungle, wearing shimmering yellow silks and heavy brass jewelry. She holds a copper mirror, reflecting light. Hyper-realistic skin, vibrant warm colors, master painting style.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -695,6 +773,40 @@
         "Oranmiyan",
         "Ogun"
       ]
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Oduduwa descending from a golden light on a sacred chain to the watery abyss. He holds a bag of cosmic earth and a five-toed cockerel. His face is masked by a royal beaded veil. Epic scale fantasy art, majestic and biblical lighting.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -753,6 +865,40 @@
         "Oduduwa"
       ],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Obatala, the elder god of creation, dressed in immaculate white robes. He sits in a celestial workshop sculpting human figures out of white light and clay. Peaceful and holy atmosphere, soft glowing white lighting, photorealistic facial details.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -817,6 +963,40 @@
         "Oya",
         "Shango"
       ]
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Yemaya, the mother of the ocean. A stunning goddess with deep blue flowing robes that merge with the waves. She wears silver necklaces and holds seashells. Hyper-realistic ocean background, regal and serene facial details, cinematic lighting.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -869,22 +1049,6 @@
         "Foundation"
       ]
     },
-    "hero": {
-      "titles": [
-        "Alaafin of Oyo",
-        "Ooni of Ife",
-        "The Great One"
-      ],
-      "achievements": [
-        "Founded the Oyo Empire",
-        "Founded the Benin Dynasty"
-      ],
-      "weapons_or_artifacts": [
-        "Opa Oranmiyan (Staff)",
-        "Iron Sword"
-      ],
-      "legacy": "The physical ancestor of Yoruba kingship and legitimacy."
-    },
     "rendering": {
       "prompt_canon": "Legendary warrior Oranmiyan standing beside his monolithic stone pillar (Opa Oranmiyan) on a vast savannah. Clad in ancient iron warrior armor, dust clouds in the wind. Epic historical cinematic shot, dramatic golden hour lighting.",
       "prompt_variants": [
@@ -920,6 +1084,24 @@
       "descendants": [
         "Shango"
       ]
+    },
+    "type_specific": {
+      "hero": {
+        "titles": [
+          "Alaafin of Oyo",
+          "Ooni of Ife",
+          "The Great One"
+        ],
+        "achievements": [
+          "Founded the Oyo Empire",
+          "Founded the Benin Dynasty"
+        ],
+        "weapons_or_artifacts": [
+          "Opa Oranmiyan (Staff)",
+          "Iron Sword"
+        ],
+        "legacy": "The physical ancestor of Yoruba kingship and legitimacy."
+      }
     }
   },
   {
@@ -978,6 +1160,40 @@
         "Shango"
       ],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Oba, the orisha of the hearth, in a peaceful ancient domestic setting. She wears indigo and red robes, one side of her face veiled. She stands by a warm cooking fire. Soft domestic glow, photorealistic portrait style, warm lighting.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1037,6 +1253,40 @@
       ],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Sacred Yoruba Ibeji twins, two identical dark-skinned children wearing ceremonial red and white beads. They hold each other's hands, surrounded by floating golden light and fruit offerings. Playful and magical atmosphere, hyper-detailed fantasy portrait.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1093,6 +1343,38 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "creature": {
+        "habitat": [],
+        "powers": [],
+        "size": ""
+      }
+    },
+    "rendering": {
+      "prompt_canon": "The mythic Impundulu bird of Zulu legend. A man-sized bird with iridescent shimmering feathers that crackle with violet lightning. Dark stormy background, realistic and terrifying bird anatomy, cinematic dark fantasy.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1148,6 +1430,40 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "A creepy Tokoloshe dwarf hiding in a dark dusty corner. Small, hairy humanoid with glowing red eyes. Cinematic lighting, horror atmosphere, hyper-realistic textures, suspenseful composition.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1204,6 +1520,40 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Unkulunkulu, the Zulu creator god, emerging from a primordial glowing reed bed under a massive cosmic galaxy sky. Vast wise facial features, ethereal celestial light, ultra-detailed fantasy art.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1262,6 +1612,40 @@
       ],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Zulu rainbow goddess Mbaba Mwana Waresa. A joyful goddess standing on a translucent rainbow bridge, holding a golden beer calabash. Radiant skin, iridescent traditional clothing, cinematic nature background.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1317,6 +1701,39 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "hero": {
+        "titles": [],
+        "achievements": [],
+        "weapons_or_artifacts": [],
+        "legacy": ""
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Yasuke, the legendary black samurai. Standing in a winter temple courtyard in Japan, wearing ornate black lacquered armor over Makua tribal textures. He holds a katana, glowing moonlight atmosphere. Cinematic masterpiece portrait.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1370,21 +1787,6 @@
         "Diplomatic"
       ]
     },
-    "hero": {
-      "titles": [
-        "Ngola",
-        "Queen of Ndongo and Matamba"
-      ],
-      "achievements": [
-        "Defied Portuguese colonization",
-        "United rival tribes"
-      ],
-      "weapons_or_artifacts": [
-        "Royal Battle Axe",
-        "Bow"
-      ],
-      "legacy": "A timeless symbol of African resistance and strategic brilliance."
-    },
     "rendering": {
       "prompt_canon": "A majestic cinematic shot of Queen Nzinga Mbande on her Ndongo throne. She wears royal leopard skin and traditional heavy gold jewelry, brandishing a war bow. Arid savannah landscape behind her, cinematic high-fidelity detail.",
       "prompt_variants": [
@@ -1414,6 +1816,23 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "hero": {
+        "titles": [
+          "Ngola",
+          "Queen of Ndongo and Matamba"
+        ],
+        "achievements": [
+          "Defied Portuguese colonization",
+          "United rival tribes"
+        ],
+        "weapons_or_artifacts": [
+          "Royal Battle Axe",
+          "Bow"
+        ],
+        "legacy": "A timeless symbol of African resistance and strategic brilliance."
+      }
     }
   },
   {
@@ -1471,6 +1890,39 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "hero": {
+        "titles": [],
+        "achievements": [],
+        "weapons_or_artifacts": [],
+        "legacy": ""
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Queen Amina of Zazzau atop a powerful white warhorse. She wears traditional iron chainmail and Hausa royal fabrics, brandishing a curved sword. Dry desert heat background, dust clouds, historical epic cinematic style.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1527,6 +1979,39 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "hero": {
+        "titles": [],
+        "achievements": [],
+        "weapons_or_artifacts": [],
+        "legacy": ""
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Emperor Sundiata Keita, the Lion Prince, sitting in a desert palace of Timbuktu style. Rich indigo robes with gold patterns, holding a golden scepter. A lion's phantom spirit walks behind him. Epic scale, cinematic historical art.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1586,6 +2071,40 @@
       ],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "A majestic androgynous divinity merging the sun and moon. Mawu-Lisa with skin reflecting the solar flares of gold and the cool lunar silver. Cosmic background, weaving galaxies on a loom. Epic ethereal scale, photorealistic fantasy art.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1644,6 +2163,40 @@
       ],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Primordial god Damballa manifested as a massive shimmering white python coiling around the cosmic world egg. Silver sparkles in the scales, ethereal rainforest setting with pure springs. Majestic and peaceful dark fantasy art.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1700,6 +2253,40 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "The Nommo spirits of Dogon mythology. Ethereal amphibious beings with bioluminescent blue skin and large dark eyes, emerging from a craft near the star Sirius. Hyper-detailed futuristic tribal aesthetic, deep space lighting.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1754,6 +2341,40 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Masai god Enkai manifested in the vast open sky of the Rift Valley. One half deep indigo thunderheads with gentle rain, other half fierce red lightning and heat haze. Epic scale nature fantasy, ultra-detailed landscape art.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1809,6 +2430,40 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "The Kongo god Kalunga at the threshold of the underworld. An elder god with dark skin dusted in white chalk, standing on the ocean horizon where water merges with sky. Moody indigo lighting, serene but imposing presence.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1864,6 +2519,38 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "creature": {
+        "habitat": [],
+        "powers": [],
+        "size": ""
+      }
+    },
+    "rendering": {
+      "prompt_canon": "The mythic Grootslang in a dark cavern filled with diamonds. A colossal emerald-skinned serpent with the massive head and tusks of an elephant. Primal power, shimmering scales, cinematic lighting, ultra-detailed fantasy art.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1918,6 +2605,38 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "creature": {
+        "habitat": [],
+        "powers": [],
+        "size": ""
+      }
+    },
+    "rendering": {
+      "prompt_canon": "The mythic Aigamuxa humanoid predator. A dark-skinned creature with wild features, lifting one foot to reveal a glowing yellow eye on the sole. Arid rocky desert landscape, suspenseful horror lighting, photorealistic anatomy.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -1973,6 +2692,38 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "creature": {
+        "habitat": [],
+        "powers": [],
+        "size": ""
+      }
+    },
+    "rendering": {
+      "prompt_canon": "A mythic Abiku child figure in an old dark forest. Ghostly glowing child wearing iron bells and copper bangles. Ethereal atmospheric lighting, cinematic horror fantasy, hyper-realistic textures.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -2030,6 +2781,40 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "The ancient Egyptian goddess Neith at her celestial loom. She weaves the stars of the milky way, wearing the Red Crown of Lower Egypt. She holds crossed arrows. Masterpiece Egyptian art style, hyper-realistic cosmic lighting.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -2086,6 +2871,40 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Kianda, the water spirit of Angola. A beautiful mermaid goddess emerging from the turquoise Atlantic surf, long flowing dark hair with seashell beads. Soft sunlight, cinematic oceanic lighting, realistic skin and scale textures.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -2141,6 +2960,39 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "hero": {
+        "titles": [],
+        "achievements": [],
+        "weapons_or_artifacts": [],
+        "legacy": ""
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Buganda hero Kibuuka manifested in a stormy cloud. A colossal warrior shooting glowing arrows from a bank of thunderheads. Epic scale historical fantasy, atmospheric thunder and lighting art.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -2199,6 +3051,40 @@
       "descendants": [
         "Mawu-Lisa"
       ]
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Ancient primordial mother Nana Buluku. An elderly goddess with skin like cracked ancestral earth, wearing star-print robes. She sits in the celestial void before time. Ancient features, ethereal scale, photorealistic fantasy art style.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -2255,6 +3141,40 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "The Tonga river god Nyami Nyami, a massive serpent with the head of a fish, coiling through the emerald and turquoise whirlpools of the Zambezi river. Clay-colored highlights on scales, ancient water ripples, hyper-realistic water effects, dramatic sun rays through water.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -2311,6 +3231,40 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "The Rain Queen Modjadji of the Lobedu people. A mystical regal ruler surrounded by silver mist and heavy rain curtains. She wears traditional Lobedu royal beads and translucent blue flowing garments. Ethereal atmospheric lighting, silver and deep blue palette, cinematic photography style.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -2363,26 +3317,6 @@
         "Primordial"
       ]
     },
-    "creature": {
-      "habitat": [
-        "Congo River Basin",
-        "Deep Swamps",
-        "Underground Caves"
-      ],
-      "powers": [
-        "Territorial Roar",
-        "Overturning Boats"
-      ],
-      "strengths": [
-        "Immense Size",
-        "Thick Hide"
-      ],
-      "weaknesses": [
-        "Loud Noises"
-      ],
-      "diet": "Herbivorous (Malombo vines)",
-      "size": "Gigantic (Sauropod-sized)"
-    },
     "rendering": {
       "prompt_canon": "The hidden cryptid Mokele-mbembe in the dense Congo Basin rainforest. A prehistoric sauropod-like giant wading through murky swamp waters. Moss-covered scales, immense scale, dramatic jungle light filtering through canopy, photorealistic textures, National Geographic style.",
       "prompt_variants": [
@@ -2412,6 +3346,28 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "creature": {
+        "habitat": [
+          "Congo River Basin",
+          "Deep Swamps",
+          "Underground Caves"
+        ],
+        "powers": [
+          "Territorial Roar",
+          "Overturning Boats"
+        ],
+        "strengths": [
+          "Immense Size",
+          "Thick Hide"
+        ],
+        "weaknesses": [
+          "Loud Noises"
+        ],
+        "diet": "Herbivorous (Malombo vines)",
+        "size": "Gigantic (Sauropod-sized)"
+      }
     }
   },
   {
@@ -2472,6 +3428,40 @@
       ],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "divinity": {
+        "cult": {
+          "offerings": [],
+          "taboos": []
+        },
+        "domains": []
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Papa Legba, the Vodun guardian of the crossroads. A wise elderly man wearing a straw hat and holding a carved wooden cane (poto mitan). He carries a ring of rusted keys. Vibrant red and yellow cloth accents, pipe smoke swirling in the air, sunset lighting at a mystical desert road junction, hyper-detailed portrait.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -2524,28 +3514,6 @@
         "Swift"
       ]
     },
-    "creature": {
-      "habitat": [
-        "Zanzibar Archipelago",
-        "Roofs",
-        "Shadows"
-      ],
-      "powers": [
-        "Shapeshifting",
-        "Night Terror induction",
-        "Possession"
-      ],
-      "strengths": [
-        "Fear harvesting",
-        "Flight"
-      ],
-      "weaknesses": [
-        "Daylight",
-        "Communal solidarity"
-      ],
-      "diet": "Fear / Psychic energy",
-      "size": "Variable (Human to Large Bat)"
-    },
     "rendering": {
       "prompt_canon": "The shadow-shifter Popobawa from Zanzibar folklore. A terrifying one-eyed creature with massive leathery bat-like wings perched on a traditional carved Swahili roof at night. Single glowing yellow eye, silhouette aesthetics, dark urban fantasy setting, moonlight and deep shadows.",
       "prompt_variants": [
@@ -2575,6 +3543,30 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "creature": {
+        "habitat": [
+          "Zanzibar Archipelago",
+          "Roofs",
+          "Shadows"
+        ],
+        "powers": [
+          "Shapeshifting",
+          "Night Terror induction",
+          "Possession"
+        ],
+        "strengths": [
+          "Fear harvesting",
+          "Flight"
+        ],
+        "weaknesses": [
+          "Daylight",
+          "Communal solidarity"
+        ],
+        "diet": "Fear / Psychic energy",
+        "size": "Variable (Human to Large Bat)"
+      }
     }
   },
   {
@@ -2632,6 +3624,39 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "hero": {
+        "titles": [],
+        "achievements": [],
+        "weapons_or_artifacts": [],
+        "legacy": ""
+      }
+    },
+    "rendering": {
+      "prompt_canon": "The Luo hero Luanda Magere, the stone warrior. A powerful dark-skinned man with skin texture like cracked granite, brandishing a traditional Luo hide shield and iron spear. Invincible posture, dramatic sunset lighting across the Kenyan savannah, historical epic cinematic style, 8k resolution.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -2687,6 +3712,38 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "creature": {
+        "habitat": [],
+        "powers": [],
+        "size": ""
+      }
+    },
+    "rendering": {
+      "prompt_canon": "The mystical Abada creature, size of a donkey with two crooked golden horns (one on forehead, one on neck), stag feet, ox tail, lush Congo jungle background, bioluminescent accents, photorealistic.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -2742,6 +3799,38 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "creature": {
+        "habitat": [],
+        "powers": [],
+        "size": ""
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Giant seven-headed black serpent Bida, scales shining like obsidian, raining gold dust over an ancient Sahel city, majestic and terrifying, sunset lighting, cinematic scale.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -2798,6 +3887,38 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "creature": {
+        "habitat": [],
+        "powers": [],
+        "size": ""
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Small hairless forest dwarves Biloko, covered in moss and leaves, large snouts, holding ancient bells, peeking from a hollow giant baobab tree, mystical green atmosphere, sharp detail.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   },
   {
@@ -2852,25 +3973,6 @@
         "Amphibious"
       ]
     },
-    "creature": {
-      "habitat": [
-        "Lake Victoria",
-        "River Nyanza"
-      ],
-      "powers": [
-        "Ambush",
-        "Piercing Tusks"
-      ],
-      "strengths": [
-        "Scale Armor (Arrow-proof)",
-        "Swimming Speed"
-      ],
-      "weaknesses": [
-        "None recorded"
-      ],
-      "diet": "Carnivorous (Hippos, Crocodiles)",
-      "size": "Large (Hippo-sized)"
-    },
     "rendering": {
       "prompt_canon": "The river monster Dingonek, leopard head, giant walrus tusks, armored scales like an armadillo, broad tail with stinger, emerging from dark river waters, hyper-realistic, intimidating.",
       "prompt_variants": [
@@ -2900,6 +4002,27 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "creature": {
+        "habitat": [
+          "Lake Victoria",
+          "River Nyanza"
+        ],
+        "powers": [
+          "Ambush",
+          "Piercing Tusks"
+        ],
+        "strengths": [
+          "Scale Armor (Arrow-proof)",
+          "Swimming Speed"
+        ],
+        "weaknesses": [
+          "None recorded"
+        ],
+        "diet": "Carnivorous (Hippos, Crocodiles)",
+        "size": "Large (Hippo-sized)"
+      }
     }
   },
   {
@@ -2956,6 +4079,38 @@
       "parents": [],
       "conjoint": [],
       "descendants": []
+    },
+    "type_specific": {
+      "creature": {
+        "habitat": [],
+        "powers": [],
+        "size": ""
+      }
+    },
+    "rendering": {
+      "prompt_canon": "Colossal winged eel Inkanyamba emerging from a massive waterfall, horse-like head, dark storm clouds and lightning, feathers made of wind, powerful and divine, cinematic lighting.",
+      "prompt_variants": [
+        {
+          "style_id": "regional_or_ethnic",
+          "label": "Regional/Ethnic Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "manga",
+          "label": "Manga Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "comic_marvel",
+          "label": "Comic Book Style",
+          "prompt": ""
+        },
+        {
+          "style_id": "modern_african_painting",
+          "label": "Modern African Art",
+          "prompt": ""
+        }
+      ]
     }
   }
 ]
