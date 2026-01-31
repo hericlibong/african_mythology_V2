@@ -5,6 +5,7 @@ import PromptBox from './PromptBox';
 import VisualManifestation from './VisualManifestation';
 import { MYTHOLOGICAL_DB } from '../services/mockData';
 import { MapPin, Shield, Zap, Heart, Scroll, Image as ImageIcon, Eye, EyeOff, Sparkles, Loader2, Cpu, GitFork } from 'lucide-react';
+import TypeSpecificDetails from './TypeSpecificDetails';
 
 interface EntityCardProps {
   data: MythologicalEntity;
@@ -248,6 +249,13 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
                 ))}
               </div>
             </section>
+
+            {/* Contract V2: Type Specific Details */}
+            <TypeSpecificDetails
+              entity={data}
+              className="border border-amber-900/30 bg-amber-950/10 rounded-lg p-4"
+            />
+
 
             <div className="h-px bg-stone-800 w-full"></div>
 

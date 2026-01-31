@@ -37,6 +37,41 @@ export interface Relations {
   descendants: string[];
 }
 
+// --- Contract V2 Extensions ---
+
+export interface DivinitySpecific {
+  cult?: {
+    offerings?: string[];
+    taboos?: string[];
+  };
+  domains?: string[];
+}
+
+export interface HeroSpecific {
+  titles?: string[];
+  achievements?: string[];
+  weapons_or_artifacts?: string[];
+  legacy?: string;
+}
+
+export interface CreatureSpecific {
+  habitat?: string[];
+  powers?: string[];
+  strengths?: string[];
+  weaknesses?: string[];
+  diet?: string;
+  size?: string;
+}
+
+export interface RenderingSpecific {
+  prompt_canon?: string;
+  prompt_variants?: Array<{
+    style_id: string;
+    label: string;
+    prompt: string;
+  }>;
+}
+
 export interface MythologicalEntity {
   entity_type: EntityType;
   name: string;
@@ -47,4 +82,16 @@ export interface MythologicalEntity {
   appearance: Appearance;
   story: Story;
   relations: Relations;
+
+  // Contract V2 Fields (Flexible: support both root and nested structures)
+  type_specific?: {
+    divinity?: DivinitySpecific;
+    hero?: HeroSpecific;
+    creature?: CreatureSpecific;
+  };
+  divinity?: DivinitySpecific;
+  hero?: HeroSpecific;
+  creature?: CreatureSpecific;
+  rendering?: RenderingSpecific;
+  sources?: Array<{ label: string; url: string }>;
 }
