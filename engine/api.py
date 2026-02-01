@@ -76,6 +76,7 @@ except Exception as e:
 
 class GenerateRequest(BaseModel):
     entity_name: str
+    style_id: str = "photoreal"
 
 
 # -----------------------------
@@ -96,13 +97,14 @@ def health_check():
 
 
 @app.get("/preview/{entity_name}")
-def get_prompt_preview(entity_name: str):
-    prompt = orchestrator.get_prompt_preview(entity_name)
+def get_prompt_preview(entity_name: str, style_id: str = "photoreal"):
+    prompt = orchestrator.get_prompt_preview(entity_name, style_id)
     if prompt == "Entity not found.":
         raise HTTPException(status_code=404, detail="Entity not found")
 
     return {
         "entity": entity_name,
+        "style_id": style_id,
         "prompt": prompt,
     }
 
@@ -110,13 +112,16 @@ def get_prompt_preview(entity_name: str):
 @app.post("/generate")
 def generate_image(request: GenerateRequest):
     entity_name = request.entity_name
+    style_id = request.style_id
 
     # 1) Prompt
-    prompt = orchestrator.get_prompt_preview(entity_name)
+    prompt = orchestrator.get_prompt_preview(entity_name, style_id)
     if prompt == "Entity not found.":
         raise HTTPException(status_code=404, detail="Entity not found")
+    if not prompt:
+        raise HTTPException(status_code=400, detail=f"No prompt available for style '{style_id}'")
 
-    logger.info(f"Generating image for {entity_name} with prompt: {prompt}")
+    logger.info(f"Generating image for {entity_name} [{style_id}] with prompt: {prompt}")
 
     try:
         # 2) Call Vertex AI (Imagen)
@@ -150,7 +155,11 @@ def generate_image(request: GenerateRequest):
         output_dir.mkdir(parents=True, exist_ok=True)
 
         safe_name = entity_name.lower().replace(" ", "_").replace("/", "-")
-        filename = f"{safe_name}.png"
+        # Filename: entity.png for photoreal, entity_style.png for others
+        if style_id == "photoreal":
+            filename = f"{safe_name}.png"
+        else:
+            filename = f"{safe_name}_{style_id}.png"
         file_path = output_dir / filename
 
         generated_image = images[0]
@@ -163,7 +172,19 @@ def generate_image(request: GenerateRequest):
         updated = False
         for entity in orchestrator.data:
             if entity.name.lower() == entity_name.lower():
-                entity.appearance.imageUrl = image_url
+                # Ensure rendering.images exists
+                if not entity.rendering:
+                    entity.rendering = {}
+                if "images" not in entity.rendering:
+                    entity.rendering["images"] = {}
+                
+                # Store URL by style
+                entity.rendering["images"][style_id] = image_url
+                
+                # Legacy sync for photoreal
+                if style_id == "photoreal":
+                    entity.appearance.imageUrl = image_url
+                
                 updated = True
                 break
 
@@ -174,6 +195,7 @@ def generate_image(request: GenerateRequest):
         return {
             "status": "success",
             "image_url": image_url,
+            "style_id": style_id,
             "prompt_used": prompt,
         }
 

@@ -70,6 +70,7 @@ export interface RenderingSpecific {
     label: string;
     prompt: string;
   }>;
+  images?: Record<string, string>;  // Map of style_id -> image URL
 }
 
 export interface MythologicalEntity {
