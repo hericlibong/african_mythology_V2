@@ -175,6 +175,52 @@ const App: React.FC = () => {
     setView('lineage');
   };
 
+  const handleImageGenerated = (entityName: string, styleId: string, url: string) => {
+    // 1. Update In-Memory DB (Persistence within session)
+    const dbEntity = MYTHOLOGICAL_DB.find(e => e.name === entityName);
+    if (dbEntity) {
+      if (!dbEntity.rendering) {
+        dbEntity.rendering = { images: {}, prompt_canon: '', prompt_variants: [] };
+      }
+      if (!dbEntity.rendering.images) {
+        dbEntity.rendering.images = {};
+      }
+      dbEntity.rendering.images[styleId] = url;
+    }
+
+    // 2. Update Search Results State (Triggers MiniCard re-render)
+    setResults(prevResults => prevResults.map(p => {
+      if (p.name === entityName) {
+        // Create a deep copy to ensure React detects the change
+        const updated = { ...p };
+        // Ensure rendering object exists
+        if (!updated.rendering) updated.rendering = { images: {}, prompt_canon: '', prompt_variants: [] };
+        if (!updated.rendering.images) updated.rendering.images = {};
+
+        // Update image
+        updated.rendering.images = {
+          // Keep existing images
+          ...updated.rendering.images,
+          [styleId]: url,
+        };
+        return updated;
+      }
+      return p;
+    }));
+
+    // 3. Update Selected Entity State (if needed, though EntityCard handles its own local state mostly)
+    if (selectedEntity?.name === entityName) {
+      setSelectedEntity(prev => {
+        if (!prev) return null;
+        const updated = { ...prev };
+        if (!updated.rendering) updated.rendering = { images: {}, prompt_canon: '', prompt_variants: [] };
+        if (!updated.rendering.images) updated.rendering.images = {};
+        updated.rendering.images = { ...updated.rendering.images, [styleId]: url };
+        return updated;
+      });
+    }
+  };
+
   // --- Render Helpers ---
 
   const renderArchive = () => (
@@ -244,6 +290,7 @@ const App: React.FC = () => {
               data={selectedEntity}
               onSelectEntity={handleSelectEntity}
               onOpenLineage={() => handleOpenLineage(selectedEntity)}
+              onImageGenerated={(styleId, url) => handleImageGenerated(selectedEntity.name, styleId, url)}
             />
           </div>
         )}

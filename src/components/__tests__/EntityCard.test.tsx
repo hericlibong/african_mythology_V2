@@ -104,4 +104,29 @@ describe('EntityCard Integration', () => {
             expect(screen.getByText(/Initialize Neural Render/i)).toBeInTheDocument();
         });
     });
+
+    it('should call onImageGenerated when generation succeeds', async () => {
+        const onImageGeneratedSpy = vi.fn();
+
+        // Setup mock response BEFORE action
+        mockFetch.mockResolvedValueOnce({
+            ok: true,
+            json: async () => ({ status: 'success', image_url: '/generated/callback_test.png' }),
+        });
+
+        render(<EntityCard data={mockEntity} onImageGenerated={onImageGeneratedSpy} />);
+
+        // 1. Click Generate
+        const generateBtn = screen.getByText(/Initialize Neural Render/i);
+        fireEvent.click(generateBtn);
+
+        // 3. Wait for Success
+        await waitFor(() => {
+            const img = screen.getByAltText('TestEntity');
+            expect(img).toBeInTheDocument();
+        });
+
+        // 4. Verify Callback
+        expect(onImageGeneratedSpy).toHaveBeenCalledWith('photoreal', '/generated/callback_test.png');
+    });
 });

@@ -12,6 +12,7 @@ interface EntityCardProps {
   data: MythologicalEntity;
   onSelectEntity?: (entity: MythologicalEntity) => void;
   onOpenLineage?: () => void;
+  onImageGenerated?: (styleId: string, url: string) => void;
 }
 
 // Style definitions
@@ -23,7 +24,7 @@ const STYLE_DEFINITIONS = [
   { id: 'modern_african_painting', label: 'African Art' },
 ];
 
-const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLineage }) => {
+const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLineage, onImageGenerated }) => {
   const [showPrompt, setShowPrompt] = useState(false);
   const [generationState, setGenerationState] = useState<'idle' | 'generating' | 'completed' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -146,6 +147,11 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
           setGenerationState('completed');
         }
         setErrorMessage(null);
+
+        // Propagate to parent to update thumbnail
+        if (onImageGenerated) {
+          onImageGenerated(styleToGenerate, result.image_url);
+        }
       } else {
         console.error("API returned error:", result);
         setGenerationState('error');
