@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Navbar from './components/Navbar';
 import SearchBar from './components/SearchBar';
 import EntityCard from './components/EntityCard';
@@ -16,17 +16,109 @@ import { Dices, Sparkles, ArrowLeft } from 'lucide-react';
 
 type ViewState = 'landing' | 'archive' | 'about' | 'map' | 'lineage' | 'types';
 
+// Parse URL hash to extract view and entity
+const parseHash = (): { view: ViewState; entityName?: string; typeFilter?: EntityType } => {
+  const hash = window.location.hash.slice(1); // Remove '#'
+  if (!hash) return { view: 'landing' };
+
+  const parts = hash.split('/');
+  const viewPart = parts[0] as ViewState;
+
+  const validViews: ViewState[] = ['landing', 'archive', 'about', 'map', 'lineage', 'types'];
+  if (!validViews.includes(viewPart)) return { view: 'landing' };
+
+  const result: { view: ViewState; entityName?: string; typeFilter?: EntityType } = { view: viewPart };
+
+  // Parse entity or type filter from path
+  if (parts[1]) {
+    if (viewPart === 'types' && ['Divinity', 'Hero', 'Creature'].includes(parts[1])) {
+      result.typeFilter = parts[1] as EntityType;
+    } else {
+      result.entityName = decodeURIComponent(parts[1]);
+    }
+  }
+
+  return result;
+};
+
+// Build hash from state
+const buildHash = (view: ViewState, entityName?: string, typeFilter?: EntityType): string => {
+  if (view === 'landing') return '';
+  let hash = view;
+  if (view === 'archive' && entityName) {
+    hash += '/' + encodeURIComponent(entityName);
+  } else if (view === 'types' && typeFilter) {
+    hash += '/' + typeFilter;
+  } else if (view === 'lineage' && entityName) {
+    hash += '/' + encodeURIComponent(entityName);
+  }
+  return hash;
+};
+
 const App: React.FC = () => {
-  const [view, setView] = useState<ViewState>('landing');
+  // Initialize state from URL hash
+  const initialState = parseHash();
+
+  const [view, setView] = useState<ViewState>(initialState.view);
   const [results, setResults] = useState<MythologicalEntity[]>([]);
-  const [selectedEntity, setSelectedEntity] = useState<MythologicalEntity | null>(null);
-  const [lineageFocusEntity, setLineageFocusEntity] = useState<MythologicalEntity | null>(null);
-  
+  const [selectedEntity, setSelectedEntity] = useState<MythologicalEntity | null>(() => {
+    if (initialState.entityName) {
+      return MYTHOLOGICAL_DB.find(e => e.name.toLowerCase() === initialState.entityName!.toLowerCase()) || null;
+    }
+    return null;
+  });
+  const [lineageFocusEntity, setLineageFocusEntity] = useState<MythologicalEntity | null>(() => {
+    if (initialState.view === 'lineage' && initialState.entityName) {
+      return MYTHOLOGICAL_DB.find(e => e.name.toLowerCase() === initialState.entityName!.toLowerCase()) || null;
+    }
+    return null;
+  });
+
   // New State for Type Filtering
-  const [selectedTypeFilter, setSelectedTypeFilter] = useState<EntityType | null>(null);
-  
+  const [selectedTypeFilter, setSelectedTypeFilter] = useState<EntityType | null>(initialState.typeFilter || null);
+
   const [loading, setLoading] = useState(false);
-  const [hasSearched, setHasSearched] = useState(false);
+  const [hasSearched, setHasSearched] = useState(initialState.view === 'archive' && !!initialState.entityName);
+
+  // Sync URL hash when state changes
+  useEffect(() => {
+    const entityName = view === 'lineage' ? lineageFocusEntity?.name : selectedEntity?.name;
+    const newHash = buildHash(view, entityName, selectedTypeFilter || undefined);
+
+    if (window.location.hash.slice(1) !== newHash) {
+      window.location.hash = newHash;
+    }
+  }, [view, selectedEntity, lineageFocusEntity, selectedTypeFilter]);
+
+  // Listen for browser back/forward
+  useEffect(() => {
+    const handleHashChange = () => {
+      const state = parseHash();
+      setView(state.view);
+
+      if (state.entityName) {
+        const entity = MYTHOLOGICAL_DB.find(e => e.name.toLowerCase() === state.entityName!.toLowerCase());
+        if (state.view === 'lineage') {
+          setLineageFocusEntity(entity || null);
+        } else {
+          setSelectedEntity(entity || null);
+          if (entity) setHasSearched(true);
+        }
+      } else {
+        setSelectedEntity(null);
+        setLineageFocusEntity(null);
+      }
+
+      if (state.typeFilter) {
+        setSelectedTypeFilter(state.typeFilter);
+      } else {
+        setSelectedTypeFilter(null);
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   // --- Actions ---
 
@@ -74,7 +166,7 @@ const App: React.FC = () => {
     // However, to keep the context "Back to categories", let's handle it within 'types' view?
     // Simplified approach: View card in 'archive' mode effectively.
     if (view === 'map' || view === 'lineage' || view === 'types') {
-        setView('archive');
+      setView('archive');
     }
   };
 
@@ -93,7 +185,7 @@ const App: React.FC = () => {
           Search The <span className="text-amber-600">Archive</span>
         </h1>
         <p className={`text-stone-400 text-center max-w-lg mx-auto mb-8 font-light text-lg transition-opacity duration-500 ${hasSearched ? 'opacity-0 h-0 overflow-hidden m-0' : 'opacity-100'}`}>
-          Discover lost and found myths from Sub-Saharan Africa. 
+          Discover lost and found myths from Sub-Saharan Africa.
           Experience Divinities, Heroes, and Creatures reimagined by AI.
         </p>
       </div>
@@ -101,8 +193,8 @@ const App: React.FC = () => {
       {/* Search Section */}
       <div className="flex flex-col items-center w-full max-w-2xl mx-auto mb-12 relative z-10">
         <SearchBar onSearch={handleSearch} isLoading={loading} />
-        
-        <button 
+
+        <button
           onClick={handleRandomDiscovery}
           disabled={loading}
           className="mt-4 flex items-center gap-2 px-6 py-2 rounded-full border border-stone-800 bg-stone-900/50 text-stone-400 text-sm hover:text-amber-400 hover:border-amber-500/50 hover:bg-stone-800 transition-all duration-300 group"
@@ -140,17 +232,17 @@ const App: React.FC = () => {
         {!loading && selectedEntity && (
           <div className="animate-fadeIn">
             {results.length > 1 && (
-              <button 
+              <button
                 onClick={() => setSelectedEntity(null)}
                 className="mb-6 flex items-center gap-2 text-xs font-mono uppercase text-stone-500 hover:text-amber-500 transition-colors"
               >
                 <ArrowLeft size={14} /> Back to selection
               </button>
             )}
-            <EntityCard 
-              key={selectedEntity.name} 
-              data={selectedEntity} 
-              onSelectEntity={handleSelectEntity} 
+            <EntityCard
+              key={selectedEntity.name}
+              data={selectedEntity}
+              onSelectEntity={handleSelectEntity}
               onOpenLineage={() => handleOpenLineage(selectedEntity)}
             />
           </div>
@@ -176,17 +268,17 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-stone-950 text-stone-200 selection:bg-amber-500/30 selection:text-amber-200 font-sans overflow-x-hidden">
-      
+
       {/* Persistent Navbar */}
-      <Navbar 
-        currentView={view === 'lineage' ? 'archive' : view} 
-        onHomeClick={resetToHome} 
-        onSearchClick={() => setView('archive')} 
-        onMapClick={() => setView('map')} 
-        onAboutClick={() => setView('about')} 
+      <Navbar
+        currentView={view === 'lineage' ? 'archive' : view}
+        onHomeClick={resetToHome}
+        onSearchClick={() => setView('archive')}
+        onMapClick={() => setView('map')}
+        onAboutClick={() => setView('about')}
         onTypesClick={() => {
-            setView('types');
-            setSelectedTypeFilter(null); // Reset filter when clicking main nav
+          setView('types');
+          setSelectedTypeFilter(null); // Reset filter when clicking main nav
         }}
       />
 
@@ -202,21 +294,21 @@ const App: React.FC = () => {
         {view === 'landing' && <LandingPage onEnter={() => setView('archive')} />}
         {view === 'archive' && renderArchive()}
         {view === 'map' && <MapPage onSelectEntity={handleSelectEntity} />}
-        
+
         {view === 'types' && !selectedTypeFilter && (
-            <TypesLobby onSelectType={(type) => setSelectedTypeFilter(type)} />
+          <TypesLobby onSelectType={(type) => setSelectedTypeFilter(type)} />
         )}
         {view === 'types' && selectedTypeFilter && (
-            <FilteredList 
-                category={selectedTypeFilter} 
-                onBack={() => setSelectedTypeFilter(null)}
-                onSelectEntity={handleSelectEntity}
-            />
+          <FilteredList
+            category={selectedTypeFilter}
+            onBack={() => setSelectedTypeFilter(null)}
+            onSelectEntity={handleSelectEntity}
+          />
         )}
 
         {view === 'lineage' && lineageFocusEntity && (
-          <LineageTree 
-            focusEntity={lineageFocusEntity} 
+          <LineageTree
+            focusEntity={lineageFocusEntity}
             onClose={() => setView('archive')}
             onNodeClick={handleOpenLineage}
           />
