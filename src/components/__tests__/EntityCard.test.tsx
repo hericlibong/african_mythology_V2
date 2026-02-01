@@ -129,4 +129,23 @@ describe('EntityCard Integration', () => {
         // 4. Verify Callback
         expect(onImageGeneratedSpy).toHaveBeenCalledWith('photoreal', '/generated/callback_test.png');
     });
+
+    it('should show generation button if image fails to load', async () => {
+        // Create entity with a "broken" image URL
+        const brokenEntity = { ...mockEntity, appearance: { ...mockEntity.appearance, imageUrl: '/broken/image.png' } };
+
+        render(<EntityCard data={brokenEntity} />);
+
+        // 1. Initially it should try to show the image (so button hidden)
+        const img = screen.getByAltText('TestEntity');
+        expect(img).toBeInTheDocument();
+
+        // 2. Trigger error on the image
+        fireEvent.error(img);
+
+        // 3. Expect button to appear
+        await waitFor(() => {
+            expect(screen.getByText(/Initialize Neural Render/i)).toBeInTheDocument();
+        });
+    });
 });

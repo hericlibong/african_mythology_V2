@@ -33,6 +33,9 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
   // Local state to track newly generated images (for immediate display before data refresh)
   const [generatedImages, setGeneratedImages] = useState<Record<string, string>>({});
 
+  // Track failed image URLs to prevent infinite load loops and allow fallback to generation view
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
+
   // Derive available styles with prompt availability
   const availableStyles: StyleOption[] = useMemo(() => {
     return STYLE_DEFINITIONS.map(def => {
@@ -49,21 +52,28 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
 
   // Derive current image URL: check local state first, then data.rendering.images, then legacy
   const currentImageUrl = useMemo(() => {
+    let url: string | undefined;
+
     // Priority 1: Just-generated image in local state
     if (generatedImages[selectedStyle]) {
-      return generatedImages[selectedStyle];
+      url = generatedImages[selectedStyle];
     }
     // Priority 2: Persisted in rendering.images
-    const imagesMap = data.rendering?.images;
-    if (imagesMap && imagesMap[selectedStyle]) {
-      return imagesMap[selectedStyle];
+    else if (data.rendering?.images && data.rendering?.images[selectedStyle]) {
+      url = data.rendering?.images[selectedStyle];
     }
     // Priority 3: Legacy fallback for photoreal
-    if (selectedStyle === 'photoreal' && data.appearance.imageUrl) {
-      return data.appearance.imageUrl;
+    else if (selectedStyle === 'photoreal' && data.appearance.imageUrl) {
+      url = data.appearance.imageUrl;
     }
-    return undefined;
-  }, [data, selectedStyle, generatedImages]);
+
+    // Check if this URL is known to be broken
+    if (url && failedImages.has(url)) {
+      return undefined;
+    }
+
+    return url;
+  }, [data, selectedStyle, generatedImages, failedImages]);
 
   // Derive prompt for current style
   const currentPrompt = useMemo(() => {
@@ -292,7 +302,20 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
                     src={currentImageUrl}
                     alt={data.name}
                     className="w-full h-full object-cover"
-                    onError={handleImageError}
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      const brokenUrl = target.src;
+                      // Backstop: If we have a broken URL, add it to failedImages
+                      setFailedImages(prev => {
+                        const newSet = new Set(prev);
+                        newSet.add(brokenUrl);
+                        // Also try adding the relative path version if it matches
+                        if (currentImageUrl && brokenUrl.includes(currentImageUrl)) {
+                          newSet.add(currentImageUrl);
+                        }
+                        return newSet;
+                      });
+                    }}
                   />
                 ) : (
                   <VisualManifestation entity={data} />
