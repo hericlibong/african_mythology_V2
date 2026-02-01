@@ -85,7 +85,23 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
     setGeneratedImages({});
   }, [data.name]);
 
+  // Reset generation state when style changes, to ensure button reappears if no image exists
+  useEffect(() => {
+    // If we switch to a style that has an image, we are "completed" (showing image).
+    // If we switch to a style that has NO image, we should be "idle" (showing button).
+    // The derived 'currentImageUrl' handles the image source, but 'generationState' controls the overlay.
+    // However, simpler logic is: just reset to 'idle'. 
+    // If an image exists, 'currentImageUrl' will be truthy, and the condition 
+    // `generationState !== 'completed' && !currentImageUrl`
+    // in the JSX will evaluate to false (because !currentImageUrl is false), so the overlay won't show.
+    // If no image exists, !currentImageUrl is true, and 'idle' makes the overlay visible.
+    setGenerationState('idle');
+  }, [selectedStyle]);
+
   const handleGenerate = async () => {
+    // Capture style at start of generation to avoid race conditions if user switches style while waiting
+    const styleToGenerate = selectedStyle;
+
     setGenerationState('generating');
     setErrorMessage(null);
 
@@ -95,7 +111,7 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ entity_name: data.name, style_id: selectedStyle }),
+        body: JSON.stringify({ entity_name: data.name, style_id: styleToGenerate }),
       });
 
       if (response.status === 429) {
@@ -121,9 +137,14 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
         // Store the generated image URL in local state for IMMEDIATE display
         setGeneratedImages(prev => ({
           ...prev,
-          [selectedStyle]: result.image_url
+          [styleToGenerate]: result.image_url
         }));
-        setGenerationState('completed');
+
+        // Only update completion state if we are still on the same style
+        // This avoids showing "Completed" state on a different style that might not have an image yet
+        if (selectedStyle === styleToGenerate) {
+          setGenerationState('completed');
+        }
         setErrorMessage(null);
       } else {
         console.error("API returned error:", result);

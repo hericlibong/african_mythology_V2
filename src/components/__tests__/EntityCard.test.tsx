@@ -18,7 +18,14 @@ const mockEntity: MythologicalEntity = {
     attributes: { domains: ['Test Domain'], symbols: ['Test Symbol'], power_objects: [], symbolic_animals: [] },
     appearance: { physical_signs: [], manifestations: 'Test', image_generation_prompt: 'A test prompt', imageUrl: '' }, // Empty imageUrl to show button
     story: { description: 'Test Description', characteristics: [] },
-    relations: { parents: [], conjoint: [], descendants: [] }
+    relations: { parents: [], conjoint: [], descendants: [] },
+    rendering: {
+        images: {},
+        prompt_canon: 'Canon prompt',
+        prompt_variants: [
+            { style_id: 'regional_or_ethnic', prompt: 'Regional prompt', label: 'Regional' }
+        ]
+    }
 };
 
 describe('EntityCard Integration', () => {
@@ -58,6 +65,43 @@ describe('EntityCard Integration', () => {
             const img = screen.getByAltText('TestEntity');
             expect(img).toBeInTheDocument();
             expect(img).toHaveAttribute('src', '/generated/test.png');
+        });
+    });
+
+    it('should reset to idle state when switching styles', async () => {
+        render(<EntityCard data={mockEntity} />);
+
+        // 1. Start with Photoreal (default) - Button should be visible
+        let generateBtn = screen.getByText(/Initialize Neural Render/i);
+        expect(generateBtn).toBeInTheDocument();
+
+        // 2. Simulate generation completion (manually setting state via mock or just assuming start state)
+        // For this test, let's just assert that switching styles shows the button 
+        // even if we were in a different state, but since we can't easily inject state here without completing a flow:
+
+        // Let's do a quick generation flow first
+        mockFetch.mockResolvedValueOnce({
+            ok: true,
+            json: async () => ({ status: 'success', image_url: '/generated/photoreal.png' }),
+        });
+
+        fireEvent.click(generateBtn);
+
+        await waitFor(() => {
+            expect(screen.getByAltText('TestEntity')).toHaveAttribute('src', '/generated/photoreal.png');
+        });
+
+        // 3. Switch Style to "Regional"
+        // Find the style selector. The component uses a StyleSelector. 
+        // We need to find how to trigger it. Based on the code, it renders options.
+        // Let's assume we can click on the text "Regional"
+        const regionalBtn = screen.getByText('Regional');
+        fireEvent.click(regionalBtn);
+
+        // 4. Verify "Initialize Neural Render" button is visible again
+        // Because "Regional" has no image in our mock data
+        await waitFor(() => {
+            expect(screen.getByText(/Initialize Neural Render/i)).toBeInTheDocument();
         });
     });
 });
