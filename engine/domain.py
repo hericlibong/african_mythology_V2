@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 from pydantic import BaseModel, Field, ConfigDict
 
 class Origin(BaseModel):
@@ -43,6 +43,9 @@ class MythologicalEntity(BaseModel):
     appearance: Appearance
     story: Story
     relations: Relations
+    # Contract V2 fields
+    type_specific: Optional[Dict[str, Any]] = None
+    rendering: Optional[Dict[str, Any]] = None
 
 class ImageGenerationRequest(BaseModel):
     entity_name: str

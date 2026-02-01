@@ -6,6 +6,7 @@ import VisualManifestation from './VisualManifestation';
 import { MYTHOLOGICAL_DB } from '../services/mockData';
 import { MapPin, Shield, Zap, Heart, Scroll, Image as ImageIcon, Eye, EyeOff, Sparkles, Loader2, Cpu, GitFork } from 'lucide-react';
 import TypeSpecificDetails from './TypeSpecificDetails';
+import StyleSelector, { StyleOption } from './StyleSelector';
 
 interface EntityCardProps {
   data: MythologicalEntity;
@@ -13,20 +14,80 @@ interface EntityCardProps {
   onOpenLineage?: () => void;
 }
 
+// Style definitions
+const STYLE_DEFINITIONS = [
+  { id: 'photoreal', label: 'Photoreal' },
+  { id: 'regional_or_ethnic', label: 'Regional' },
+  { id: 'manga', label: 'Manga' },
+  { id: 'comic_marvel', label: 'Comic' },
+  { id: 'modern_african_painting', label: 'African Art' },
+];
+
 const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLineage }) => {
   const [showPrompt, setShowPrompt] = useState(false);
   const [generationState, setGenerationState] = useState<'idle' | 'generating' | 'completed' | 'error'>('idle');
-  const [imageUrl, setImageUrl] = useState(data.appearance.imageUrl);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [selectedStyle, setSelectedStyle] = useState('photoreal');
 
-  // Reset generation state when navigating to a new entity
+  // Local state to track newly generated images (for immediate display before data refresh)
+  const [generatedImages, setGeneratedImages] = useState<Record<string, string>>({});
+
+  // Derive available styles with prompt availability
+  const availableStyles: StyleOption[] = useMemo(() => {
+    return STYLE_DEFINITIONS.map(def => {
+      let hasPrompt = false;
+      if (def.id === 'photoreal') {
+        hasPrompt = !!(data.rendering?.prompt_canon || data.appearance.image_generation_prompt);
+      } else {
+        const variant = data.rendering?.prompt_variants?.find(v => v.style_id === def.id);
+        hasPrompt = !!(variant?.prompt);
+      }
+      return { ...def, hasPrompt };
+    });
+  }, [data]);
+
+  // Derive current image URL: check local state first, then data.rendering.images, then legacy
+  const currentImageUrl = useMemo(() => {
+    // Priority 1: Just-generated image in local state
+    if (generatedImages[selectedStyle]) {
+      return generatedImages[selectedStyle];
+    }
+    // Priority 2: Persisted in rendering.images
+    const imagesMap = data.rendering?.images;
+    if (imagesMap && imagesMap[selectedStyle]) {
+      return imagesMap[selectedStyle];
+    }
+    // Priority 3: Legacy fallback for photoreal
+    if (selectedStyle === 'photoreal' && data.appearance.imageUrl) {
+      return data.appearance.imageUrl;
+    }
+    return undefined;
+  }, [data, selectedStyle, generatedImages]);
+
+  // Derive prompt for current style
+  const currentPrompt = useMemo(() => {
+    if (selectedStyle === 'photoreal') {
+      return data.rendering?.prompt_canon || data.appearance.image_generation_prompt || '';
+    }
+    const variant = data.rendering?.prompt_variants?.find(v => v.style_id === selectedStyle);
+    return variant?.prompt || '';
+  }, [data, selectedStyle]);
+
+  // Combine persisted + local images for indicator dots
+  const allImagesMap = useMemo(() => {
+    return { ...data.rendering?.images, ...generatedImages };
+  }, [data.rendering?.images, generatedImages]);
+
+  // Reset state when entity changes
   useEffect(() => {
     setGenerationState('idle');
-    setImageUrl(data.appearance.imageUrl);
-  }, [data]);
+    setSelectedStyle('photoreal');
+    setGeneratedImages({});
+  }, [data.name]);
 
   const handleGenerate = async () => {
     setGenerationState('generating');
+    setErrorMessage(null);
 
     try {
       const response = await fetch('/generate', {
@@ -34,7 +95,7 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ entity_name: data.name }),
+        body: JSON.stringify({ entity_name: data.name, style_id: selectedStyle }),
       });
 
       if (response.status === 429) {
@@ -57,7 +118,11 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
       const result = await response.json();
 
       if (result.status === 'success') {
-        setImageUrl(result.image_url);
+        // Store the generated image URL in local state for IMMEDIATE display
+        setGeneratedImages(prev => ({
+          ...prev,
+          [selectedStyle]: result.image_url
+        }));
         setGenerationState('completed');
         setErrorMessage(null);
       } else {
@@ -103,8 +168,13 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
   };
 
   const handleImageError = () => {
-    console.warn(`Failed to load image for ${data.name}. Resetting state.`);
-    setImageUrl(undefined);
+    console.warn(`Failed to load image for ${data.name} [${selectedStyle}]. Resetting.`);
+    // Remove from local cache if it was a newly generated one that failed
+    setGeneratedImages(prev => {
+      const copy = { ...prev };
+      delete copy[selectedStyle];
+      return copy;
+    });
     setGenerationState('error');
   };
 
@@ -150,7 +220,7 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
             <div className="aspect-[3/4] w-full rounded-lg overflow-hidden border border-stone-800 relative group bg-black shadow-lg">
 
               {/* IDLE & GENERATING OVERLAYS (The "Screen") */}
-              {generationState !== 'completed' && !imageUrl && (
+              {generationState !== 'completed' && !currentImageUrl && (
                 <div className="absolute inset-0 z-20 bg-stone-950 flex flex-col items-center justify-center p-6 text-center">
                   {/* Grid Texture Background */}
                   <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
@@ -189,10 +259,10 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
               )}
 
               {/* COMPLETED STATE: Reveal Image or Fallback */}
-              <div className={`w-full h-full transition-opacity duration-1000 ease-in-out ${generationState === 'completed' || imageUrl ? 'opacity-100' : 'opacity-0'}`}>
-                {imageUrl ? (
+              <div className={`w-full h-full transition-opacity duration-1000 ease-in-out ${generationState === 'completed' || currentImageUrl ? 'opacity-100' : 'opacity-0'}`}>
+                {currentImageUrl ? (
                   <img
-                    src={imageUrl}
+                    src={currentImageUrl}
                     alt={data.name}
                     className="w-full h-full object-cover"
                     onError={handleImageError}
@@ -203,12 +273,23 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
               </div>
 
               {/* Tech Label Overlay (Visible only after generation) */}
-              <div className={`absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent transition-opacity duration-1000 ${generationState === 'completed' || imageUrl ? 'opacity-100' : 'opacity-0'}`}>
+              <div className={`absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent transition-opacity duration-1000 ${generationState === 'completed' || currentImageUrl ? 'opacity-100' : 'opacity-0'}`}>
                 <div className="flex items-center gap-2 text-white/60 text-xs font-mono">
                   <ImageIcon size={12} />
-                  <span>{imageUrl ? 'Generative Render Output' : 'Abstract Reconstruction'}</span>
+                  <span>{currentImageUrl ? 'Generative Render Output' : 'Abstract Reconstruction'}</span>
                 </div>
               </div>
+            </div>
+
+            {/* Style Selector */}
+            <div className="mt-4">
+              <span className="text-xs font-mono uppercase tracking-wider text-stone-500 mb-2 block">Render Style</span>
+              <StyleSelector
+                styles={availableStyles}
+                selectedStyle={selectedStyle}
+                onSelectStyle={setSelectedStyle}
+                imagesMap={allImagesMap}
+              />
             </div>
 
             {/* Prompt Toggle */}
@@ -223,7 +304,7 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
 
               {showPrompt && (
                 <div className="animate-fadeIn mt-2">
-                  <PromptBox prompt={data.appearance.image_generation_prompt} />
+                  <PromptBox prompt={currentPrompt} />
                 </div>
               )}
             </div>

@@ -22,9 +22,21 @@ class ImageOrchestrator:
         missing = self.get_missing_images()
         return len(self.data), len(missing)
     
-    def get_prompt_preview(self, entity_name: str) -> str:
-        """Returns the prompt for a specific entity."""
+    def get_prompt_preview(self, entity_name: str, style_id: str = "photoreal") -> str:
+        """Returns the prompt for a specific entity and style."""
         for entity in self.data:
             if entity.name.lower() == entity_name.lower():
-                return entity.appearance.image_generation_prompt
+                # Photoreal: use rendering.prompt_canon or fallback to legacy
+                if style_id == "photoreal":
+                    if entity.rendering and entity.rendering.get("prompt_canon"):
+                        return entity.rendering["prompt_canon"]
+                    return entity.appearance.image_generation_prompt
+                
+                # Other styles: lookup in prompt_variants
+                if entity.rendering and entity.rendering.get("prompt_variants"):
+                    for variant in entity.rendering["prompt_variants"]:
+                        if variant.get("style_id") == style_id and variant.get("prompt"):
+                            return variant["prompt"]
+                
+                return ""  # Empty prompt for unavailable style
         return "Entity not found."
