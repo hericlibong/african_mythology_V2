@@ -290,3 +290,252 @@ All of them are optional fields inside their block. Empty block = do not render.
 - No automatic “truth engine”.
 - No forced genealogy completion.
 - No default images shipped with the dataset.
+
+
+Voici un contenu **prêt à copier-coller** pour compléter l’issue #18 (Docs : mapping Contract V2 → UI + convention des styles).
+Tu peux le mettre dans `docs/CONTRACT_V2.md` (ou en addendum à la fin).
+
+---
+
+## Addendum — Contract V2 : mapping UI + convention des styles (render)
+
+### Objectif
+
+Fixer une convention stable pour que :
+
+* l’enrichissement futur soit **mécanique** (400+ entités),
+* le frontend sache **quoi afficher** sans heuristique,
+* la génération d’images multi-style reste **compatible** avec l’existant.
+
+---
+
+## 1) Règle “silent add” (principe)
+
+
+* Toute entité possède les blocs type_specific et rendering.
+
+* Ces blocs font partie du contrat structurel, pas de l’enrichissement.
+
+* Ils peuvent être :
+
+  vides,
+
+* partiellement remplis,
+
+* ou pleinement enrichis.
+
+* 👉 L’absence d’affichage vient d’un manque de données, pas d’un manque de structure.
+
+* 👉 Conséquence : on peut enrichir progressivement (entité par entité) sans casser le site.
+
+---
+
+## 2) Structure officielle : `type_specific`
+
+`type_specific` contient les champs propres au type de l’entité (divinity / hero / creature).
+
+* Type : objet libre (clé/valeur), mais **mêmes clés recommandées** par type.
+* Si absent : aucune section “type” ajoutée dans l’UI.
+
+Exemples de clés recommandées (indicatives) :
+
+* **divinity** : `domains`, `symbols`, `rituals`, `taboos`
+* **hero** : `quests`, `weapons`, `allies`, `enemies`
+* **creature** : `habitat`, `abilities`, `weaknesses`, `omens`
+
+---
+
+## 3) Structure officielle : `rendering`
+
+Le bloc `rendering` sert à gérer la génération d’images **par style**.
+
+### 3.1 `rendering.images`
+
+* Dictionnaire `style_id -> url`
+* Sert à afficher la **pastille verte** et l’image au clic.
+
+Exemple :
+
+```json
+"rendering": {
+  "images": {
+    "photoreal": "https://.../mami_wata.png",
+    "manga": "https://.../mami_wata_manga.png"
+  }
+}
+```
+
+### 3.2 `rendering.prompt_canon`
+
+* Prompt “canon” (référence) utilisé pour **photoreal**.
+* Si absent, fallback legacy : `appearance.image_generation_prompt`.
+
+### 3.3 `rendering.prompt_variants`
+
+* Liste des prompts alternatifs (un prompt par style).
+* Chaque item contient :
+
+  * `style_id` (obligatoire)
+  * `prompt` (obligatoire)
+
+Exemple :
+
+```json
+"prompt_variants": [
+  { "style_id": "manga", "prompt": "..." },
+  { "style_id": "comic_marvel", "prompt": "..." }
+]
+```
+
+---
+
+## 4) Convention des `style_id` (référence unique)
+
+Liste officielle des styles supportés côté UI + API :
+
+* `photoreal` (canon / legacy compatible)
+* `regional_or_ethnic`
+* `manga`
+* `comic_marvel`
+* `modern_african_painting`
+
+Règle :
+
+* **Un bouton UI = un style_id**
+* **Une image générée = stockée dans rendering.images[style_id]**
+
+---
+
+## 5) Mapping UI (règles simples)
+
+### 5.1 Affichage des boutons de style
+
+* L’UI affiche le bouton **Photoreal** si :
+
+  * `rendering.prompt_canon` existe **OU**
+  * `appearance.image_generation_prompt` existe (legacy)
+* L’UI affiche un bouton variant (ex: Manga) si :
+
+  * `rendering.prompt_variants` contient un item avec `style_id` correspondant **et** un `prompt` non vide
+
+### 5.2 Affichage des pastilles (indicateur “image dispo”)
+
+* Pastille verte sur un style si :
+
+  * `rendering.images[style_id]` existe (URL non vide)
+
+---
+
+## 6) Exemple JSON complet (3 entités)
+
+> Objectif : montrer la convention “enrichi vs non enrichi” + multi-style.
+
+### 6.1 Divinity (enrichie, multi-style)
+
+```json
+{
+  "name": "Mami Wata",
+  "type": "divinity",
+  "subtitle": "Sovereign Spirit of the Oceans",
+  "origin": { "region": "Multi-ethnic (Pan-African)", "pantheon": "Vodun / Diaspora" },
+
+  "appearance": {
+    "imageUrl": "https://.../mami_wata.png",
+    "image_generation_prompt": "A hyper-realistic cinematic shot of Mami Wata..."
+  },
+
+  "story": {
+    "legend": "The 'Mother of Waters' who controls the wealth of the seas..."
+  },
+
+  "type_specific": {
+    "domains": ["Water", "Wealth", "Beauty", "Seduction"],
+    "symbols": ["Snake", "Mirror", "Golden Comb"],
+    "rituals": ["Perfume", "White Kaolin", "Sweet fruits"],
+    "taboos": ["Disrespecting water"]
+  },
+
+  "rendering": {
+    "prompt_canon": "A hyper-realistic cinematic shot of Mami Wata... (canon version)",
+    "prompt_variants": [
+      {
+        "style_id": "regional_or_ethnic",
+        "prompt": "Mami Wata depicted in the style of vivid West African shrine chromolithography..."
+      },
+      {
+        "style_id": "manga",
+        "prompt": "Mami Wata in high-quality anime style..."
+      },
+      {
+        "style_id": "comic_marvel",
+        "prompt": "Mami Wata as a powerful comic book superheroine..."
+      },
+      {
+        "style_id": "modern_african_painting",
+        "prompt": "Abstract contemporary oil painting, Mami Wata..."
+      }
+    ],
+    "images": {
+      "photoreal": "https://.../mami_wata.png",
+      "manga": "https://.../mami_wata_manga.png"
+    }
+  }
+}
+```
+
+### 6.2 Hero (non enrichi, legacy only)
+
+```json
+{
+  "name": "Oduduwa",
+  "type": "hero",
+  "subtitle": "Founder figure",
+  "appearance": {
+    "imageUrl": "https://.../oduduwa.png",
+    "image_generation_prompt": "Oduduwa descending from a golden light..."
+  },
+  "story": { "legend": "..." }
+}
+```
+
+### 6.3 Creature (enrichie, mais sans variants)
+
+```json
+{
+  "name": "Popobawa",
+  "type": "creature",
+  "subtitle": "Shadow-shifter",
+  "appearance": {
+    "imageUrl": "https://.../popobawa.png",
+    "image_generation_prompt": "A terrifying one-eyed creature..."
+  },
+  "type_specific": {
+    "habitat": ["Zanzibar rooftops"],
+    "abilities": ["Shadow shifting"],
+    "weaknesses": ["Light exposure"]
+  },
+  "rendering": {
+    "images": {
+      "photoreal": "https://.../popobawa.png"
+    }
+  }
+}
+```
+
+---
+
+## Critère de fin (issue #18)
+
+* Le doc explique clairement :
+
+  * la règle “silent add”
+  * la structure `type_specific`
+  * la structure `rendering` (prompt_canon, prompt_variants, images)
+  * la liste officielle des `style_id`
+  * 1 exemple complet (ici : 3 pour couvrir les cas)
+* Le doc est **utilisable tel quel** pour enrichir des entités en série.
+
+---
+
+
+

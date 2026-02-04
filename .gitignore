@@ -32,7 +32,6 @@ engine/__pycache__/
 .pytest_cache/
 .env.hf
 
-# Hugging Face Space: exclude binaries & local assets
-docs/
+# Hugging Face Space: exclude binaries & local assetsdocs/
 public/generated_images/
 reproduce_issue.py
