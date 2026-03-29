@@ -1,9 +1,15 @@
 import pytest
 import json
 import shutil
+import sys
+import os
 from pathlib import Path
-from engine.domain import MythologicalEntity
-from engine.loader import load_mythology_data, save_mythology_data
+
+# Add engine directory to sys.path (same pattern as engine/tests/integration/)
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'engine'))
+
+from domain import MythologicalEntity
+from loader import load_mythology_data, save_mythology_data
 
 # Mock data path to avoid overwriting real data
 TEST_DATA_PATH = Path("tests/fixtures/test_mythology_data.json")
@@ -73,7 +79,7 @@ def mock_loader_data_path(monkeypatch, tmp_path):
         json.dump([v2_entity], f)
         
     # Monkeypatch the DATA_PATH in engine.loader
-    monkeypatch.setattr("engine.loader.DATA_PATH", test_file)
+    monkeypatch.setattr("loader.DATA_PATH", test_file)
     return test_file
 
 def test_round_trip_preserves_extras(mock_loader_data_path):
