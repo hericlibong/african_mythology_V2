@@ -43,9 +43,10 @@ The current dataset (`src/data/mythology_data.json`) uses a **single unified sch
 ### 2.2 Optional (but supported everywhere)
 
 #### `origin`
-- `country`: string
-- `ethnicity`: string
+- `country`: string *(multi-origin entities may use `"A / B"` format)*
+- `ethnicity`: string *(same multi-value convention if applicable)*
 - `pantheon`: string
+- `cultural_region`: string *(cultural/artistic region used as trigger for regional rendering styles; can be empty if unknown or unreliable)*
 
 #### `identity`
 - `gender`: string
@@ -106,15 +107,27 @@ Array of:
 
 ---
 
-### 3.3 Type-specific extensions (the core of v2)
+### 3.3 Regional style eligibility
 
-Add one of the following blocks depending on `entity_type`:
+The `regional_or_ethnic` rendering style is available for an entity **if and only if** `origin.cultural_region` is non-empty.
 
-- `divinity` for `Divinity`
-- `hero` for `Hero`
-- `creature` for `Creature`
+An empty `cultural_region` means the cultural attribution is unknown or insufficiently reliable — the entity is excluded from regional rendering, no fallback.
 
-All of them are optional fields inside their block. Empty block = do not render.
+---
+
+### 3.4 Type-specific extensions (the core of v2)
+
+Type-specific data is stored under a `type_specific` object, keyed by entity type:
+
+```json
+"type_specific": {
+  "divinity": { ... }
+}
+```
+
+The key inside `type_specific` must match the lowercase `entity_type` (`"divinity"`, `"hero"`, or `"creature"`).
+
+All fields inside a type block are optional. Empty block = do not render.
 
 ---
 
@@ -197,7 +210,7 @@ All of them are optional fields inside their block. Empty block = do not render.
   "entity_type": "Divinity",
   "name": "Shango",
   "category": "Orisha of Lightning",
-  "origin": { "country": "Nigeria", "ethnicity": "Yoruba", "pantheon": "Orisha" },
+  "origin": { "country": "Nigeria", "ethnicity": "Yoruba", "pantheon": "Orisha", "cultural_region": "Yoruba" },
   "identity": { "gender": "Male", "cultural_role": "God of Thunder and Royal Justice", "alignment": "Chaotic Good" },
   "attributes": {
     "domains": ["Thunder", "Lightning", "Justice", "Dance"],
@@ -211,10 +224,12 @@ All of them are optional fields inside their block. Empty block = do not render.
     "image_generation_prompt": "LEGACY_PROMPT",
     "imageUrl": ""
   },
-  "divinity": {
-    "cult": {
-      "offerings": ["Kola nuts", "Palm wine"],
-      "taboos": ["(optional)"]
+  "type_specific": {
+    "divinity": {
+      "cult": {
+        "offerings": ["Kola nuts", "Palm wine"],
+        "taboos": ["(optional)"]
+      }
     }
   },
   "rendering": {
@@ -236,20 +251,22 @@ All of them are optional fields inside their block. Empty block = do not render.
   "entity_type": "Hero",
   "name": "Oranmiyan",
   "category": "Warrior King",
-  "origin": { "country": "Nigeria", "ethnicity": "Yoruba", "pantheon": "Legendary" },
+  "origin": { "country": "Nigeria", "ethnicity": "Yoruba", "pantheon": "Legendary", "cultural_region": "Yoruba" },
   "identity": { "gender": "Male", "cultural_role": "Conqueror and Founder of Empires" },
   "appearance": { "image_generation_prompt": "LEGACY_PROMPT", "imageUrl": "" },
   "story": {
     "description": "Founder figure associated with the rise of Oyo and Benin traditions.",
     "characteristics": ["Indomitable", "Strategic"]
   },
-  "hero": {
-    "titles": ["Founder", "Warrior king"],
-    "achievements": ["Founded dynastic legitimacy", "Associated with Opa Oranmiyan"],
-    "allies": [],
-    "enemies": [],
-    "weapons_or_artifacts": ["Opa Oranmiyan"],
-    "legacy": "A pillar symbol remains as a material memory."
+  "type_specific": {
+    "hero": {
+      "titles": ["Founder", "Warrior king"],
+      "achievements": ["Founded dynastic legitimacy", "Associated with Opa Oranmiyan"],
+      "allies": [],
+      "enemies": [],
+      "weapons_or_artifacts": ["Opa Oranmiyan"],
+      "legacy": "A pillar symbol remains as a material memory."
+    }
   }
 }
 ```
@@ -260,17 +277,19 @@ All of them are optional fields inside their block. Empty block = do not render.
   "entity_type": "Creature",
   "name": "Dingonek",
   "category": "River Monster",
-  "origin": { "country": "Kenya", "ethnicity": "Wandorobo", "pantheon": "East African Cryptids" },
+  "origin": { "country": "Kenya", "ethnicity": "Wandorobo", "pantheon": "East African Cryptids", "cultural_region": "" },
   "identity": { "gender": "Neutral", "cultural_role": "Apex aquatic predator" },
   "appearance": { "image_generation_prompt": "LEGACY_PROMPT", "imageUrl": "" },
   "story": { "description": "A feared aquatic beast described through sightings and danger.", "characteristics": ["Fierce", "Armored"] },
-  "creature": {
-    "habitat": ["Rivers", "Lakes"],
-    "powers": ["Ambush predation"],
-    "strengths": ["Armor-like scales"],
-    "weaknesses": [],
-    "diet": "Carnivorous",
-    "size": "Large"
+  "type_specific": {
+    "creature": {
+      "habitat": ["Rivers", "Lakes"],
+      "powers": ["Ambush predation"],
+      "strengths": ["Armor-like scales"],
+      "weaknesses": [],
+      "diet": "Carnivorous",
+      "size": "Large"
+    }
   }
 }
 ```
