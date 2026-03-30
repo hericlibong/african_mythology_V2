@@ -6,7 +6,8 @@
     "origin": {
       "country": "Nigeria",
       "ethnicity": "Yoruba",
-      "pantheon": "Orisha"
+      "pantheon": "Orisha",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Male",
@@ -104,7 +105,8 @@
     "origin": {
       "country": "Pan-African",
       "ethnicity": "Multi-ethnic",
-      "pantheon": "Vodun / Diaspora"
+      "pantheon": "Vodun / Diaspora",
+      "cultural_region": "Pan-African"
     },
     "identity": {
       "gender": "Female",
@@ -211,7 +213,8 @@
     "origin": {
       "country": "Ghana",
       "ethnicity": "Akan",
-      "pantheon": "Akan"
+      "pantheon": "Akan",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Male",
@@ -309,7 +312,8 @@
     "origin": {
       "country": "Nigeria",
       "ethnicity": "Yoruba",
-      "pantheon": "Orisha"
+      "pantheon": "Orisha",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Female",
@@ -417,7 +421,8 @@
     "origin": {
       "country": "Nigeria",
       "ethnicity": "Yoruba",
-      "pantheon": "Orisha"
+      "pantheon": "Orisha",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Male",
@@ -523,7 +528,8 @@
     "origin": {
       "country": "Nigeria",
       "ethnicity": "Yoruba",
-      "pantheon": "Orisha"
+      "pantheon": "Orisha",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Fluid",
@@ -626,7 +632,8 @@
     "origin": {
       "country": "Nigeria",
       "ethnicity": "Yoruba",
-      "pantheon": "Orisha"
+      "pantheon": "Orisha",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Female",
@@ -722,7 +729,8 @@
     "origin": {
       "country": "Nigeria",
       "ethnicity": "Yoruba",
-      "pantheon": "Orisha"
+      "pantheon": "Orisha",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Male",
@@ -816,7 +824,8 @@
     "origin": {
       "country": "Nigeria",
       "ethnicity": "Yoruba",
-      "pantheon": "Orisha"
+      "pantheon": "Orisha",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Male",
@@ -908,7 +917,8 @@
     "origin": {
       "country": "Nigeria / Diaspora",
       "ethnicity": "Yoruba",
-      "pantheon": "Orisha"
+      "pantheon": "Orisha",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Female",
@@ -1006,7 +1016,8 @@
     "origin": {
       "country": "Nigeria",
       "ethnicity": "Yoruba",
-      "pantheon": "Legendary"
+      "pantheon": "Legendary",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Male",
@@ -1111,7 +1122,8 @@
     "origin": {
       "country": "Nigeria",
       "ethnicity": "Yoruba",
-      "pantheon": "Orisha"
+      "pantheon": "Orisha",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Female",
@@ -1203,7 +1215,8 @@
     "origin": {
       "country": "Nigeria",
       "ethnicity": "Yoruba",
-      "pantheon": "Orisha"
+      "pantheon": "Orisha",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Neutral",
@@ -1296,7 +1309,8 @@
     "origin": {
       "country": "South Africa",
       "ethnicity": "Zulu",
-      "pantheon": "Southern"
+      "pantheon": "Southern African",
+      "cultural_region": "Southern Africa"
     },
     "identity": {
       "gender": "Neutral",
@@ -1384,7 +1398,8 @@
     "origin": {
       "country": "South Africa",
       "ethnicity": "Southern Nations",
-      "pantheon": "Southern"
+      "pantheon": "Southern African",
+      "cultural_region": "Southern Africa"
     },
     "identity": {
       "gender": "Male",
@@ -1473,7 +1488,8 @@
     "origin": {
       "country": "South Africa",
       "ethnicity": "Zulu",
-      "pantheon": "Southern"
+      "pantheon": "Southern African",
+      "cultural_region": "Southern Africa"
     },
     "identity": {
       "gender": "Male",
@@ -1563,7 +1579,8 @@
     "origin": {
       "country": "South Africa",
       "ethnicity": "Zulu",
-      "pantheon": "Southern"
+      "pantheon": "Southern African",
+      "cultural_region": "Southern Africa"
     },
     "identity": {
       "gender": "Female",
@@ -1655,7 +1672,8 @@
     "origin": {
       "country": "Mozambique / Japan",
       "ethnicity": "Makua",
-      "pantheon": "Historical"
+      "pantheon": "Historical Figures",
+      "cultural_region": "Cross-Regional"
     },
     "identity": {
       "gender": "Male",
@@ -1742,8 +1760,9 @@
     "category": "Conqueror Queen",
     "origin": {
       "country": "Angola",
-      "ethnicity": "Mbundu / Ndongo",
-      "pantheon": "Historical"
+      "ethnicity": "Mbundu",
+      "pantheon": "Historical Figures",
+      "cultural_region": "Central Africa"
     },
     "identity": {
       "gender": "Female",
@@ -1842,7 +1861,8 @@
     "origin": {
       "country": "Nigeria",
       "ethnicity": "Hausa",
-      "pantheon": "Historical"
+      "pantheon": "Historical Figures",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Female",
@@ -1932,7 +1952,8 @@
     "origin": {
       "country": "Mali",
       "ethnicity": "Mandinka",
-      "pantheon": "Empire"
+      "pantheon": "Empire of Mali",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Male",
@@ -2020,8 +2041,9 @@
     "category": "Dual Creator",
     "origin": {
       "country": "Benin / Togo",
-      "ethnicity": "Fon / Ewe",
-      "pantheon": "Vodun"
+      "ethnicity": "Fon",
+      "pantheon": "Vodun",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Androgynous",
@@ -2113,8 +2135,9 @@
     "category": "Sky Serpent",
     "origin": {
       "country": "Benin / Haiti",
-      "ethnicity": "Fon / Diaspora",
-      "pantheon": "Vodun"
+      "ethnicity": "Fon",
+      "pantheon": "Vodun",
+      "cultural_region": "Cross-Regional"
     },
     "identity": {
       "gender": "Male",
@@ -2206,7 +2229,8 @@
     "origin": {
       "country": "Mali",
       "ethnicity": "Dogon",
-      "pantheon": "Dogon"
+      "pantheon": "Dogon",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Fluid",
@@ -2296,7 +2320,8 @@
     "origin": {
       "country": "Kenya / Tanzania",
       "ethnicity": "Masai",
-      "pantheon": "East"
+      "pantheon": "East African",
+      "cultural_region": "East Africa"
     },
     "identity": {
       "gender": "Fluid",
@@ -2384,7 +2409,8 @@
     "origin": {
       "country": "DRC / Angola",
       "ethnicity": "Kongo",
-      "pantheon": "Kongo"
+      "pantheon": "Kongo",
+      "cultural_region": "Central Africa"
     },
     "identity": {
       "gender": "Male",
@@ -2472,8 +2498,9 @@
     "category": "The Ancient Serpent",
     "origin": {
       "country": "South Africa",
-      "ethnicity": "Khoisan Variation",
-      "pantheon": "Southern"
+      "ethnicity": "Khoisan",
+      "pantheon": "Southern African",
+      "cultural_region": "Southern Africa"
     },
     "identity": {
       "gender": "Neutral",
@@ -2560,7 +2587,8 @@
     "origin": {
       "country": "South Africa / Namibia",
       "ethnicity": "Khoikhoi",
-      "pantheon": "Folklore"
+      "pantheon": "Folklore",
+      "cultural_region": "Southern Africa"
     },
     "identity": {
       "gender": "Neutral",
@@ -2646,7 +2674,8 @@
     "origin": {
       "country": "Nigeria / Benin",
       "ethnicity": "Yoruba",
-      "pantheon": "Orisha"
+      "pantheon": "Orisha",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Neutral",
@@ -2733,7 +2762,8 @@
     "origin": {
       "country": "Egypt",
       "ethnicity": "Ancient Egyptian",
-      "pantheon": "Egyptian"
+      "pantheon": "Egyptian",
+      "cultural_region": "North Africa"
     },
     "identity": {
       "gender": "Female",
@@ -2824,7 +2854,8 @@
     "origin": {
       "country": "Angola",
       "ethnicity": "Mbundu",
-      "pantheon": "Southern"
+      "pantheon": "Southern African",
+      "cultural_region": "Central Africa"
     },
     "identity": {
       "gender": "Female",
@@ -2914,7 +2945,8 @@
     "origin": {
       "country": "Uganda",
       "ethnicity": "Buganda",
-      "pantheon": "Legendary"
+      "pantheon": "Legendary",
+      "cultural_region": "East Africa"
     },
     "identity": {
       "gender": "Male",
@@ -3001,8 +3033,9 @@
     "category": "Primordial Spirit",
     "origin": {
       "country": "Benin / Nigeria",
-      "ethnicity": "Fon / Yoruba",
-      "pantheon": "Vodun / Orisha"
+      "ethnicity": "Fon",
+      "pantheon": "Vodun / Orisha",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Female",
@@ -3092,9 +3125,10 @@
     "name": "Nyami Nyami",
     "category": "The River God",
     "origin": {
-      "country": "Zimbabwe/Zambia",
+      "country": "Zimbabwe / Zambia",
       "ethnicity": "Tonga",
-      "pantheon": "Tonga"
+      "pantheon": "Tonga",
+      "cultural_region": "Southern Africa"
     },
     "identity": {
       "gender": "Male",
@@ -3184,7 +3218,8 @@
     "origin": {
       "country": "South Africa",
       "ethnicity": "Lobedu",
-      "pantheon": "Lobedu"
+      "pantheon": "Lobedu",
+      "cultural_region": "Southern Africa"
     },
     "identity": {
       "gender": "Female",
@@ -3274,7 +3309,8 @@
     "origin": {
       "country": "Congo Basin",
       "ethnicity": "Bakwele",
-      "pantheon": "Congolese Folklore"
+      "pantheon": "Congolese Folklore",
+      "cultural_region": "Central Africa"
     },
     "identity": {
       "gender": "Neutral",
@@ -3377,7 +3413,8 @@
     "origin": {
       "country": "Benin",
       "ethnicity": "Fon",
-      "pantheon": "Vodun"
+      "pantheon": "Vodun",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Male",
@@ -3471,7 +3508,8 @@
     "origin": {
       "country": "Tanzania",
       "ethnicity": "Swahili",
-      "pantheon": "Zanzibar Folklore"
+      "pantheon": "Zanzibar Folklore",
+      "cultural_region": "East Africa"
     },
     "identity": {
       "gender": "Neutral",
@@ -3576,7 +3614,8 @@
     "origin": {
       "country": "Kenya",
       "ethnicity": "Luo",
-      "pantheon": "Luo Folklore"
+      "pantheon": "Luo Folklore",
+      "cultural_region": "East Africa"
     },
     "identity": {
       "gender": "Male",
@@ -3666,7 +3705,8 @@
     "origin": {
       "country": "DRC / Congo",
       "ethnicity": "Mongo",
-      "pantheon": "Central African Legends"
+      "pantheon": "Central African Legends",
+      "cultural_region": "Central Africa"
     },
     "identity": {
       "gender": "Neutral",
@@ -3753,7 +3793,8 @@
     "origin": {
       "country": "Mali",
       "ethnicity": "Soninke",
-      "pantheon": "Wagadu Legends"
+      "pantheon": "Wagadu Legends",
+      "cultural_region": "West Africa"
     },
     "identity": {
       "gender": "Male",
@@ -3840,7 +3881,8 @@
     "origin": {
       "country": "DRC",
       "ethnicity": "Mongo",
-      "pantheon": "Central African Folklore"
+      "pantheon": "Central African Folklore",
+      "cultural_region": "Central Africa"
     },
     "identity": {
       "gender": "Neutral",
@@ -3928,7 +3970,8 @@
     "origin": {
       "country": "Kenya",
       "ethnicity": "Wandorobo",
-      "pantheon": "East African Cryptids"
+      "pantheon": "East African Cryptids",
+      "cultural_region": "East Africa"
     },
     "identity": {
       "gender": "Neutral",
@@ -4032,7 +4075,8 @@
     "origin": {
       "country": "South Africa",
       "ethnicity": "Zulu",
-      "pantheon": "Water Spirits"
+      "pantheon": "Water Spirits",
+      "cultural_region": "Southern Africa"
     },
     "identity": {
       "gender": "Neutral",

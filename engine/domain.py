@@ -5,6 +5,7 @@ class Origin(BaseModel):
     country: str
     ethnicity: str
     pantheon: str
+    cultural_region: str = ""
 
 class Identity(BaseModel):
     gender: str

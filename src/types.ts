@@ -4,6 +4,7 @@ export interface Origin {
   country: string;
   ethnicity: string;
   pantheon: string;
+  cultural_region?: string;
 }
 
 export interface Identity {
