@@ -1,0 +1,113 @@
+{
+  "DEFAULT": {
+    "visual_signature": "Museum-grade sacred object realism, culturally grounded, authentic historical artifact",
+    "visual_philosophy": {
+      "concept": "Traditional cultural heritage representation",
+      "geometry": "Balanced and respectful ethnographic proportions",
+      "proportions": "Authentic scale and weight"
+    },
+    "material_science": {
+      "primary": ["wood", "terra cotta", "bronze", "organic materials"],
+      "textiles": ["traditional woven fabrics", "natural fibers"],
+      "rituals": ["natural pigments", "aged patina"]
+    },
+    "surface_and_finish": {
+      "technique": ["hand-crafted", "traditional tooling"],
+      "finish": ["weathered", "museum preservation state"],
+      "tactile_feel": ["textured", "ancient", "tangible"]
+    },
+    "atmosphere": {
+      "lighting": ["cinematic museum lighting", "neutral dark background"],
+      "context": ["sacred space", "historical archive"],
+      "color_palette": ["earth tones", "natural ochres", "muted organic colors"]
+    },
+    "constraints": {
+      "forbidden": ["cartoon", "3d render", "plastic", "shiny metal", "western fantasy armor", "anime", "low quality", "neon glowing effects", "afro-futurism"],
+      "mandatory": ["cultural respect", "historical realism", "tangible materiality"]
+    }
+  },
+  "Yoruba": {
+    "inherits": "DEFAULT",
+    "visual_signature": "Classical Yoruba sacred sculpture, regal authority, Jijora aesthetic, ritual patina, red-white symbolism",
+    "visual_philosophy": {
+      "concept": "Jijora (Mimesis midway between abstraction and realism)",
+      "geometry": "Large bulging eyes, prominent lips, stylized hairstyles (osu), columnar posture",
+      "proportions": "Proportional emphasis on the head (Ori), head represents one-third of the figure"
+    },
+    "material_science": {
+      "primary": ["polished Iroko wood", "Sese hardwood", "Classical Ife bronze", "leaded brass"],
+      "textiles": ["Aso-Oke textiles", "indigo-dyed fabrics", "geometric strip patterns"],
+      "rituals": ["Osun (red camwood powder)", "palm oil anointing", "cowrie shells"]
+    },
+    "surface_and_finish": {
+      "technique": ["precise geometric incisions (kolo)", "scarifications", "ritual polishing"],
+      "finish": ["dark glossy oily patina", "forehead highlights"],
+      "tactile_feel": ["warm polished wood", "organic", "alive and nurtured"]
+    },
+    "atmosphere": {
+      "lighting": ["low-intensity shrine lighting", "flickering oil lamps", "deep chiaroscuro"],
+      "context": ["mud-walled interior shrines (ile orisha)", "sacred altars"],
+      "color_palette": ["deep reds", "pure white", "indigo"]
+    },
+    "constraints": {
+      "forbidden": ["marvel-style armor", "sci-fi lightning effects", "western facial features"],
+      "mandatory": ["traditional hairstyle", "regal dignity (agba)", "specific orisha bead colors"]
+    }
+  },
+  "Akan": {
+    "inherits": "DEFAULT",
+    "visual_signature": "Ashanti royal opulence, verbal-visual synthesis, shimmering gold, Kente cloth, sun-drenched",
+    "visual_philosophy": {
+      "concept": "Verbal-visual nexus (visual proverbs), display art for status",
+      "geometry": "Large flattened disc-like heads, high foreheads, M-shaped brows, downcast eyes",
+      "proportions": "Conceptual depiction of prime adulthood, rings of fat on neck"
+    },
+    "material_science": {
+      "primary": ["solid cast gold", "gold leaf over wood cores", "brass goldweights", "Sese hardwood"],
+      "textiles": ["Kente silk", "adwinasa complex weave patterns", "antelope hide"],
+      "rituals": ["charcoal blackening for sacred stools"]
+    },
+    "surface_and_finish": {
+      "technique": ["lost-wax process (cire perdue)", "granulation", "filigree goldwork"],
+      "finish": ["shimmering jewel-like highlights", "matte charcoal wood"],
+      "tactile_feel": ["dense intricate metal textures", "smooth silk", "heavy gold"]
+    },
+    "atmosphere": {
+      "lighting": ["intense midday sun", "dynamic diffuse light filtering through silk umbrellas"],
+      "context": ["open-air palace courtyard in Kumasi", "royal atrium"],
+      "color_palette": ["brilliant gold", "vibrant Kente yellow, red, and green", "deep charcoal"]
+    },
+    "constraints": {
+      "forbidden": ["sci-fi circuits", "digital chrome", "poor quality metals", "medieval european crowns"],
+      "mandatory": ["authentic Ashanti goldweight textures", "accurate Kente patterns"]
+    }
+  },
+  "Kongo": {
+    "inherits": "DEFAULT",
+    "visual_signature": "Aggressive Nkisi Nkondi power figures, chaotic hardware accumulation, mirrors, firelit shrine",
+    "visual_philosophy": {
+      "concept": "Aggressive pursuit of justice, housing mystical forces, gestural aesthetic",
+      "geometry": "Akimbo posture (hands on hips, forward lean), upward-tilted heads, wide staring eyes",
+      "proportions": "Sturdy, alert, ready to spring forth"
+    },
+    "material_science": {
+      "primary": ["Iroko wood base", "iron nails", "metal blades", "screws", "mirrors", "porcelain"],
+      "textiles": ["raffia", "animal skins"],
+      "rituals": ["bilongo (medicines of ash, soil, herbs)", "kaolin clay", "resins"]
+    },
+    "surface_and_finish": {
+      "technique": ["additive hardware accumulation", "driving nails into wood", "resin sealing"],
+      "finish": ["crusty", "multi-textured", "white matte kaolin face", "reflective mirror abdomen"],
+      "tactile_feel": ["sharp iron", "chaotic texture", "rough dark wood", "smooth glass"]
+    },
+    "atmosphere": {
+      "lighting": ["low-intensity firelight", "flickering shadows", "glittering reflections on nails and mirrors"],
+      "context": ["private ritual shrines of the nganga", "dark forest groves"],
+      "color_palette": ["dark rusted iron", "white kaolin", "earthy browns", "flashing light"]
+    },
+    "constraints": {
+      "forbidden": ["sleek lines", "clean minimal surfaces", "glowing energy beams", "Marvel-style magic effects"],
+      "mandatory": ["iron nail accumulation", "abdominal mirror cavity (kundu)", "aggressive posture"]
+    }
+  }
+}
