@@ -1,0 +1,169 @@
+{
+  "DEFAULT": {
+    "visual_signature": "Culturally grounded sacred figuration with readable ritual identity and material truth.",
+    "visual_philosophy": {
+      "concept": "Symbol first, spectacle second.",
+      "geometry": "Balanced frontal or three-quarter compositions with clear silhouette hierarchy.",
+      "proportions": "Human-readable anatomy with stylization driven by status, ritual role, and emblematic emphasis."
+    },
+    "material_science": {
+      "primary": ["carved wood", "cast metal", "stone", "beads", "natural pigments"],
+      "textiles": ["handwoven cloth", "ritual wrappers", "layered drapery"],
+      "rituals": ["ceremonial regalia", "offering vessels", "protective objects"]
+    },
+    "surface_and_finish": {
+      "technique": ["carving", "casting", "weaving", "incised patterning", "applique"],
+      "finish": ["matte mineral finish", "aged patina", "burnished highlights"],
+      "tactile_feel": ["handmade", "ritually handled", "materially dense"]
+    },
+    "atmosphere": {
+      "lighting": ["directional natural light", "firelight", "sacred interior glow"],
+      "context": ["shrine space", "ritual ground", "architectural backdrop", "landscape tied to cult or legend"],
+      "color_palette": ["earth ochre", "charcoal", "ivory", "indigo", "deep red", "metallic accents"]
+    },
+    "constraints": {
+      "forbidden": ["generic fantasy armor", "random cyberpunk elements", "pan-African mashup without evidence", "culture-agnostic props"],
+      "mandatory": ["clear cultural anchor", "specific ritual materiality", "coherent symbolic objects"]
+    }
+  },
+  "Yoruba": {
+    "inherits": "DEFAULT",
+    "visual_signature": "Regal orisha-centered figuration with sculptural poise, bead-coded authority, and shrine clarity.",
+    "visual_philosophy": {
+      "concept": "Ase made visible through dignity, rhythm, and symbolic regalia.",
+      "geometry": "Vertical balance, calm frontal stance, rounded volumes, and strong head emphasis.",
+      "proportions": "Composed bodies with enlarged head presence and controlled ceremonial posture."
+    },
+    "material_science": {
+      "primary": ["carved wood", "cast brass", "beadwork", "terracotta"],
+      "textiles": ["aso oke", "layered wrappers", "beaded crowns", "ritual sashes"],
+      "rituals": ["oshe staff", "horsetail whisk", "cowries", "offering bowls"]
+    },
+    "surface_and_finish": {
+      "technique": ["polychrome carving", "bead inlay", "burnished wood", "incised pattern"],
+      "finish": ["satin wood sheen", "chalked ritual residue", "bead gloss"],
+      "tactile_feel": ["crafted", "consecrated", "ornamented"]
+    },
+    "atmosphere": {
+      "lighting": ["warm daylight", "courtyard shadow", "lamplight"],
+      "context": ["shrine veranda", "palace court", "ritual grove", "storm or river threshold"],
+      "color_palette": ["indigo", "white chalk", "red", "amber", "brass", "deep brown"]
+    },
+    "constraints": {
+      "forbidden": ["mudcloth patterns", "kente motifs", "mask-only treatment"],
+      "mandatory": ["orisha-specific regalia", "bead hierarchy", "Yoruba shrine logic"]
+    }
+  },
+  "Akan": {
+    "inherits": "DEFAULT",
+    "visual_signature": "Courtly gold-centered figuration with proverb-rich symbolism and measured ceremonial display.",
+    "visual_philosophy": {
+      "concept": "Authority through wisdom, wealth, and communicative symbol.",
+      "geometry": "Stable seated or standing compositions, compact massing, and emblematic accessories.",
+      "proportions": "Naturalistic torso with dignified stillness and concentrated gesture."
+    },
+    "material_science": {
+      "primary": ["gold", "carved wood", "blackened stool wood", "beads"],
+      "textiles": ["kente cloth", "adinkra cloth", "strip weaving"],
+      "rituals": ["goldweights", "stools", "state umbrellas", "linguist staff"]
+    },
+    "surface_and_finish": {
+      "technique": ["gold casting", "relief carving", "textile pattern blocking", "polished surfaces"],
+      "finish": ["warm metallic luster", "dark wood polish", "crisp textile contrast"],
+      "tactile_feel": ["ceremonial", "refined", "symbol-laden"]
+    },
+    "atmosphere": {
+      "lighting": ["soft daylight", "royal court shade", "festival light"],
+      "context": ["palace courtyard", "stool room", "public durbar", "forest threshold"],
+      "color_palette": ["gold", "black", "crimson", "green", "indigo", "ivory"]
+    },
+    "constraints": {
+      "forbidden": ["Benin bronze plaque formulas", "Yoruba crown systems", "unstructured warrior excess"],
+      "mandatory": ["Akan regalia logic", "gold symbolism", "stool or proverb-linked object language"]
+    }
+  },
+  "Kongo": {
+    "inherits": "DEFAULT",
+    "visual_signature": "Spirit-charged figuration with threshold symbolism, bilateral force, and charged surfaces.",
+    "visual_philosophy": {
+      "concept": "Visible passage between living world and ancestral world.",
+      "geometry": "Front-facing tension, mirrored axes, and compact power around torso and gaze.",
+      "proportions": "Compact bodies with deliberate emphasis on head, abdomen, and gesture-bearing hands."
+    },
+    "material_science": {
+      "primary": ["carved wood", "iron", "raffia", "shell", "clay"],
+      "textiles": ["raffia cloth", "wrapped fiber", "ritual ties"],
+      "rituals": ["nkisi containers", "nails or blades", "shell markers", "boundary staffs"]
+    },
+    "surface_and_finish": {
+      "technique": ["embedded elements", "rough carving", "pierced insertions", "white clay application"],
+      "finish": ["dark worn wood", "chalk contrast", "oxidized iron"],
+      "tactile_feel": ["charged", "protective", "handled"]
+    },
+    "atmosphere": {
+      "lighting": ["threshold light", "overcast daylight", "ember glow"],
+      "context": ["crossroads", "ancestral enclosure", "river edge", "burial ground"],
+      "color_palette": ["black brown", "white clay", "rust red", "palm fiber beige", "iron gray"]
+    },
+    "constraints": {
+      "forbidden": ["smooth courtly polish everywhere", "generic tribal masks", "ornament without ritual function"],
+      "mandatory": ["threshold symbolism", "nkisi logic or equivalent force-object language", "white-and-dark contrast"]
+    }
+  },
+  "Fon": {
+    "inherits": "DEFAULT",
+    "visual_signature": "Vodun-centered sacred figuration with emblematic clarity, serpentine flow, and altar logic.",
+    "visual_philosophy": {
+      "concept": "Cosmic force rendered through emblem, shrine order, and ritual mediation.",
+      "geometry": "Structured frontal figures with flowing curves around arms, serpents, and staffs.",
+      "proportions": "Balanced bodies with clear iconographic emphasis rather than heroic exaggeration."
+    },
+    "material_science": {
+      "primary": ["carved wood", "iron", "clay", "cowries", "beads"],
+      "textiles": ["ritual cloth", "white wrappers", "applique banners"],
+      "rituals": ["vodun altars", "serpent imagery", "staffs", "calabashes"]
+    },
+    "surface_and_finish": {
+      "technique": ["painted shrine surfaces", "applique", "incised carving", "white kaolin accents"],
+      "finish": ["chalked ritual finish", "aged pigment", "soft sheen on handled surfaces"],
+      "tactile_feel": ["consecrated", "layered", "altar-bound"]
+    },
+    "atmosphere": {
+      "lighting": ["shrine interior light", "humid daylight", "candlelight"],
+      "context": ["vodun shrine", "compound altar", "sacred grove", "processional path"],
+      "color_palette": ["white", "red ochre", "indigo", "earth brown", "cowrie ivory", "dark green"]
+    },
+    "constraints": {
+      "forbidden": ["diaspora carnival styling as default", "generic mermaid glamour", "culture-blind serpent motifs"],
+      "mandatory": ["vodun altar logic", "ritual emblem clarity", "material signs of consecration"]
+    }
+  },
+  "Zulu": {
+    "inherits": "DEFAULT",
+    "visual_signature": "Dynamic southern African figuration with storm energy, bead-coded identity, and hide-based regalia.",
+    "visual_philosophy": {
+      "concept": "Presence through vitality, weather force, and embodied status.",
+      "geometry": "Strong diagonals, upright stance, and high-contrast silhouette.",
+      "proportions": "Athletic readable anatomy with emphasized shoulders, headgear, and gesture."
+    },
+    "material_science": {
+      "primary": ["hide", "wood", "beads", "horn", "metal"],
+      "textiles": ["beadwork panels", "hide garments", "woven belts"],
+      "rituals": ["staffs", "shields", "rain symbols", "ancestral markers"]
+    },
+    "surface_and_finish": {
+      "technique": ["bead patterning", "leather finishing", "burnished wood", "pigment striping"],
+      "finish": ["oiled hide sheen", "matte earth pigment", "bead sparkle"],
+      "tactile_feel": ["weathered", "energetic", "crafted"]
+    },
+    "atmosphere": {
+      "lighting": ["storm light", "high sun", "firelit dusk"],
+      "context": ["open grassland", "homestead enclosure", "waterfall or riverbank", "ritual dance ground"],
+      "color_palette": ["black", "white", "red brown", "storm gray", "bead blue", "earth umber"]
+    },
+    "constraints": {
+      "forbidden": ["West African court regalia", "North African ornament systems", "generic monster rendering without cultural markers"],
+      "mandatory": ["southern African regalia logic", "bead identity cues", "weather or landscape anchoring"]
+    }
+  }
+}

@@ -125,6 +125,14 @@ The `regional_or_ethnic` rendering style is available for an entity **if and onl
 
 > Migration note: some existing entities may still use `origin.cultural_region` as a pseudo style key. The correct direction is now `origin.ethnicity` = style key, `origin.cultural_region` = macro-region.
 
+### 3.3.1 Style Matrix reference
+
+The Style Matrix is stored in `src/data/styles_matrix.json`.
+
+It is indexed by `origin.ethnicity`, not by `origin.cultural_region`.
+
+The matrix stores reusable stylistic rules (visual signature, materials, surface treatment, atmosphere, constraints). It does not store final entity prompts.
+
 ---
 
 ### 3.4 Type-specific extensions (the core of v2)
