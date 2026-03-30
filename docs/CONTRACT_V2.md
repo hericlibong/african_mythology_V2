@@ -43,10 +43,16 @@ The current dataset (`src/data/mythology_data.json`) uses a **single unified sch
 ### 2.2 Optional (but supported everywhere)
 
 #### `origin`
-- `country`: string *(multi-origin entities may use `"A / B"` format)*
-- `ethnicity`: string *(same multi-value convention if applicable)*
-- `pantheon`: string
-- `cultural_region`: string *(cultural/artistic region used as trigger for regional rendering styles; can be empty if unknown or unreliable)*
+- `country`: string *(modern geographic reference; multi-origin entities may use `"A / B"` format)*
+- `ethnicity`: string *(primary cultural anchor of the entity; main key for the Style Matrix; should be as precise and singular as possible; leave empty if uncertain or not operational for styling)*
+- `pantheon`: string *(mythological / religious / narrative / historical family)*
+- `cultural_region`: string *(broad editorial macro-region for grouping; not a fine-grained style key; can be empty if unknown or unreliable)*
+
+> Reading rule:
+> - `country` = where to situate the entity today
+> - `ethnicity` = which culture drives the style
+> - `pantheon` = which tradition to classify it under
+> - `cultural_region` = which large editorial area to group it under
 
 #### `identity`
 - `gender`: string
@@ -109,9 +115,15 @@ Array of:
 
 ### 3.3 Regional style eligibility
 
-The `regional_or_ethnic` rendering style is available for an entity **if and only if** `origin.cultural_region` is non-empty.
+The `regional_or_ethnic` rendering style is available for an entity **if and only if**:
 
-An empty `cultural_region` means the cultural attribution is unknown or insufficiently reliable — the entity is excluded from regional rendering, no fallback.
+- `origin.ethnicity` is non-empty
+- `origin.ethnicity` is judged sufficiently reliable
+- `origin.ethnicity` is mapped in the Style Matrix
+
+`origin.cultural_region` no longer acts as the fine-grained trigger for this style. It remains an editorial macro-region only.
+
+> Migration note: some existing entities may still use `origin.cultural_region` as a pseudo style key. The correct direction is now `origin.ethnicity` = style key, `origin.cultural_region` = macro-region.
 
 ---
 
@@ -210,7 +222,7 @@ All fields inside a type block are optional. Empty block = do not render.
   "entity_type": "Divinity",
   "name": "Shango",
   "category": "Orisha of Lightning",
-  "origin": { "country": "Nigeria", "ethnicity": "Yoruba", "pantheon": "Orisha", "cultural_region": "Yoruba" },
+  "origin": { "country": "Nigeria", "ethnicity": "Yoruba", "pantheon": "Orisha", "cultural_region": "West Africa" },
   "identity": { "gender": "Male", "cultural_role": "God of Thunder and Royal Justice", "alignment": "Chaotic Good" },
   "attributes": {
     "domains": ["Thunder", "Lightning", "Justice", "Dance"],
@@ -251,7 +263,7 @@ All fields inside a type block are optional. Empty block = do not render.
   "entity_type": "Hero",
   "name": "Oranmiyan",
   "category": "Warrior King",
-  "origin": { "country": "Nigeria", "ethnicity": "Yoruba", "pantheon": "Legendary", "cultural_region": "Yoruba" },
+  "origin": { "country": "Nigeria", "ethnicity": "Yoruba", "pantheon": "Legendary", "cultural_region": "West Africa" },
   "identity": { "gender": "Male", "cultural_role": "Conqueror and Founder of Empires" },
   "appearance": { "image_generation_prompt": "LEGACY_PROMPT", "imageUrl": "" },
   "story": {
@@ -271,16 +283,16 @@ All fields inside a type block are optional. Empty block = do not render.
 }
 ```
 
-### 6.3 Creature example (v2-compatible)
+### 6.3 Creature example (structural illustration)
 ```json
 {
   "entity_type": "Creature",
-  "name": "Dingonek",
+  "name": "Illustrative Creature",
   "category": "River Monster",
-  "origin": { "country": "Kenya", "ethnicity": "Wandorobo", "pantheon": "East African Cryptids", "cultural_region": "" },
+  "origin": { "country": "Kenya", "ethnicity": "", "pantheon": "Folkloric Creature", "cultural_region": "East Africa" },
   "identity": { "gender": "Neutral", "cultural_role": "Apex aquatic predator" },
   "appearance": { "image_generation_prompt": "LEGACY_PROMPT", "imageUrl": "" },
-  "story": { "description": "A feared aquatic beast described through sightings and danger.", "characteristics": ["Fierce", "Armored"] },
+  "story": { "description": "Structure-only example used to illustrate creature fields without asserting a styling-ready ethnic attribution.", "characteristics": ["Fierce", "Armored"] },
   "type_specific": {
     "creature": {
       "habitat": ["Rivers", "Lakes"],
