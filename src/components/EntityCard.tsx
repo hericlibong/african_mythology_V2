@@ -29,6 +29,8 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
   const [generationState, setGenerationState] = useState<'idle' | 'generating' | 'completed' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [selectedStyle, setSelectedStyle] = useState('photoreal');
+  const [regionalPrompt, setRegionalPrompt] = useState('');
+  const [regionalPromptStatus, setRegionalPromptStatus] = useState<'loading' | 'available' | 'unavailable'>('loading');
 
   // Local state to track newly generated images (for immediate display before data refresh)
   const [generatedImages, setGeneratedImages] = useState<Record<string, string>>({});
@@ -36,9 +38,57 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
   // Track failed image URLs to prevent infinite load loops and allow fallback to generation view
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
 
+  useEffect(() => {
+    const controller = new AbortController();
+
+    setRegionalPrompt('');
+    setRegionalPromptStatus('loading');
+
+    const loadRegionalPreview = async () => {
+      try {
+        const response = await fetch(
+          `/preview/${encodeURIComponent(data.name)}?style_id=regional_or_ethnic`,
+          { signal: controller.signal },
+        );
+
+        if (!response.ok) {
+          throw new Error('Regional preview unavailable');
+        }
+
+        const result = await response.json();
+        const prompt = typeof result.prompt === 'string' ? result.prompt.trim() : '';
+
+        setRegionalPrompt(prompt);
+        setRegionalPromptStatus(prompt ? 'available' : 'unavailable');
+      } catch (error) {
+        if (
+          controller.signal.aborted ||
+          (error instanceof DOMException && error.name === 'AbortError')
+        ) {
+          return;
+        }
+
+        setRegionalPrompt('');
+        setRegionalPromptStatus('unavailable');
+      }
+    };
+
+    loadRegionalPreview();
+
+    return () => controller.abort();
+  }, [data.name]);
+
   // Derive available styles with prompt availability
   const availableStyles: StyleOption[] = useMemo(() => {
-    return STYLE_DEFINITIONS.map(def => {
+    return STYLE_DEFINITIONS.flatMap(def => {
+      if (def.id === 'regional_or_ethnic') {
+        if (regionalPromptStatus !== 'available') {
+          return [];
+        }
+
+        return [{ ...def, hasPrompt: true }];
+      }
+
       let hasPrompt = false;
       if (def.id === 'photoreal') {
         hasPrompt = !!(data.rendering?.prompt_canon || data.appearance.image_generation_prompt);
@@ -46,9 +96,9 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
         const variant = data.rendering?.prompt_variants?.find(v => v.style_id === def.id);
         hasPrompt = !!(variant?.prompt);
       }
-      return { ...def, hasPrompt };
+      return [{ ...def, hasPrompt }];
     });
-  }, [data]);
+  }, [data, regionalPromptStatus]);
 
   // Derive current image URL: check local state first, then data.rendering.images, then legacy
   const currentImageUrl = useMemo(() => {
@@ -77,12 +127,16 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
 
   // Derive prompt for current style
   const currentPrompt = useMemo(() => {
+    if (selectedStyle === 'regional_or_ethnic') {
+      return regionalPrompt;
+    }
+
     if (selectedStyle === 'photoreal') {
       return data.rendering?.prompt_canon || data.appearance.image_generation_prompt || '';
     }
     const variant = data.rendering?.prompt_variants?.find(v => v.style_id === selectedStyle);
     return variant?.prompt || '';
-  }, [data, selectedStyle]);
+  }, [data, selectedStyle, regionalPrompt]);
 
   // Combine persisted + local images for indicator dots
   const allImagesMap = useMemo(() => {
@@ -108,6 +162,12 @@ const EntityCard: React.FC<EntityCardProps> = ({ data, onSelectEntity, onOpenLin
     // If no image exists, !currentImageUrl is true, and 'idle' makes the overlay visible.
     setGenerationState('idle');
   }, [selectedStyle]);
+
+  useEffect(() => {
+    if (selectedStyle === 'regional_or_ethnic' && regionalPromptStatus !== 'available') {
+      setSelectedStyle('photoreal');
+    }
+  }, [regionalPromptStatus, selectedStyle]);
 
   const handleGenerate = async () => {
     // Capture style at start of generation to avoid race conditions if user switches style while waiting
