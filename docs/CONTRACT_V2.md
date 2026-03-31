@@ -113,7 +113,7 @@ Array of:
 
 ---
 
-### 3.3 Regional style eligibility
+### 3.3 Ethnicity-based style eligibility (fine style key)
 
 The `regional_or_ethnic` rendering style is available for an entity **if and only if**:
 
