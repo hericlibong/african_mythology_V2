@@ -568,7 +568,7 @@
       ],
       "manifestations": "An old man at a crossroad or a young child playing tricks.",
       "image_generation_prompt": "Eshu at a lonely desert crossroads under a twilight sky. He wears a traditional cap split between red and black, holding a hooked wooden staff and smoking a pipe. Mysterious atmosphere, moody cinematic lighting, detailed facial expressions.",
-      "imageUrl": ""
+      "imageUrl": "/generated_images/eshu.png"
     },
     "story": {
       "description": "The lord of the crossroads who holds the keys to the future. He is the one who translates human desires to the gods and ensures that every choice has a consequence. He is neither good nor evil, but the essential friction that makes growth possible.",
@@ -628,7 +628,10 @@
           "label": "Surrealist Duality",
           "prompt": "Surrealist painting of Eshu. A face that looks forward and backward, red and black melting into each other. Dreamlike crossroads landscape."
         }
-      ]
+      ],
+      "images": {
+        "photoreal": "/generated_images/eshu.png"
+      }
     }
   },
   {
