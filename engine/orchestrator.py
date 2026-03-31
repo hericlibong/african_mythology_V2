@@ -1,6 +1,6 @@
 from typing import List, Tuple
-from domain import MythologicalEntity
-from loader import load_mythology_data
+from engine.domain import MythologicalEntity
+from engine.loader import load_mythology_data
 
 class ImageOrchestrator:
     def __init__(self):

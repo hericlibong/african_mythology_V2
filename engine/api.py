@@ -13,8 +13,9 @@ from vertexai.preview.vision_models import ImageGenerationModel
 from google.oauth2 import service_account
 from google.api_core.exceptions import ResourceExhausted, TooManyRequests
 
-from orchestrator import ImageOrchestrator
-from loader import save_mythology_data  # Ensure loader exports this
+from engine.loader import save_mythology_data
+from engine.orchestrator import ImageOrchestrator
+from engine.prompt_builder import build_prompt
 
 
 
@@ -79,6 +80,25 @@ class GenerateRequest(BaseModel):
     style_id: str = "photoreal"
 
 
+def _find_entity(entity_name: str):
+    for entity in orchestrator.data:
+        if entity.name.lower() == entity_name.lower():
+            return entity
+    return None
+
+
+def _resolve_request_prompt(entity_name: str, style_id: str):
+    entity = _find_entity(entity_name)
+    if not entity:
+        return None, "Entity not found."
+
+    if style_id == "regional_or_ethnic":
+        prompt = build_prompt(entity) or ""
+        return entity, prompt
+
+    return entity, orchestrator.get_prompt_preview(entity_name, style_id)
+
+
 # -----------------------------
 # Health + API routes
 # -----------------------------
@@ -98,7 +118,7 @@ def health_check():
 
 @app.get("/preview/{entity_name}")
 def get_prompt_preview(entity_name: str, style_id: str = "photoreal"):
-    prompt = orchestrator.get_prompt_preview(entity_name, style_id)
+    _, prompt = _resolve_request_prompt(entity_name, style_id)
     if prompt == "Entity not found.":
         raise HTTPException(status_code=404, detail="Entity not found")
 
@@ -115,7 +135,7 @@ def generate_image(request: GenerateRequest):
     style_id = request.style_id
 
     # 1) Prompt
-    prompt = orchestrator.get_prompt_preview(entity_name, style_id)
+    entity, prompt = _resolve_request_prompt(entity_name, style_id)
     if prompt == "Entity not found.":
         raise HTTPException(status_code=404, detail="Entity not found")
     if not prompt:
@@ -170,23 +190,18 @@ def generate_image(request: GenerateRequest):
         image_url = f"/generated_images/{filename}"
 
         updated = False
-        for entity in orchestrator.data:
-            if entity.name.lower() == entity_name.lower():
-                # Ensure rendering.images exists
-                if not entity.rendering:
-                    entity.rendering = {}
-                if "images" not in entity.rendering:
-                    entity.rendering["images"] = {}
-                
-                # Store URL by style
-                entity.rendering["images"][style_id] = image_url
-                
-                # Legacy sync for photoreal
-                if style_id == "photoreal":
-                    entity.appearance.imageUrl = image_url
-                
-                updated = True
-                break
+        if entity:
+            if not entity.rendering:
+                entity.rendering = {}
+            if "images" not in entity.rendering:
+                entity.rendering["images"] = {}
+
+            entity.rendering["images"][style_id] = image_url
+
+            if style_id == "photoreal":
+                entity.appearance.imageUrl = image_url
+
+            updated = True
 
         if updated:
             save_mythology_data(orchestrator.data)
