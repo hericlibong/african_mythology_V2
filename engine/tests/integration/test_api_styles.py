@@ -1,14 +1,12 @@
 import pytest
 from fastapi.testclient import TestClient
 from unittest.mock import MagicMock, patch
-import sys
 import os
 
-# Add engine directory to sys.path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+os.environ.setdefault("GCP_SERVICE_ACCOUNT_JSON", "{}")
 
-from api import app
-from domain import MythologicalEntity, Appearance
+from engine.api import app
+from engine.domain import MythologicalEntity, Appearance
 
 client = TestClient(app)
 
@@ -19,8 +17,8 @@ client = TestClient(app)
 @pytest.fixture
 def mock_vertex():
     """Mocks Vertex AI initialization and ImageModel."""
-    with patch("api.vertexai") as mock_v, \
-         patch("api.ImageGenerationModel") as mock_model_class:
+    with patch("engine.api.vertexai") as mock_v, \
+         patch("engine.api.ImageGenerationModel") as mock_model_class:
         
         mock_v.init.return_value = None
         mock_model_instance = MagicMock()
@@ -37,7 +35,7 @@ def mock_vertex():
 @pytest.fixture
 def mock_loader():
     """Mocks the save_mythology_data function."""
-    with patch("api.save_mythology_data") as mock_save:
+    with patch("engine.api.save_mythology_data") as mock_save:
         yield mock_save
 
 @pytest.fixture
@@ -48,17 +46,20 @@ def mock_orchestrator_data():
     1. 'CanonEntity': Has rendering.prompt_canon
     2. 'LegacyEntity': Has NO rendering, only appearance.prompt
     3. 'MangaEntity': Has rendering.prompt_variants with 'manga'
+    4. 'Shango': Covered ethnicity for PromptBuilder + legacy regional prompt to ignore
+    5. 'UnmappedRegionalEntity': Uncovered ethnicity + legacy regional prompt to ignore
+    6. 'NoEthnicityEntity': Empty ethnicity + legacy regional prompt to ignore
     """
-    from domain import Origin, Identity, Attributes, Appearance, Story, Relations
+    from engine.domain import Origin, Identity, Attributes, Appearance, Story, Relations
 
-    def make_entity(name, appearance_kwargs, rendering=None):
+    def make_entity(name, appearance_kwargs, rendering=None, origin=None, attributes=None):
         return MythologicalEntity(
             entity_type="Divinity",
             name=name,
             category="Test",
-            origin=Origin(country="Test", ethnicity="Test", pantheon="Test"),
+            origin=origin or Origin(country="Test", ethnicity="Test", pantheon="Test"),
             identity=Identity(gender="Test", cultural_role="Test", alignment="Test"),
-            attributes=Attributes(domains=[], symbols=[], power_objects=[], symbolic_animals=[]),
+            attributes=attributes or Attributes(domains=[], symbols=[], power_objects=[], symbolic_animals=[]),
             appearance=Appearance(
                 physical_signs=[],
                 manifestations="Test Manifestation",
@@ -97,8 +98,72 @@ def mock_orchestrator_data():
         }
     )
 
+    shango_entity = make_entity(
+        name="Shango",
+        appearance_kwargs={"imageUrl": "", "image_generation_prompt": "Legacy Shango Prompt"},
+        origin=Origin(country="Nigeria", ethnicity="Yoruba", pantheon="Orisha"),
+        attributes=Attributes(
+            domains=[],
+            symbols=["Double-headed axe", "Red and White Beads"],
+            power_objects=["Oshe Shango"],
+            symbolic_animals=[],
+        ),
+        rendering={
+            "prompt_variants": [
+                {"style_id": "regional_or_ethnic", "prompt": "LEGACY REGIONAL PROMPT SHOULD BE IGNORED"}
+            ],
+            "images": {}
+        }
+    )
+
+    unmapped_regional_entity = make_entity(
+        name="UnmappedRegionalEntity",
+        appearance_kwargs={"imageUrl": "", "image_generation_prompt": "Legacy Regional Prompt"},
+        origin=Origin(country="Tanzania", ethnicity="Swahili", pantheon="Test"),
+        attributes=Attributes(
+            domains=[],
+            symbols=["Crescent"],
+            power_objects=["Ritual Staff"],
+            symbolic_animals=[],
+        ),
+        rendering={
+            "prompt_variants": [
+                {"style_id": "regional_or_ethnic", "prompt": "LEGACY REGIONAL PROMPT SHOULD BE IGNORED"}
+            ],
+            "images": {}
+        }
+    )
+
+    no_ethnicity_entity = make_entity(
+        name="NoEthnicityEntity",
+        appearance_kwargs={"imageUrl": "", "image_generation_prompt": "Legacy Regional Prompt"},
+        origin=Origin(country="Test", ethnicity="", pantheon="Test"),
+        attributes=Attributes(
+            domains=[],
+            symbols=["Bell"],
+            power_objects=["Staff"],
+            symbolic_animals=[],
+        ),
+        rendering={
+            "prompt_variants": [
+                {"style_id": "regional_or_ethnic", "prompt": "LEGACY REGIONAL PROMPT SHOULD BE IGNORED"}
+            ],
+            "images": {}
+        }
+    )
+
     # Patch the orchestrator's data directly
-    with patch("api.orchestrator.data", [canon_entity, legacy_entity, manga_entity]):
+    with patch(
+        "engine.api.orchestrator.data",
+        [
+            canon_entity,
+            legacy_entity,
+            manga_entity,
+            shango_entity,
+            unmapped_regional_entity,
+            no_ethnicity_entity,
+        ],
+    ):
         yield
 
 # -----------------------------------------------------------------------------
@@ -141,6 +206,29 @@ def test_preview_unknown_style(mock_orchestrator_data):
     assert response.status_code == 200
     data = response.json()
     assert data["prompt"] == ""  # Logic returns empty string
+
+
+def test_preview_regional_or_ethnic_uses_prompt_builder_and_ignores_legacy_prompt(mock_orchestrator_data):
+    response = client.get("/preview/Shango?style_id=regional_or_ethnic")
+    assert response.status_code == 200
+    data = response.json()
+    assert "Classical Yoruba sacred sculpture" in data["prompt"]
+    assert "Double-headed axe" in data["prompt"]
+    assert "LEGACY REGIONAL PROMPT SHOULD BE IGNORED" not in data["prompt"]
+
+
+def test_preview_regional_or_ethnic_unmapped_ethnicity_returns_empty_prompt(mock_orchestrator_data):
+    response = client.get("/preview/UnmappedRegionalEntity?style_id=regional_or_ethnic")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["prompt"] == ""
+
+
+def test_preview_regional_or_ethnic_empty_ethnicity_returns_empty_prompt(mock_orchestrator_data):
+    response = client.get("/preview/NoEthnicityEntity?style_id=regional_or_ethnic")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["prompt"] == ""
 
 # -----------------------------------------------------------------------------
 # Generate Tests
@@ -201,3 +289,37 @@ def test_generate_style_persistence(mock_vertex, mock_loader, mock_orchestrator_
     assert target.rendering["images"]["manga"] == image_url
     # 2. DOES NOT Update legacy appearance.imageUrl (should remain empty as init in fixture)
     assert target.appearance.imageUrl == "" 
+
+
+def test_generate_regional_or_ethnic_uses_dynamic_prompt_and_persists(mock_vertex, mock_loader, mock_orchestrator_data):
+    payload = {"entity_name": "Shango", "style_id": "regional_or_ethnic"}
+    response = client.post("/generate", json=payload)
+
+    assert response.status_code == 200
+    data = response.json()
+    assert data["image_url"].endswith("/generated_images/shango_regional_or_ethnic.png")
+    assert "Classical Yoruba sacred sculpture" in data["prompt_used"]
+    assert "Double-headed axe" in data["prompt_used"]
+    assert "LEGACY REGIONAL PROMPT SHOULD BE IGNORED" not in data["prompt_used"]
+    assert "Classical Yoruba sacred sculpture" in mock_vertex.generate_images.call_args.kwargs["prompt"]
+
+    saved_data = mock_loader.call_args[0][0]
+    target = next(e for e in saved_data if e.name == "Shango")
+    assert target.rendering["images"]["regional_or_ethnic"] == data["image_url"]
+    assert target.appearance.imageUrl == ""
+
+
+def test_generate_regional_or_ethnic_unmapped_ethnicity_returns_400(mock_vertex, mock_orchestrator_data):
+    payload = {"entity_name": "UnmappedRegionalEntity", "style_id": "regional_or_ethnic"}
+    response = client.post("/generate", json=payload)
+    assert response.status_code == 400
+    assert "No prompt available" in response.json()["detail"]
+    mock_vertex.generate_images.assert_not_called()
+
+
+def test_generate_regional_or_ethnic_empty_ethnicity_returns_400(mock_vertex, mock_orchestrator_data):
+    payload = {"entity_name": "NoEthnicityEntity", "style_id": "regional_or_ethnic"}
+    response = client.post("/generate", json=payload)
+    assert response.status_code == 400
+    assert "No prompt available" in response.json()["detail"]
+    mock_vertex.generate_images.assert_not_called()

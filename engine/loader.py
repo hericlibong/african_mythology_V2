@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 from typing import List
-from domain import MythologicalEntity
+from engine.domain import MythologicalEntity
 
 # Path resolution: engine/loader.py -> parent -> parent -> src/data/mythology_data.json
 DATA_PATH = Path(__file__).parent.parent / "src" / "data" / "mythology_data.json"
