@@ -46,6 +46,4 @@ RUN mkdir -p /app/public/generated_images
 
 EXPOSE 7860
 
-WORKDIR /app/engine
-CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "7860"]
-
+CMD ["uvicorn", "engine.api:app", "--host", "0.0.0.0", "--port", "7860"]
