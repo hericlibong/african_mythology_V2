@@ -95,7 +95,10 @@
           "label": "Modern African Art",
           "prompt": ""
         }
-      ]
+      ],
+      "images": {
+        "regional_or_ethnic": "/generated_images/shango_regional_or_ethnic.png"
+      }
     }
   },
   {
@@ -302,7 +305,10 @@
           "label": "Storyteller Abstract",
           "prompt": "Abstract portrait of Anansi. A silhouette made of woven words and threads. Warm earth tones mixed with bright gold. Symbolizing the oral tradition."
         }
-      ]
+      ],
+      "images": {
+        "regional_or_ethnic": "/generated_images/anansi_regional_or_ethnic.png"
+      }
     }
   },
   {
@@ -2498,7 +2504,10 @@
           "label": "Modern African Art",
           "prompt": ""
         }
-      ]
+      ],
+      "images": {
+        "regional_or_ethnic": "/generated_images/kalunga_regional_or_ethnic.png"
+      }
     }
   },
   {
